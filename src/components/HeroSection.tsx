@@ -1,90 +1,22 @@
-import { useEffect, useState } from "react";
-import humanImage from "@/assets/human.jpeg";
-import robotImage from "@/assets/robot.jpeg";
+import heroVideo from "@/assets/hero-video.mp4";
 
 export const HeroSection = () => {
-  const [transitionProgress, setTransitionProgress] = useState(0);
-
-  useEffect(() => {
-    let rafId = 0;
-    let startTime = Date.now();
-    const duration = 5000; // 5 seconds
-
-    const animate = () => {
-      const elapsed = Date.now() - startTime;
-      const progress = (elapsed % (duration * 2)) / duration;
-      
-      // Create a smooth back-and-forth transition
-      const smoothProgress = progress > 1 
-        ? 2 - progress // Going back from 1 to 0
-        : progress;     // Going from 0 to 1
-      
-      setTransitionProgress(smoothProgress);
-      rafId = requestAnimationFrame(animate);
-    };
-
-    rafId = requestAnimationFrame(animate);
-    
-    return () => {
-      if (rafId) cancelAnimationFrame(rafId);
-    };
-  }, []);
-
   return (
     <section className="relative min-h-[100svh] h-[100svh] w-full overflow-hidden flex items-center justify-center">
-      {/* Background Images with Smooth Transition Effect */}
+      {/* Background Video */}
       <div className="absolute inset-0">
-        {/* Human Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center will-change-transform"
-          style={{
-            backgroundImage: `url(${humanImage})`,
-            opacity: 1 - transitionProgress,
-            transform: `scale(${1 + transitionProgress * 0.05})`,
-            filter: `blur(${transitionProgress * 2}px)`,
-            backfaceVisibility: 'hidden',
-          }}
-        />
-        
-        {/* Blend Overlay Layer */}
-        <div 
-          className="absolute inset-0 pointer-events-none will-change-transform"
-          style={{
-            backgroundImage: `
-              repeating-linear-gradient(135deg,
-                hsl(var(--primary) / ${Math.min(transitionProgress * 0.12, 0.12)} ) 0px,
-                hsl(var(--primary) / ${Math.min(transitionProgress * 0.12, 0.12)} ) 4px,
-                transparent 4px,
-                transparent 16px
-              ),
-              linear-gradient(135deg,
-                hsl(var(--primary) / ${Math.min(transitionProgress * 0.25, 0.25)}),
-                hsl(var(--accent) / ${Math.min(transitionProgress * 0.25, 0.25)})
-              )`,
-            opacity: Math.min(transitionProgress + 0.1, 1),
-            mixBlendMode: 'soft-light',
-          }}
-        />
-        
-        {/* Robot Image */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center will-change-transform"
-          style={{
-            backgroundImage: `url(${robotImage})`,
-            opacity: transitionProgress,
-            transform: `scale(${0.95 + transitionProgress * 0.05})`,
-            filter: `blur(${(1 - transitionProgress) * 2}px)`,
-            backfaceVisibility: 'hidden',
-          }}
-        />
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src={heroVideo} type="video/mp4" />
+        </video>
         
         {/* Gradient Overlay */}
-        <div 
-          className="absolute inset-0 bg-gradient-to-b from-background/10 via-background/30 to-background/95"
-          style={{
-            opacity: 0.8 + transitionProgress * 0.2,
-          }}
-        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/10 via-background/30 to-background/95" />
       </div>
 
       {/* Scroll Indicator */}
