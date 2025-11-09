@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { HeroSection } from "@/components/HeroSection";
 import { Header } from "@/components/Header";
 import { Sidebar } from "@/components/Sidebar";
@@ -8,6 +8,12 @@ import { agents } from "@/data/agents";
 
 const Index = () => {
   const [selectedIndustry, setSelectedIndustry] = useState("Alle");
+  const agentsGridRef = useRef<HTMLDivElement>(null);
+
+  const handleIndustrySelect = (industry: string) => {
+    setSelectedIndustry(industry);
+    agentsGridRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -20,7 +26,7 @@ const Index = () => {
       {/* Mobile Sidebar */}
       <MobileSidebar 
         selectedIndustry={selectedIndustry}
-        onSelectIndustry={setSelectedIndustry}
+        onSelectIndustry={handleIndustrySelect}
         agents={agents}
       />
 
@@ -28,13 +34,15 @@ const Index = () => {
       <div className="flex">
         <Sidebar 
           selectedIndustry={selectedIndustry}
-          onSelectIndustry={setSelectedIndustry}
+          onSelectIndustry={handleIndustrySelect}
           agents={agents}
         />
-        <AgentsGrid 
-          agents={agents}
-          selectedIndustry={selectedIndustry}
-        />
+        <div ref={agentsGridRef}>
+          <AgentsGrid 
+            agents={agents}
+            selectedIndustry={selectedIndustry}
+          />
+        </div>
       </div>
     </div>
   );
