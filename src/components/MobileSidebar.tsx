@@ -2,20 +2,28 @@ import { useState } from "react";
 import { Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import { industries } from "@/data/agents";
+import { industries, Agent } from "@/data/agents";
 import { cn } from "@/lib/utils";
 
 interface MobileSidebarProps {
   selectedIndustry: string;
   onSelectIndustry: (industry: string) => void;
+  agents: Agent[];
 }
 
-export const MobileSidebar = ({ selectedIndustry, onSelectIndustry }: MobileSidebarProps) => {
+export const MobileSidebar = ({ selectedIndustry, onSelectIndustry, agents }: MobileSidebarProps) => {
   const [open, setOpen] = useState(false);
 
   const handleSelectIndustry = (industry: string) => {
     onSelectIndustry(industry);
     setOpen(false);
+  };
+
+  const getAgentCount = (industry: string) => {
+    if (industry === "Alle") {
+      return agents.length;
+    }
+    return agents.filter(agent => agent.industry === industry).length;
   };
 
   return (
@@ -45,13 +53,21 @@ export const MobileSidebar = ({ selectedIndustry, onSelectIndustry }: MobileSide
                 key={industry}
                 onClick={() => handleSelectIndustry(industry)}
                 className={cn(
-                  "w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200",
+                  "w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 flex items-center justify-between",
                   selectedIndustry === industry
                     ? "bg-accent text-accent-foreground shadow-sm"
                     : "text-foreground/70 hover:text-foreground hover:bg-muted"
                 )}
               >
-                {industry}
+                <span>{industry}</span>
+                <span className={cn(
+                  "text-xs px-2 py-0.5 rounded-full",
+                  selectedIndustry === industry
+                    ? "bg-accent-foreground/20"
+                    : "bg-muted"
+                )}>
+                  {getAgentCount(industry)}
+                </span>
               </button>
             ))}
           </nav>

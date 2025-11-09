@@ -17,6 +17,7 @@ const Index = () => {
       <MobileSidebar 
         selectedIndustry={selectedIndustry}
         onSelectIndustry={setSelectedIndustry}
+        agents={agents}
       />
 
       {/* Main Content */}
@@ -24,6 +25,7 @@ const Index = () => {
         <Sidebar 
           selectedIndustry={selectedIndustry}
           onSelectIndustry={setSelectedIndustry}
+          agents={agents}
         />
         <AgentsGrid 
           agents={agents}
