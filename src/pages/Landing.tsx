@@ -10,7 +10,7 @@ import { PricingSection } from "@/components/landing/PricingSection";
 import { ContactSection } from "@/components/landing/ContactSection";
 import { RevenueCalculator } from "@/components/landing/RevenueCalculator";
 import { Testimonials } from "@/components/landing/Testimonials";
-import { FinalCTA } from "@/components/landing/FinalCTA";
+
 import { LandingFooter } from "@/components/landing/LandingFooter";
 
 const Landing = () => {
@@ -28,7 +28,7 @@ const Landing = () => {
       <ContactSection />
       <RevenueCalculator />
       <Testimonials />
-      <FinalCTA />
+      
       <LandingFooter />
     </div>
   );
