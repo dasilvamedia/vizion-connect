@@ -89,7 +89,7 @@ export const Testimonials = () => {
           {testimonials.map((testimonial, index) => (
             <div 
               key={index} 
-              className={`bg-card p-6 rounded-lg border border-border hover:shadow-xl transition-all duration-500 hover:scale-105 ${
+              className={`bg-card p-6 rounded-lg border border-border hover:shadow-xl transition-all duration-500 md:hover:scale-105 ${
                 isVisible ? 'animate-fade-in opacity-100' : 'opacity-0'
               }`}
               style={{ 

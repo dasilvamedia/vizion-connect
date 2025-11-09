@@ -43,7 +43,7 @@ export const StatsSection = () => {
           {stats.map((stat, index) => (
             <div 
               key={index} 
-              className="text-center transform hover:scale-110 transition-transform duration-300"
+              className="text-center transform md:hover:scale-110 transition-transform duration-300"
               style={{
                 animation: `fade-in 0.6s ease-out ${index * 0.2}s both`
               }}

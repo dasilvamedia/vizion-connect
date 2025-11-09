@@ -105,13 +105,13 @@ export const PricingSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto px-2">
           {plans.map((plan, index) => (
             <div 
               key={index} 
-              className={`relative p-8 rounded-lg border ${
-                plan.popular ? 'border-orange bg-orange/5 scale-105' : 'border-border bg-card'
-              } hover:shadow-2xl transition-all duration-500 hover:scale-110 ${
+              className={`relative p-6 md:p-8 rounded-lg border ${
+                plan.popular ? 'border-orange bg-orange/5 md:scale-105' : 'border-border bg-card'
+              } hover:shadow-2xl transition-all duration-500 md:hover:scale-110 ${
                 isVisible ? 'animate-fade-in opacity-100' : 'opacity-0'
               }`}
               style={{ 

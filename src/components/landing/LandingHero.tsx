@@ -83,7 +83,7 @@ export const LandingHero = () => {
         <div className="relative inline-block">
           <a 
             href="tel:+4973613893011" 
-            className="inline-flex items-center gap-2 bg-white hover:bg-orange text-foreground hover:text-white font-semibold px-4 py-2 rounded-full text-sm shadow-2xl transition-all duration-300 hover:scale-105 border border-white/30"
+            className="inline-flex items-center gap-2 bg-white hover:bg-orange text-foreground hover:text-white font-semibold px-4 py-2 rounded-full text-sm shadow-2xl transition-all duration-300 md:hover:scale-105 border border-white/30"
           >
             <svg 
               xmlns="http://www.w3.org/2000/svg" 
@@ -102,8 +102,8 @@ export const LandingHero = () => {
             07361 3893011
           </a>
           
-          {/* Handwritten "Ruf mich an" with arrow - visible on all devices */}
-          <div className="absolute left-full ml-2 sm:ml-4 top-1/2 -translate-y-1/2 flex items-center animate-fade-in" style={{ animationDelay: '1s' }}>
+          {/* Handwritten "Ruf mich an" with arrow - Desktop: rechts, Mobile: unten */}
+          <div className="hidden md:absolute md:left-full md:ml-2 lg:ml-4 md:top-1/2 md:-translate-y-1/2 md:flex items-center animate-fade-in" style={{ animationDelay: '1s' }}>
             {/* Sanfter, geschwungener Pfeil */}
             <svg width="60" height="50" viewBox="0 0 60 50" className="drop-shadow-lg -ml-2">
               {/* Sanfte geschwungene Linie zum Button */}
@@ -126,6 +126,13 @@ export const LandingHero = () => {
             </svg>
             <p className="text-white text-xs sm:text-sm whitespace-nowrap ml-1 font-handwriting" style={{ transform: 'rotate(-2deg)' }}>
               RUF MICH AN
+            </p>
+          </div>
+          
+          {/* Mobile: Unter dem Button */}
+          <div className="md:hidden mt-2 flex justify-center animate-fade-in" style={{ animationDelay: '1s' }}>
+            <p className="text-white text-sm font-handwriting drop-shadow-lg" style={{ transform: 'rotate(-2deg)' }}>
+              ↑ RUF MICH AN
             </p>
           </div>
         </div>

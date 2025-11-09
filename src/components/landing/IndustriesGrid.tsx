@@ -114,7 +114,7 @@ export const IndustriesGrid = () => {
         {industries.map((industry, index) => (
           <div 
             key={index} 
-            className={`p-6 rounded-lg border border-border bg-card hover:shadow-xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 ${
+            className={`p-6 rounded-lg border border-border bg-card hover:shadow-xl transition-all duration-500 md:hover:scale-105 md:hover:-translate-y-2 ${
               isVisible ? 'animate-fade-in opacity-100' : 'opacity-0'
             }`}
             style={{ 
