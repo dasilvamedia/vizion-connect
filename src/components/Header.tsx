@@ -7,7 +7,7 @@ export const Header = () => {
         <img 
           src={logo} 
           alt="Lead Connect by DaSilvamedia" 
-          className="h-12 sm:h-16 w-auto"
+          className="h-48 sm:h-64 w-auto"
         />
       </div>
     </header>
