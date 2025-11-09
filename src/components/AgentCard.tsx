@@ -11,15 +11,15 @@ export const AgentCard = ({ agent }: AgentCardProps) => {
     <Card className="group relative overflow-hidden border-border bg-card hover:border-accent/50 transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,120,0,0.15)] cursor-pointer">
       <div className="p-6 space-y-4">
         {/* Header */}
-        <div className="space-y-2">
+        <div className="space-y-3">
           <div className="flex items-start justify-between gap-2">
-            <h3 className="text-xl font-semibold text-card-foreground group-hover:text-accent transition-colors duration-300">
+            <h3 className="text-xl font-semibold text-card-foreground group-hover:text-accent transition-colors duration-300 flex-1">
               {agent.name}
             </h3>
-            <Badge variant="secondary" className="shrink-0 text-xs">
-              {agent.industry}
-            </Badge>
           </div>
+          <Badge variant="secondary" className="text-xs w-fit">
+            {agent.industry}
+          </Badge>
           <p className="text-sm text-muted-foreground line-clamp-3">
             {agent.description}
           </p>

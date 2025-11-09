@@ -807,6 +807,502 @@ export const agents: Agent[] = [
     description: "Informiert über Visa-Anforderungen, kann bei Reisedokumenten helfen und über Einreisebestimmungen beraten.",
     features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
     useCases: ["Visa-Service", "Reisedokumente", "Einreisebestimmungen", "Visa-Anforderungen", "Reisepass"]
+  },
+  {
+    id: 101,
+    name: "Reiseversicherung Agent",
+    industry: "Reise & Tourismus",
+    description: "Berät zu Reiseversicherungen, kann Versicherungsschutz erklären und bei Schadensfällen helfen.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Reiseversicherung", "Versicherungsschutz", "Schadensfälle", "Reiseschutz", "Versicherungsberatung"]
+  },
+  {
+    id: 102,
+    name: "Geschäftsreise Agent",
+    industry: "Reise & Tourismus",
+    description: "Spezialisiert auf Geschäftsreisen, kann Firmenreisen organisieren und über Business-Tarife informieren.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Geschäftsreisen", "Firmenreisen", "Business-Tarife", "Corporate Travel", "Geschäftsreise-Service"]
+  },
+  {
+    id: 103,
+    name: "Last-Minute Agent",
+    industry: "Reise & Tourismus",
+    description: "Bietet Last-Minute-Reisen an, kann spontane Buchungen abwickeln und über kurzfristige Angebote informieren.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Last-Minute-Reisen", "Spontane Buchungen", "Kurzfristige Angebote", "Schnellbuchung", "Sofortreisen"]
+  },
+  {
+    id: 104,
+    name: "Reise-Notfall Agent",
+    industry: "Reise & Tourismus",
+    description: "Hilft bei Reise-Notfällen, kann Notfallkontakte vermitteln und bei Reiseproblemen unterstützen.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Reise-Notfall", "Notfallkontakte", "Reiseprobleme", "Notfallhilfe", "Reise-Assistance"]
+  },
+  {
+    id: 105,
+    name: "First-Level Support Agent",
+    industry: "B2B",
+    description: "Beantwortet grundlegende Produktfragen, kann einfache Probleme lösen und komplexe Fälle weiterleiten.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["First-Level Support", "Produktfragen", "Problemlösung", "Ticketing", "Weiterleitung"]
+  },
+  {
+    id: 106,
+    name: "Lead-Qualifizierung Agent",
+    industry: "B2B",
+    description: "Qualifiziert eingehende Anfragen, sammelt Kontaktdaten und kann warme Leads an den Vertrieb weiterleiten.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Lead-Qualifizierung", "Kontaktdaten", "Interessentenbetreuung", "Vertriebsweiterleitung", "Scoring"]
+  },
+  {
+    id: 107,
+    name: "Demo-Buchung Agent",
+    industry: "B2B",
+    description: "Vereinbart Produktdemos, prüft Qualifikation und kann Termine koordinieren. Bereitet Demo-Teilnehmer vor.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Demo-Buchung", "Terminvereinbarung", "Produktdemos", "Qualifikation", "Vorbereitung"]
+  },
+  {
+    id: 108,
+    name: "Kundenfeedback Agent",
+    industry: "B2B",
+    description: "Sammelt Kundenfeedback, führt Zufriedenheitsumfragen durch und kann Verbesserungsvorschläge entgegennehmen.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Kundenfeedback", "Zufriedenheitsumfragen", "Verbesserungsvorschläge", "Bewertungen", "Testimonials"]
+  },
+  {
+    id: 109,
+    name: "Kunden-Onboarding Agent",
+    industry: "B2B",
+    description: "Führt neue Kunden durch das Onboarding, erklärt Produktfeatures und kann bei der Einrichtung helfen.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Kunden-Onboarding", "Produktfeatures", "Einrichtung", "Erste Schritte", "Tutorial"]
+  },
+  {
+    id: 110,
+    name: "Preisberatung Agent",
+    industry: "B2B",
+    description: "Berät zu Preismodellen, kann Angebote erstellen und über Rabatte informieren.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Preisberatung", "Preismodelle", "Angebote", "Rabatte", "Kostenvoranschläge"]
+  },
+  {
+    id: 111,
+    name: "Integration Agent",
+    industry: "B2B",
+    description: "Hilft bei API-Integrationen, kann technische Dokumentation erklären und bei Integrationsfehlern helfen.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["API-Integration", "Technische Dokumentation", "Integrationsfehler", "Developer Support", "API-Hilfe"]
+  },
+  {
+    id: 112,
+    name: "Billing Agent",
+    industry: "B2B",
+    description: "Beantwortet Rechnungsfragen, kann Zahlungsmethoden verwalten und bei Abrechnungsproblemen helfen.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Rechnungsfragen", "Zahlungsmethoden", "Abrechnungsprobleme", "Billing-Support", "Zahlungsabwicklung"]
+  },
+  {
+    id: 113,
+    name: "Churn-Prevention Agent",
+    industry: "B2B",
+    description: "Identifiziert Kündigungsrisiken, kann Retention-Angebote machen und bei Kündigungen vermitteln.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Churn-Prevention", "Kündigungsrisiken", "Retention-Angebote", "Kundenbindung", "Win-Back"]
+  },
+  {
+    id: 114,
+    name: "Partnership Agent",
+    industry: "B2B",
+    description: "Informiert über Partnerschaftsmöglichkeiten, kann Kooperationen initiieren und über Partnerprogramme beraten.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Partnerschaften", "Kooperationen", "Partnerprogramme", "Business Development", "Allianzen"]
+  },
+  {
+    id: 115,
+    name: "Verfügbarkeitsabfrage Agent",
+    industry: "Einzelhandel",
+    description: "Prüft Produktverfügbarkeit in Filialen, kann Artikel reservieren und über Lieferzeiten informieren.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Verfügbarkeitsabfrage", "Filialbestand", "Produktreservierung", "Lieferzeiten", "Bestandsprüfung"]
+  },
+  {
+    id: 116,
+    name: "Filialinfos Agent",
+    industry: "Einzelhandel",
+    description: "Informiert über Öffnungszeiten, Standorte und Services. Kann Wegbeschreibungen geben und Kontaktdaten bereitstellen.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Öffnungszeiten", "Standortinfos", "Wegbeschreibung", "Filialservices", "Kontaktdaten"]
+  },
+  {
+    id: 117,
+    name: "Click & Collect Agent",
+    industry: "Einzelhandel",
+    description: "Wickelt Click & Collect Bestellungen ab, informiert über Abholbereitschaft und kann Abholtermine koordinieren.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Click & Collect", "Abholbereitschaft", "Abholtermine", "Bestellstatus", "Filialabholung"]
+  },
+  {
+    id: 118,
+    name: "Aktionen & Events Agent",
+    industry: "Einzelhandel",
+    description: "Informiert über laufende Aktionen, Events und Sonderverkäufe. Kann Einladungen zu Veranstaltungen versenden.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Aktionen", "Events", "Sonderverkäufe", "Veranstaltungen", "Einladungen"]
+  },
+  {
+    id: 119,
+    name: "Kundenkarte Agent",
+    industry: "Einzelhandel",
+    description: "Verwaltet Kundenkarten, kann Punkte abfragen und über Kundenkarten-Vorteile informieren.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Kundenkarte", "Punkte-System", "Kundenkarten-Vorteile", "Treueprogramm", "Rabatte"]
+  },
+  {
+    id: 120,
+    name: "Reklamation Agent",
+    industry: "Einzelhandel",
+    description: "Nimmt Reklamationen entgegen, kann Umtausch koordinieren und über Gewährleistung informieren.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Reklamationen", "Umtausch", "Gewährleistung", "Reklamationsbearbeitung", "Kundenservice"]
+  },
+  {
+    id: 121,
+    name: "Produktberatung Agent",
+    industry: "Einzelhandel",
+    description: "Berät zu Produkten, kann Produktvergleiche durchführen und Empfehlungen geben.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Produktberatung", "Produktvergleiche", "Empfehlungen", "Produktinfos", "Beratung"]
+  },
+  {
+    id: 122,
+    name: "Lieferservice Agent",
+    industry: "Einzelhandel",
+    description: "Koordiniert Lieferungen, kann Liefertermine abstimmen und über Lieferoptionen informieren.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Lieferservice", "Liefertermine", "Lieferoptionen", "Zustellung", "Lieferkoordination"]
+  },
+  {
+    id: 123,
+    name: "Geschenkservice Agent",
+    industry: "Einzelhandel",
+    description: "Hilft bei Geschenkauswahl, kann Geschenkverpackung organisieren und Geschenkgutscheine verwalten.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Geschenkservice", "Geschenkverpackung", "Geschenkgutscheine", "Geschenkauswahl", "Geschenktipps"]
+  },
+  {
+    id: 124,
+    name: "Reparaturservice Agent",
+    industry: "Einzelhandel",
+    description: "Koordiniert Reparaturen, kann Reparaturtermine vereinbaren und über Reparaturkosten informieren.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Reparaturservice", "Reparaturtermine", "Reparaturkosten", "Werkstatt", "Reparatur-Koordination"]
+  },
+  {
+    id: 125,
+    name: "Montageservice Agent",
+    industry: "Einzelhandel",
+    description: "Organisiert Montagen, kann Montagetermine vereinbaren und über Montagekosten informieren.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Montageservice", "Montagetermine", "Montagekosten", "Installation", "Aufbau-Service"]
+  },
+  {
+    id: 126,
+    name: "Saisonale Beratung Agent",
+    industry: "Einzelhandel",
+    description: "Berät zu saisonalen Produkten, informiert über Saisonschlussverkäufe und kann saisonale Empfehlungen geben.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Saisonale Produkte", "Saisonschlussverkauf", "Saisonale Empfehlungen", "Trends", "Saisonberatung"]
+  },
+  {
+    id: 127,
+    name: "B2B Bestellmanagement Agent",
+    industry: "Großhandel",
+    description: "Nimmt Großbestellungen entgegen, prüft Verfügbarkeiten und kann Angebote erstellen. Koordiniert Liefertermine.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["B2B Bestellungen", "Großbestellungen", "Angebotserstellung", "Liefertermine", "Verfügbarkeitsprüfung"]
+  },
+  {
+    id: 128,
+    name: "Preisanfrage Agent",
+    industry: "Großhandel",
+    description: "Beantwortet Preisanfragen, informiert über Staffelpreise und kann Sonderkonditionen anbieten.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Preisanfragen", "Staffelpreise", "Sonderkonditionen", "Mengenrabatte", "Konditionsverhandlung"]
+  },
+  {
+    id: 129,
+    name: "Rechnungsservice Agent",
+    industry: "Großhandel",
+    description: "Beantwortet Rechnungsfragen, kann Zahlungserinnerungen versenden und Zahlungsvereinbarungen treffen.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Rechnungsfragen", "Zahlungserinnerungen", "Zahlungsvereinbarungen", "Mahnwesen", "Buchhaltung"]
+  },
+  {
+    id: 130,
+    name: "Lieferkoordination Agent",
+    industry: "Großhandel",
+    description: "Koordiniert Lieferungen, informiert über Lieferstatus und kann Liefertermine abstimmen.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Lieferkoordination", "Lieferstatus", "Liefertermine", "Speditionsabstimmung", "Logistik"]
+  },
+  {
+    id: 131,
+    name: "Neukunden Agent",
+    industry: "Großhandel",
+    description: "Betreut neue Geschäftskunden, kann Kontoerstellung koordinieren und über Konditionen informieren.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Neukunden", "Kontoerstellung", "Geschäftskunden", "B2B-Konditionen", "Kundenbetreuung"]
+  },
+  {
+    id: 132,
+    name: "Lagerbestand Agent",
+    industry: "Großhandel",
+    description: "Informiert über Lagerbestände, kann Reservierungen durchführen und über Nachlieferungen informieren.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Lagerbestand", "Reservierungen", "Nachlieferungen", "Bestandsauskunft", "Lagerverwaltung"]
+  },
+  {
+    id: 133,
+    name: "Produktkatalog Agent",
+    industry: "Großhandel",
+    description: "Informiert über Produktkataloge, kann Kataloge versenden und über neue Produkte informieren.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Produktkatalog", "Katalog-Versand", "Neue Produkte", "Produktinformationen", "Sortiment"]
+  },
+  {
+    id: 134,
+    name: "Messe & Events Agent",
+    industry: "Großhandel",
+    description: "Informiert über Messeteilnahmen, kann Messetermine koordinieren und über Branchenevents informieren.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Messen", "Branchenevents", "Messetermine", "Veranstaltungen", "Networking"]
+  },
+  {
+    id: 135,
+    name: "Fachberatung Agent",
+    industry: "Großhandel",
+    description: "Bietet fachliche Beratung zu Produkten, kann technische Fragen beantworten und Lösungen empfehlen.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Fachberatung", "Technische Fragen", "Produktlösungen", "Expertenwissen", "Beratung"]
+  },
+  {
+    id: 136,
+    name: "After-Sales Service Agent",
+    industry: "Großhandel",
+    description: "Betreut Kunden nach dem Kauf, kann bei Problemen helfen und Serviceleistungen koordinieren.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["After-Sales", "Kundenbetreuung", "Serviceleistungen", "Problemlösung", "Support"]
+  },
+  {
+    id: 137,
+    name: "Retouren Agent",
+    industry: "Großhandel",
+    description: "Wickelt Retouren ab, kann Rücknahmen koordinieren und über Rückgabebedingungen informieren.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Retouren", "Rücknahmen", "Rückgabebedingungen", "Reklamationen", "Retourenabwicklung"]
+  },
+  {
+    id: 138,
+    name: "Export Agent",
+    industry: "Großhandel",
+    description: "Unterstützt bei Exportgeschäften, kann über Zollbestimmungen informieren und internationale Lieferungen koordinieren.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Export", "Zollbestimmungen", "Internationale Lieferungen", "Exportabwicklung", "Auslandsgeschäft"]
+  },
+  {
+    id: 139,
+    name: "Beauty-Terminbuchung Agent",
+    industry: "Beauty & Wellness",
+    description: "Verwaltet Termine für Beauty-Behandlungen, kann Verfügbarkeiten prüfen und Buchungen bestätigen.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Beauty-Termine", "Behandlungsbuchung", "Verfügbarkeitsprüfung", "Terminbestätigung", "Kosmetik"]
+  },
+  {
+    id: 140,
+    name: "Behandlungsberatung Agent",
+    industry: "Beauty & Wellness",
+    description: "Berät zu Beauty-Behandlungen, kann Preise nennen und Behandlungspläne erstellen.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Behandlungsberatung", "Beauty-Beratung", "Preisauskunft", "Behandlungspläne", "Kosmetikberatung"]
+  },
+  {
+    id: 141,
+    name: "Produktberatung Agent",
+    industry: "Beauty & Wellness",
+    description: "Berät zu Beauty-Produkten, kann Empfehlungen geben und Produktbestellungen entgegennehmen.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Produktberatung", "Beauty-Produkte", "Empfehlungen", "Produktbestellungen", "Hautanalyse"]
+  },
+  {
+    id: 142,
+    name: "Spa & Wellness Agent",
+    industry: "Beauty & Wellness",
+    description: "Verwaltet Spa-Termine, informiert über Wellness-Angebote und kann Pakete zusammenstellen.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Spa-Termine", "Wellness-Angebote", "Entspannungsbehandlungen", "Paketangebote", "Wellness"]
+  },
+  {
+    id: 143,
+    name: "Friseur Agent",
+    industry: "Beauty & Wellness",
+    description: "Verwaltet Friseurtermine, kann Haarberatung geben und über Friseur-Services informieren.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Friseurtermine", "Haarberatung", "Friseur-Services", "Haarschnitt", "Styling"]
+  },
+  {
+    id: 144,
+    name: "Nagelstudio Agent",
+    industry: "Beauty & Wellness",
+    description: "Verwaltet Nagelstudio-Termine, berät zu Nageldesign und kann über Nagelbehandlungen informieren.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Nagelstudio", "Nageldesign", "Nagelbehandlungen", "Maniküre", "Pediküre"]
+  },
+  {
+    id: 145,
+    name: "Massage Agent",
+    industry: "Beauty & Wellness",
+    description: "Vereinbart Massagetermine, informiert über Massagearten und kann Wellness-Pakete empfehlen.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Massagetermine", "Massagearten", "Wellness-Pakete", "Entspannung", "Therapeutische Massage"]
+  },
+  {
+    id: 146,
+    name: "Fitness Agent",
+    industry: "Beauty & Wellness",
+    description: "Informiert über Fitness-Angebote, kann Mitgliedschaften verwalten und Kurse buchen.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Fitness-Angebote", "Mitgliedschaften", "Kursbuchung", "Training", "Fitnessstudio"]
+  },
+  {
+    id: 147,
+    name: "Ernährungsberatung Agent",
+    industry: "Beauty & Wellness",
+    description: "Berät zu Ernährung und Wellness, kann Ernährungspläne empfehlen und über gesunde Lebensweise informieren.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Ernährungsberatung", "Ernährungspläne", "Gesunde Lebensweise", "Wellness-Ernährung", "Diätberatung"]
+  },
+  {
+    id: 148,
+    name: "Hautpflege Agent",
+    industry: "Beauty & Wellness",
+    description: "Berät zu Hautpflege, kann Hautanalysen durchführen und passende Behandlungen empfehlen.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Hautpflege", "Hautanalyse", "Hautbehandlungen", "Kosmetik", "Hautpflege-Routine"]
+  },
+  {
+    id: 149,
+    name: "Permanent Make-up Agent",
+    industry: "Beauty & Wellness",
+    description: "Informiert über Permanent Make-up, kann Beratungstermine vereinbaren und über Nachbehandlung informieren.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Permanent Make-up", "Beratungstermine", "Nachbehandlung", "Augenbrauen", "Lippen"]
+  },
+  {
+    id: 150,
+    name: "Wellness-Pakete Agent",
+    industry: "Beauty & Wellness",
+    description: "Stellt Wellness-Pakete zusammen, kann Kombi-Angebote erstellen und über Wellness-Programme informieren.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Wellness-Pakete", "Kombi-Angebote", "Wellness-Programme", "Paketangebote", "Wellness-Tage"]
+  },
+  {
+    id: 151,
+    name: "Sendungsverfolgung Agent",
+    industry: "Logistik & Transport",
+    description: "Informiert über Sendungsstatus, kann Tracking-Informationen abrufen und Zustellprobleme melden.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Sendungsverfolgung", "Tracking-Info", "Zustellstatus", "Lieferstatus", "Paketverfolgung"]
+  },
+  {
+    id: 152,
+    name: "Liefertermin Agent",
+    industry: "Logistik & Transport",
+    description: "Koordiniert Liefertermine, kann Terminwünsche entgegennehmen und Zustellungen umplanen.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Liefertermine", "Terminkoordination", "Zustellwünsche", "Terminumplanung", "Lieferfenster"]
+  },
+  {
+    id: 153,
+    name: "Transportbuchung Agent",
+    industry: "Logistik & Transport",
+    description: "Nimmt Transportbuchungen entgegen, kann Angebote erstellen und Versandkosten berechnen.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Transportbuchung", "Versandangebote", "Kostenberechnung", "Transportaufträge", "Logistiklösungen"]
+  },
+  {
+    id: 154,
+    name: "Lagerauskunft Agent",
+    industry: "Logistik & Transport",
+    description: "Informiert über Lagerbestände, kann Verfügbarkeiten prüfen und Nachbestellungen koordinieren.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Lagerauskunft", "Bestandsabfrage", "Verfügbarkeitsprüfung", "Nachbestellungen", "Lagerverwaltung"]
+  },
+  {
+    id: 155,
+    name: "Express-Versand Agent",
+    industry: "Logistik & Transport",
+    description: "Koordiniert Express-Sendungen, kann Eilzustellungen organisieren und über Express-Optionen informieren.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Express-Versand", "Eilzustellungen", "Same-Day-Delivery", "Express-Optionen", "Schnellversand"]
+  },
+  {
+    id: 156,
+    name: "International Agent",
+    industry: "Logistik & Transport",
+    description: "Betreut internationale Sendungen, informiert über Zoll und kann bei Auslandsversand helfen.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Internationaler Versand", "Zollabwicklung", "Auslandsversand", "Import/Export", "Internationale Logistik"]
+  },
+  {
+    id: 157,
+    name: "Schadensmeldung Agent",
+    industry: "Logistik & Transport",
+    description: "Nimmt Schadensmeldungen entgegen, kann Schadensfälle bearbeiten und Entschädigungen koordinieren.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Schadensmeldung", "Schadensfälle", "Entschädigungen", "Transportschäden", "Schadensregulierung"]
+  },
+  {
+    id: 158,
+    name: "Sperrgut Agent",
+    industry: "Logistik & Transport",
+    description: "Koordiniert Sperrgut-Transporte, kann Sondertermine vereinbaren und über Sperrgut-Bedingungen informieren.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Sperrgut", "Sondertransporte", "Sperrgut-Termine", "Großgut", "Schwertransporte"]
+  },
+  {
+    id: 159,
+    name: "Paketshop Agent",
+    industry: "Logistik & Transport",
+    description: "Informiert über Paketshops, kann Abholstellen suchen und über Paketshop-Services informieren.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Paketshops", "Abholstellen", "Paketshop-Services", "Packstationen", "Abholservice"]
+  },
+  {
+    id: 160,
+    name: "Nachnahme Agent",
+    industry: "Logistik & Transport",
+    description: "Wickelt Nachnahme-Sendungen ab, kann über Nachnahme-Bedingungen informieren und Zahlungen koordinieren.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Nachnahme", "Nachnahme-Bedingungen", "Zahlungsabwicklung", "Cash-on-Delivery", "Nachnahmegebühren"]
+  },
+  {
+    id: 161,
+    name: "Retouren Agent",
+    industry: "Logistik & Transport",
+    description: "Koordiniert Retouren, kann Rücksendescheine erstellen und über Retourenbedingungen informieren.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Retouren", "Rücksendescheine", "Retourenbedingungen", "Rückversand", "Retourenabwicklung"]
+  },
+  {
+    id: 162,
+    name: "Kühlkette Agent",
+    industry: "Logistik & Transport",
+    description: "Koordiniert Kühlketten-Transporte, kann Temperaturüberwachung organisieren und über Kühltransporte informieren.",
+    features: ["Automatisierte Antworten in Echtzeit", "Integration in bestehende Systeme", "Mehrsprachige Unterstützung", "Analytics und Reporting", "Personalisierte Benutzerführung"],
+    useCases: ["Kühlkette", "Temperaturüberwachung", "Kühltransporte", "Tiefkühllogistik", "Pharmalogistik"]
   }
 ];
 
@@ -818,5 +1314,10 @@ export const industries = [
   "Finanzdienstleistungen",
   "Telekommunikation",
   "Personalwesen",
-  "Reise & Tourismus"
+  "Reise & Tourismus",
+  "B2B",
+  "Einzelhandel",
+  "Großhandel",
+  "Beauty & Wellness",
+  "Logistik & Transport"
 ];
