@@ -97,19 +97,6 @@ export const HeroSection = () => {
         />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 text-center px-4 sm:px-6 max-w-5xl mx-auto">
-        <h1 
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold mb-4 sm:mb-6 transition-all duration-700"
-          style={{
-            color: scrollProgress > 0.5 ? 'hsl(var(--accent))' : 'hsl(var(--primary))',
-            opacity: 1 - scrollProgress * 0.5,
-            transform: `translateY(${scrollProgress * 30}px)`,
-          }}
-        >
-          Alle Agenten
-        </h1>
-      </div>
 
       {/* Scroll Indicator */}
       <div 
