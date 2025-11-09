@@ -1,0 +1,139 @@
+import { Button } from "@/components/ui/button";
+import { Check } from "lucide-react";
+
+export const PricingSection = () => {
+  const plans = [
+    {
+      name: "Basis-Service",
+      subtitle: "Perfekt für Selbständige und kleine Unternehmen",
+      price: "599€",
+      period: "pro Monat",
+      features: [
+        "1 KI-Agent für Ihr Unternehmen",
+        "KI-Chatbot inklusive",
+        "300 Minuten Service inklusive",
+        "Jede weitere Minute: 20ct",
+        "24/7 Anrufbetreuung",
+        "Lead-Generierung Service",
+        "Lead-Qualifizierung durch uns",
+        "Professionelle Kundenberatung",
+        "Anrufweiterleitung nach Bedarf",
+        "Automatische Terminbuchung",
+        "E-Mail Benachrichtigungen",
+        "Kalender-Integration Setup",
+        "Standard Support von uns"
+      ],
+      popular: false
+    },
+    {
+      name: "Business-Service",
+      subtitle: "Ideal für wachsende Unternehmen",
+      price: "1.499€",
+      period: "pro Monat",
+      features: [
+        "Bis zu 3 KI-Agenten",
+        "KI-Chatbot inklusive",
+        "500 Minuten Service inklusive",
+        "Jede weitere Minute: 15ct",
+        "24/7 Anrufbetreuung",
+        "Mehrsprachiger Service",
+        "Professionelle Lead-Generierung",
+        "Umfassende Lead-Qualifizierung",
+        "Erweiterte Kundenberatung",
+        "Intelligente Anrufweiterleitung",
+        "Vollautomatische Terminbuchung",
+        "Detaillierte E-Mail Reports",
+        "Komplette Kalender-Integration",
+        "Erweiterte Reporting-Services",
+        "Priority Support von uns"
+      ],
+      popular: true
+    },
+    {
+      name: "Premium-Service",
+      subtitle: "Für Unternehmen mit erweiterten Anforderungen",
+      price: "Auf Anfrage",
+      period: "",
+      features: [
+        "Unbegrenzte KI-Agenten",
+        "KI-Chatbot inklusive",
+        "Unbegrenzte Service-Minuten",
+        "Aktive Outbound-Kampagnen",
+        "Professionelle Lead-Generierung",
+        "Komplette CRM-Integration",
+        "Erweiterte Analytics durch uns",
+        "Maßgeschneiderte Workflows",
+        "Ihr persönlicher Account Manager",
+        "Vollständiger API-Zugang",
+        "White-Label Option verfügbar",
+        "Persönliches Beratungsgespräch"
+      ],
+      popular: false
+    }
+  ];
+
+  return (
+    <section id="preise" className="py-20 bg-muted/30">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
+            Transparente Service-Pakete für jeden Bedarf
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            Wählen Sie das Service-Paket, das am besten zu Ihrem Unternehmen passt. Alles wird von uns betreut.
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          {plans.map((plan, index) => (
+            <div 
+              key={index} 
+              className={`relative p-8 rounded-lg border ${
+                plan.popular 
+                  ? 'border-orange shadow-xl scale-105' 
+                  : 'border-border bg-card'
+              }`}
+            >
+              {plan.popular && (
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-orange text-white px-4 py-1 rounded-full text-sm font-semibold">
+                  Beliebt
+                </div>
+              )}
+              
+              <div className="mb-6">
+                <h3 className="text-2xl font-bold text-foreground mb-2">{plan.name}</h3>
+                <p className="text-sm text-muted-foreground mb-4">{plan.subtitle}</p>
+                <div className="flex items-baseline gap-2">
+                  <span className="text-4xl font-bold text-foreground">{plan.price}</span>
+                  {plan.period && <span className="text-muted-foreground">{plan.period}</span>}
+                </div>
+              </div>
+
+              <div className="mb-6">
+                <p className="text-sm font-semibold text-foreground mb-3">Enthalten:</p>
+                <ul className="space-y-3">
+                  {plan.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-start gap-2 text-sm">
+                      <Check className="w-5 h-5 text-orange flex-shrink-0 mt-0.5" />
+                      <span className="text-muted-foreground">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <Button 
+                className={`w-full ${
+                  plan.popular 
+                    ? 'bg-orange hover:bg-orange/90 text-white' 
+                    : 'bg-secondary hover:bg-secondary/80'
+                }`}
+              >
+                Service 3 Tage kostenlos testen
+              </Button>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
