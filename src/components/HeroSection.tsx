@@ -13,7 +13,7 @@ export const HeroSection = () => {
     const update = () => {
       const diff = target - current;
       if (Math.abs(diff) > 0.001) {
-        current += diff * 0.12; // smoothing factor for buttery scroll
+        current += diff * 0.15; // faster smoothing for quicker transition
         setScrollProgress(current);
         rafId = requestAnimationFrame(update);
       } else {
@@ -26,8 +26,8 @@ export const HeroSection = () => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       const windowHeight = window.innerHeight;
-      // Start transition earlier and drive it with rAF for smoothness
-      target = Math.min(scrollPosition / (windowHeight * 0.45), 1);
+      // Faster transition - complete within shorter scroll distance
+      target = Math.min(scrollPosition / (windowHeight * 0.25), 1);
       if (!rafId) rafId = requestAnimationFrame(update);
     };
 
@@ -107,17 +107,8 @@ export const HeroSection = () => {
             transform: `translateY(${scrollProgress * 30}px)`,
           }}
         >
-          Entdecke unser KI-Agenten
+          Alle Agenten
         </h1>
-        <p 
-          className="text-base sm:text-lg md:text-xl lg:text-2xl text-foreground/80 mb-6 sm:mb-8 max-w-3xl mx-auto"
-          style={{
-            opacity: 1 - scrollProgress * 0.7,
-            transform: `translateY(${scrollProgress * 20}px)`,
-          }}
-        >
-          Spezialisierte KI-Agenten für jeden Bereich Ihres Unternehmens. Von E-Commerce bis Gesundheitswesen - finden Sie den perfekten Agent für Ihre Anforderungen.
-        </p>
       </div>
 
       {/* Scroll Indicator */}
