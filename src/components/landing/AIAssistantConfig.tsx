@@ -60,70 +60,76 @@ export const AIAssistantConfig = () => {
         }`}
       />
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4 animate-fade-in">
-            Ihr persönlicher KI-Assistent - genau wie Sie ihn wollen
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Ihr Assistent ist selbstverständlich individuell anpassbar - egal ob Kaina, Emma, Petra oder Daniel. 
-            Name, Stimme und Sprachen werden genau nach Ihren Wünschen konfiguriert, damit der Service perfekt 
-            zu Ihrem Unternehmen und Ihren Anforderungen passt.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-          {features.map((feature, index) => (
-            <div 
-              key={index} 
-              className={`text-center p-6 transition-all duration-500 hover:scale-110 ${
-                isVisible ? 'animate-fade-in opacity-100' : 'opacity-0'
-              }`}
-              style={{ animationDelay: `${index * 150}ms` }}
-            >
-              <div className="w-16 h-16 rounded-full bg-orange/10 flex items-center justify-center mx-auto mb-4">
-                <feature.icon className="w-8 h-8 text-orange" />
-              </div>
-              <h3 className="text-lg font-semibold text-foreground mb-2">{feature.title}</h3>
-              <p className="text-sm text-muted-foreground">{feature.description}</p>
-            </div>
-          ))}
-        </div>
-
-        {/* Example Configuration */}
-        <div 
-          className={`max-w-2xl mx-auto bg-card border border-border rounded-lg p-8 transition-all duration-700 hover:shadow-2xl hover:scale-105 ${
-            isVisible ? 'animate-fade-in opacity-100' : 'opacity-0'
-          }`}
-          style={{ animationDelay: '0.6s' }}
-        >
-          <h3 className="text-xl font-semibold text-foreground mb-6">Beispiel-Konfiguration</h3>
-          <div className="grid grid-cols-2 gap-4 mb-6">
-            <div>
-              <p className="text-sm text-muted-foreground mb-1">Name:</p>
-              <p className="font-semibold text-foreground">Emma</p>
-            </div>
-            <div>
-              <p className="text-sm text-muted-foreground mb-1">Stimme:</p>
-              <p className="font-semibold text-foreground">Freundlich & Professionell</p>
-            </div>
-            <div>
-              <p className="text-sm text-muted-foreground mb-1">Sprachen:</p>
-              <p className="font-semibold text-foreground">Deutsch, Englisch</p>
-            </div>
-            <div>
-              <p className="text-sm text-muted-foreground mb-1">Branche:</p>
-              <p className="font-semibold text-foreground">Rechtsanwaltskanzlei</p>
-            </div>
-          </div>
-          <div className="bg-muted/50 rounded-lg p-4 border-l-4 border-orange">
-            <p className="text-foreground italic">
-              "Guten Tag, hier ist Emma von der Kanzlei Müller. Wie kann ich Ihnen heute behilflich sein?"
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+          {/* Left Column - Content and Features */}
+          <div className={`transition-all duration-700 ${isVisible ? 'animate-fade-in opacity-100' : 'opacity-0'}`}>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+              Ihr persönlicher KI-Assistent - <span className="text-orange">genau wie Sie ihn wollen</span>
+            </h2>
+            <p className="text-base md:text-lg text-muted-foreground mb-8">
+              Ihr Assistent ist selbstverständlich individuell anpassbar - egal ob Kaina, Emma, Petra oder Daniel. 
+              Name, Stimme und Sprachen werden genau nach Ihren Wünschen konfiguriert, damit der Service perfekt 
+              zu Ihrem Unternehmen und Ihren Anforderungen passt.
             </p>
+
+            {/* Features in 2x2 Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {features.map((feature, index) => (
+                <div 
+                  key={index} 
+                  className={`flex gap-4 transition-all duration-500 ${
+                    isVisible ? 'animate-fade-in opacity-100' : 'opacity-0'
+                  }`}
+                  style={{ animationDelay: `${index * 150}ms` }}
+                >
+                  <div className="w-12 h-12 rounded-lg bg-orange/10 flex items-center justify-center flex-shrink-0">
+                    <feature.icon className="w-6 h-6 text-orange" />
+                  </div>
+                  <div>
+                    <h3 className="text-base md:text-lg font-semibold text-foreground mb-1">{feature.title}</h3>
+                    <p className="text-sm text-muted-foreground">{feature.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right Column - Example Configuration */}
+          <div 
+            className={`bg-card border border-border rounded-xl p-6 md:p-8 transition-all duration-700 hover:shadow-2xl sticky top-8 ${
+              isVisible ? 'animate-fade-in opacity-100' : 'opacity-0'
+            }`}
+            style={{ animationDelay: '0.3s' }}
+          >
+            <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-6">Beispiel-Konfiguration</h3>
+            <div className="space-y-4 mb-6">
+              <div className="flex justify-between items-center">
+                <p className="text-sm text-muted-foreground">Name:</p>
+                <p className="font-semibold text-orange">Emma</p>
+              </div>
+              <div className="flex justify-between items-center">
+                <p className="text-sm text-muted-foreground">Stimme:</p>
+                <p className="font-semibold text-orange">Freundlich & Professionell</p>
+              </div>
+              <div className="flex justify-between items-center">
+                <p className="text-sm text-muted-foreground">Sprachen:</p>
+                <p className="font-semibold text-orange">Deutsch, Englisch</p>
+              </div>
+              <div className="flex justify-between items-center">
+                <p className="text-sm text-muted-foreground">Branche:</p>
+                <p className="font-semibold text-orange">Rechtsanwaltskanzlei</p>
+              </div>
+            </div>
+            <div className="bg-orange rounded-lg p-4">
+              <p className="text-white italic text-sm md:text-base">
+                "Guten Tag, hier ist Emma von der Kanzlei Müller. Wie kann ich Ihnen heute behilflich sein?"
+              </p>
+            </div>
           </div>
         </div>
 
-        <div className="text-center mt-8">
-          <p className="text-lg text-foreground mb-4">
+        <div className="text-center mt-12">
+          <p className="text-base md:text-lg text-foreground mb-4">
             Lassen Sie uns gemeinsam Ihren perfekten KI-Assistenten konfigurieren
           </p>
           <Button size="lg" className="bg-orange hover:bg-orange/90 text-white">
