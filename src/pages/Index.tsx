@@ -1,11 +1,27 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from "react";
+import { HeroSection } from "@/components/HeroSection";
+import { Sidebar } from "@/components/Sidebar";
+import { AgentsGrid } from "@/components/AgentsGrid";
+import { agents } from "@/data/agents";
 
 const Index = () => {
+  const [selectedIndustry, setSelectedIndustry] = useState("Alle");
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <div className="min-h-screen bg-background">
+      {/* Hero Section */}
+      <HeroSection />
+
+      {/* Main Content */}
+      <div className="flex">
+        <Sidebar 
+          selectedIndustry={selectedIndustry}
+          onSelectIndustry={setSelectedIndustry}
+        />
+        <AgentsGrid 
+          agents={agents}
+          selectedIndustry={selectedIndustry}
+        />
       </div>
     </div>
   );
