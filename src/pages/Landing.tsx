@@ -7,7 +7,7 @@ import { WhyChooseUs } from "@/components/landing/WhyChooseUs";
 import { StatsSection } from "@/components/landing/StatsSection";
 import { IndustriesGrid } from "@/components/landing/IndustriesGrid";
 import { PricingSection } from "@/components/landing/PricingSection";
-import { ContactSection } from "@/components/landing/ContactSection";
+import { WhyTestSection } from "@/components/landing/WhyTestSection";
 import { RevenueCalculator } from "@/components/landing/RevenueCalculator";
 import { Testimonials } from "@/components/landing/Testimonials";
 import { FinalCTA } from "@/components/landing/FinalCTA";
@@ -25,7 +25,7 @@ const Landing = () => {
       <StatsSection />
       <IndustriesGrid />
       <PricingSection />
-      <ContactSection />
+      <WhyTestSection />
       <RevenueCalculator />
       <Testimonials />
       <FinalCTA />
