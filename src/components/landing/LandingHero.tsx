@@ -14,7 +14,7 @@ export const LandingHero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex flex-col overflow-hidden">
+    <section className="relative min-h-screen flex flex-col overflow-hidden w-full">
       {/* Video Background */}
       <div className="absolute inset-0 w-full h-full overflow-hidden">
         {/* Mobile Video (Portrait) */}
@@ -24,7 +24,11 @@ export const LandingHero = () => {
           muted
           playsInline
           className="absolute top-0 left-0 w-full h-full object-cover md:hidden"
-          style={{ minWidth: '100%', minHeight: '100%' }}
+          style={{ 
+            minWidth: '100%', 
+            minHeight: '100%',
+            objectPosition: 'center center'
+          }}
         >
           <source src={heroVideoMobile} type="video/mp4" />
         </video>

@@ -15,7 +15,7 @@ import { LandingFooter } from "@/components/landing/LandingFooter";
 
 const Landing = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background w-full overflow-x-hidden">
       <LandingHero />
       <TrustLogos />
       <FullServiceSection />
