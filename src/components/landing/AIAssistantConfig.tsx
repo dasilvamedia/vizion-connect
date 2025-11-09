@@ -48,17 +48,6 @@ export const AIAssistantConfig = () => {
 
   return (
     <section ref={sectionRef} className="py-20 bg-muted/30 relative overflow-hidden">
-      {/* Animated background shapes */}
-      <div 
-        className={`absolute top-20 left-10 w-96 h-96 rounded-full bg-primary/5 transition-transform duration-1000 ${
-          isVisible ? 'scale-100' : 'scale-0'
-        }`}
-      />
-      <div 
-        className={`absolute bottom-20 right-10 w-64 h-64 rounded-full bg-accent/5 transition-transform duration-1000 delay-300 ${
-          isVisible ? 'scale-100' : 'scale-0'
-        }`}
-      />
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           {/* Left Column - Content and Features */}
