@@ -12,14 +12,7 @@ export const ContactSection = () => {
         {/* Left: Features Grid + Contact Form Placeholder */}
         <div className="space-y-8">
           <div className="grid grid-cols-2 gap-4 md:gap-6">
-            {features.map((feature, idx) => (
-              <div key={idx} className="flex items-start gap-3 bg-muted/50 border border-border rounded-lg p-4">
-                <div className="w-6 h-6 rounded-full bg-orange/10 flex items-center justify-center flex-shrink-0">
-                  <Check className="w-4 h-4 text-orange" />
-                </div>
-                <span className="text-sm md:text-base text-foreground">{feature}</span>
-              </div>
-            ))}
+            {features.map((feature, idx) => {})}
           </div>
 
           <div className="bg-muted/50 border border-border rounded-lg p-8 min-h-[200px] flex items-center justify-center">
