@@ -1,67 +1,48 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import humanImage from "@/assets/human.jpeg";
 import robotImage from "@/assets/robot.jpeg";
 
 export const HeroSection = () => {
-  const [isHovered, setIsHovered] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const progress = Math.min(scrollPosition / windowHeight, 1);
+      setScrollProgress(progress);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <section className="relative h-screen w-full overflow-hidden flex items-center justify-center">
       {/* Background Images with Parallax Effect */}
-      <div 
-        className="absolute inset-0 transition-all duration-1000 ease-out"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
+      <div className="absolute inset-0">
         {/* Human Image */}
         <div 
-          className={`absolute inset-0 bg-cover bg-center transition-all duration-1000 ease-out ${
-            isHovered ? 'opacity-0 scale-110' : 'opacity-100 scale-100'
-          }`}
+          className="absolute inset-0 bg-cover bg-center transition-all duration-300 ease-out"
           style={{
             backgroundImage: `url(${humanImage})`,
+            opacity: 1 - scrollProgress,
+            transform: `scale(${1 + scrollProgress * 0.1})`,
           }}
         />
         
         {/* Robot Image */}
         <div 
-          className={`absolute inset-0 bg-cover bg-center transition-all duration-1000 ease-out ${
-            isHovered ? 'opacity-100 scale-100' : 'opacity-0 scale-90'
-          }`}
+          className="absolute inset-0 bg-cover bg-center transition-all duration-300 ease-out"
           style={{
             backgroundImage: `url(${robotImage})`,
+            opacity: scrollProgress,
+            transform: `scale(${0.9 + scrollProgress * 0.1})`,
           }}
         />
         
         {/* Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-background/20 via-background/40 to-background/90" />
-      </div>
-
-      {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
-        <h1 className={`text-6xl md:text-8xl font-bold mb-6 transition-all duration-1000 ${
-          isHovered ? 'text-accent' : 'text-primary'
-        }`}>
-          {isHovered ? 'ROBOT' : 'HUMAN'}
-        </h1>
-        <p className="text-xl md:text-2xl text-foreground/80 mb-8 max-w-3xl mx-auto">
-          {isHovered 
-            ? 'KI-gestützte Automatisierung für maximale Effizienz'
-            : 'Menschliche Intelligenz trifft auf künstliche Innovation'
-          }
-        </p>
-        <div className="flex gap-4 justify-center">
-          <button className={`px-8 py-4 rounded-full font-semibold transition-all duration-300 ${
-            isHovered 
-              ? 'bg-accent text-accent-foreground hover:shadow-[0_0_30px_rgba(255,120,0,0.5)]'
-              : 'bg-primary text-primary-foreground hover:shadow-[0_0_30px_rgba(110,70,200,0.5)]'
-          }`}>
-            Jetzt starten
-          </button>
-          <button className="px-8 py-4 rounded-full font-semibold border-2 border-foreground/20 text-foreground hover:border-foreground/40 transition-all duration-300">
-            Mehr erfahren
-          </button>
-        </div>
       </div>
 
       {/* Scroll Indicator */}

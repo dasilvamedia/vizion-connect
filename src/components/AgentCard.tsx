@@ -31,7 +31,7 @@ export const AgentCard = ({ agent }: AgentCardProps) => {
             Use Cases
           </h4>
           <div className="flex flex-wrap gap-1.5">
-            {agent.useCases.slice(0, 3).map((useCase, index) => (
+            {agent.useCases.map((useCase, index) => (
               <span
                 key={index}
                 className="px-2 py-1 text-xs rounded-md bg-muted text-muted-foreground group-hover:bg-accent/10 group-hover:text-accent transition-colors duration-300"
@@ -39,11 +39,6 @@ export const AgentCard = ({ agent }: AgentCardProps) => {
                 {useCase}
               </span>
             ))}
-            {agent.useCases.length > 3 && (
-              <span className="px-2 py-1 text-xs rounded-md bg-muted text-muted-foreground">
-                +{agent.useCases.length - 3}
-              </span>
-            )}
           </div>
         </div>
 
