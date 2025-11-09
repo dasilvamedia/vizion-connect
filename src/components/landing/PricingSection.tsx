@@ -154,7 +154,7 @@ export const PricingSection = () => {
                   plan.popular 
                     ? 'bg-orange hover:bg-orange/90 text-white' 
                     : index === 0 || index === 2
-                    ? 'bg-secondary hover:bg-secondary/80 border-2 border-orange'
+                    ? 'bg-secondary hover:bg-secondary/80 border-2 border-orange text-black'
                     : 'bg-secondary hover:bg-secondary/80'
                 }`}
               >
