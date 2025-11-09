@@ -6,56 +6,85 @@ export const HeroSection = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
+    let rafId = 0;
+    let target = 0;
+    let current = 0;
+
+    const update = () => {
+      const diff = target - current;
+      if (Math.abs(diff) > 0.001) {
+        current += diff * 0.12; // smoothing factor for buttery scroll
+        setScrollProgress(current);
+        rafId = requestAnimationFrame(update);
+      } else {
+        current = target;
+        setScrollProgress(current);
+        rafId = 0;
+      }
+    };
+
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       const windowHeight = window.innerHeight;
-      // Start transition earlier and make it smoother (multiply by 1.5 for earlier start)
-      const progress = Math.min((scrollPosition / (windowHeight * 0.6)), 1);
-      setScrollProgress(progress);
+      // Start transition earlier and drive it with rAF for smoothness
+      target = Math.min(scrollPosition / (windowHeight * 0.45), 1);
+      if (!rafId) rafId = requestAnimationFrame(update);
     };
 
     handleScroll(); // Initial call
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (rafId) cancelAnimationFrame(rafId);
+    };
   }, []);
 
   return (
-    <section className="relative min-h-screen h-screen w-full overflow-hidden flex items-center justify-center">
+    <section className="relative min-h-[100svh] h-[100svh] w-full overflow-hidden flex items-center justify-center">
       {/* Background Images with Smooth Parallax Effect */}
       <div className="absolute inset-0">
         {/* Human Image */}
         <div 
-          className="absolute inset-0 bg-cover bg-center will-change-transform transition-opacity duration-500 ease-out"
+          className="absolute inset-0 bg-cover bg-top sm:bg-center will-change-transform"
           style={{
             backgroundImage: `url(${humanImage})`,
-            backgroundPosition: 'center center',
             opacity: 1 - scrollProgress,
-            transform: `scale(${1 + scrollProgress * 0.15}) translateY(${scrollProgress * 20}px)`,
-            filter: `blur(${scrollProgress * 4}px)`,
+            transform: `translateY(${scrollProgress * 12}px) scale(${1 + scrollProgress * 0.12})`,
+            filter: `blur(${scrollProgress * 2.5}px)`,
+            backfaceVisibility: 'hidden',
           }}
         />
         
         {/* Blend Overlay Layer */}
         <div 
-          className="absolute inset-0 will-change-transform"
+          className="absolute inset-0 pointer-events-none will-change-transform"
           style={{
-            background: `linear-gradient(135deg, 
-              rgba(110, 70, 200, ${scrollProgress * 0.3}), 
-              rgba(255, 120, 0, ${scrollProgress * 0.3}))`,
-            opacity: scrollProgress,
-            mixBlendMode: 'overlay',
+            backgroundImage: `
+              repeating-linear-gradient(135deg,
+                hsl(var(--primary) / ${Math.min(scrollProgress * 0.12, 0.12)} ) 0px,
+                hsl(var(--primary) / ${Math.min(scrollProgress * 0.12, 0.12)} ) 4px,
+                transparent 4px,
+                transparent 16px
+              ),
+              linear-gradient(135deg,
+                hsl(var(--primary) / ${Math.min(scrollProgress * 0.25, 0.25)}),
+                hsl(var(--accent) / ${Math.min(scrollProgress * 0.25, 0.25)})
+              )`,
+            opacity: Math.min(scrollProgress + 0.1, 1),
+            mixBlendMode: 'soft-light',
+            transform: `translateX(${scrollProgress * 30}px)`,
           }}
         />
         
         {/* Robot Image */}
         <div 
-          className="absolute inset-0 bg-cover bg-center will-change-transform transition-opacity duration-500 ease-out"
+          className="absolute inset-0 bg-cover bg-top sm:bg-center will-change-transform"
           style={{
             backgroundImage: `url(${robotImage})`,
-            backgroundPosition: 'center center',
             opacity: scrollProgress,
-            transform: `scale(${0.85 + scrollProgress * 0.15}) translateY(${(1 - scrollProgress) * -20}px)`,
-            filter: `blur(${(1 - scrollProgress) * 4}px)`,
+            transform: `translateY(${(1 - scrollProgress) * -12}px) scale(${0.9 + scrollProgress * 0.1})`,
+            filter: `blur(${(1 - scrollProgress) * 2.5}px)`,
+            backfaceVisibility: 'hidden',
           }}
         />
         
@@ -78,7 +107,7 @@ export const HeroSection = () => {
             transform: `translateY(${scrollProgress * 30}px)`,
           }}
         >
-          {scrollProgress > 0.5 ? 'ROBOT' : 'HUMAN'}
+          Entdecke unser KI-Agenten
         </h1>
         <p 
           className="text-base sm:text-lg md:text-xl lg:text-2xl text-foreground/80 mb-6 sm:mb-8 max-w-3xl mx-auto"
@@ -87,10 +116,7 @@ export const HeroSection = () => {
             transform: `translateY(${scrollProgress * 20}px)`,
           }}
         >
-          {scrollProgress > 0.5
-            ? 'KI-gestützte Automatisierung für maximale Effizienz'
-            : 'Menschliche Intelligenz trifft auf künstliche Innovation'
-          }
+          Spezialisierte KI-Agenten für jeden Bereich Ihres Unternehmens. Von E-Commerce bis Gesundheitswesen - finden Sie den perfekten Agent für Ihre Anforderungen.
         </p>
       </div>
 
