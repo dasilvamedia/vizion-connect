@@ -33,7 +33,7 @@ export const PricingSection = () => {
         "1 KI-Agent für Ihr Unternehmen",
         "KI-Chatbot inklusive",
         "300 Minuten Service inklusive",
-        "Jede weitere Minute: 20ct",
+        "Jede weitere Minute: 23ct",
         "24/7 Anrufbetreuung",
         "Lead-Generierung Service",
         "Lead-Qualifizierung durch uns",
