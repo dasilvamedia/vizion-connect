@@ -25,9 +25,9 @@ const Landing = () => {
       <StatsSection />
       <IndustriesGrid />
       <PricingSection />
-      <ContactSection />
       <RevenueCalculator />
       <Testimonials />
+      <ContactSection />
       
       <LandingFooter />
     </div>

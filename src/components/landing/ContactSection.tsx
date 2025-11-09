@@ -2,7 +2,7 @@ import { Check } from "lucide-react";
 import contactVideo from "@/assets/kontaktformular-2.mp4";
 export const ContactSection = () => {
   const features = ["3 Tage vollkommen kostenlos", "Sofortige Aktivierung Ihrer AI-Agenten", "Alle Funktionen inklusive", "Keine Kündigung nötig - endet automatisch"];
-  return <section className="py-20 container mx-auto px-4">
+  return <section id="kontakt" className="py-20 container mx-auto px-4">
       <div className="text-center mb-16">
         <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">Grenzenloses Potenzial. Sind Sie bereit?</h2>
         

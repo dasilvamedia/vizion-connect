@@ -147,13 +147,16 @@ export const PricingSection = () => {
               </div>
 
               <Button 
+                onClick={() => {
+                  document.getElementById('kontakt')?.scrollIntoView({ behavior: 'smooth' });
+                }}
                 className={`w-full ${
                   plan.popular 
                     ? 'bg-orange hover:bg-orange/90 text-white' 
                     : 'bg-secondary hover:bg-secondary/80'
                 }`}
               >
-                Service 3 Tage kostenlos testen
+                Jetzt anfragen
               </Button>
             </div>
           ))}
