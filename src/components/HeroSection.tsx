@@ -87,17 +87,6 @@ export const HeroSection = () => {
         />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 text-center px-4 sm:px-6 max-w-5xl mx-auto">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-bold mb-4 sm:mb-6 text-primary">
-          Entdecke unser KI-Agenten
-        </h1>
-        <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-foreground/80 max-w-3xl mx-auto">
-          Spezialisierte KI-Agenten für jeden Bereich Ihres Unternehmens.
-        </p>
-      </div>
-
-
       {/* Scroll Indicator */}
       <div className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
         <div className="w-5 h-8 sm:w-6 sm:h-10 border-2 border-foreground/30 rounded-full flex justify-center">

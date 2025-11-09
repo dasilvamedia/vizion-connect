@@ -17,10 +17,10 @@ export const AgentsGrid = ({ agents, selectedIndustry }: AgentsGridProps) => {
         {/* Header */}
         <div className="space-y-2 animate-fade-in">
           <h2 className="text-4xl font-bold text-foreground">
-            {selectedIndustry === "Alle" ? "Alle Agenten" : selectedIndustry}
+            Entdecke unser KI-Agenten
           </h2>
-          <p className="text-muted-foreground">
-            {filteredAgents.length} {filteredAgents.length === 1 ? 'Agent' : 'Agenten'} verfügbar
+          <p className="text-muted-foreground text-lg">
+            Spezialisierte KI-Agenten für jeden Bereich Ihres Unternehmens.
           </p>
         </div>
 
