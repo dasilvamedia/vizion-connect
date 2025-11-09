@@ -1,6 +1,27 @@
 import { Phone, Calendar, TrendingUp, Clock, Globe, Zap } from "lucide-react";
 
+import { useEffect, useRef, useState } from "react";
+
 export const FullServiceSection = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
   const services = [
     {
       icon: Phone,
@@ -35,7 +56,7 @@ export const FullServiceSection = () => {
   ];
 
   return (
-    <section id="funktionen" className="py-20 container mx-auto px-4">
+    <section ref={sectionRef} id="funktionen" className="py-20 container mx-auto px-4">
       <div className="text-center mb-16">
         <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
           Unser Full-Service für perfekte Kundenbetreuung
@@ -47,7 +68,16 @@ export const FullServiceSection = () => {
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {services.map((service, index) => (
-          <div key={index} className="p-6 rounded-lg border border-border bg-card hover:shadow-lg transition-shadow">
+          <div 
+            key={index} 
+            className={`p-6 rounded-lg border border-border bg-card hover:shadow-lg transition-all duration-500 hover:scale-105 ${
+              isVisible ? 'animate-fade-in opacity-100' : 'opacity-0'
+            }`}
+            style={{ 
+              animationDelay: `${index * 100}ms`,
+              transitionDelay: `${index * 50}ms`
+            }}
+          >
             <div className="w-12 h-12 rounded-lg bg-orange/10 flex items-center justify-center mb-4">
               <service.icon className="w-6 h-6 text-orange" />
             </div>

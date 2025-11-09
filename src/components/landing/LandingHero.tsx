@@ -1,9 +1,23 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { useEffect, useState } from "react";
 
 export const LandingHero = () => {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <section className="relative min-h-screen flex flex-col">
+    <section className="relative min-h-screen flex flex-col overflow-hidden">
+      {/* Animated background gradient */}
+      <div 
+        className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 pointer-events-none"
+        style={{ transform: `translateY(${scrollY * 0.5}px)` }}
+      />
       {/* Navigation */}
       <nav className="container mx-auto px-4 py-6 flex items-center justify-between">
         <div className="text-2xl font-bold text-foreground">Lead Connect</div>
@@ -18,8 +32,11 @@ export const LandingHero = () => {
       </nav>
 
       {/* Hero Content */}
-      <div className="flex-1 container mx-auto px-4 flex flex-col items-center justify-center text-center">
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 max-w-5xl">
+      <div 
+        className="flex-1 container mx-auto px-4 flex flex-col items-center justify-center text-center relative z-10"
+        style={{ transform: `translateY(${scrollY * 0.2}px)` }}
+      >
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 max-w-5xl animate-fade-in">
           Die Plattform für sichere KI-Agenten
         </h1>
         <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl">

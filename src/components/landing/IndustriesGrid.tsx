@@ -1,7 +1,28 @@
 import { Button } from "@/components/ui/button";
 import { Building2, Heart, Landmark, Phone, Users, Plane, Rocket, ShoppingBag, Package, Sparkles, Hotel, Car } from "lucide-react";
 
+import { useEffect, useRef, useState } from "react";
+
 export const IndustriesGrid = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const gridRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (gridRef.current) {
+      observer.observe(gridRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
   const industries = [
     {
       icon: Building2,
@@ -89,9 +110,18 @@ export const IndustriesGrid = () => {
         </p>
       </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+      <div ref={gridRef} className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-12">
         {industries.map((industry, index) => (
-          <div key={index} className="p-6 rounded-lg border border-border bg-card hover:shadow-lg transition-shadow">
+          <div 
+            key={index} 
+            className={`p-6 rounded-lg border border-border bg-card hover:shadow-xl transition-all duration-500 hover:scale-105 hover:-translate-y-2 ${
+              isVisible ? 'animate-fade-in opacity-100' : 'opacity-0'
+            }`}
+            style={{ 
+              animationDelay: `${index * 80}ms`,
+              transitionDelay: `${index * 40}ms`
+            }}
+          >
             <div className="w-12 h-12 rounded-lg bg-orange/10 flex items-center justify-center mb-4">
               <industry.icon className="w-6 h-6 text-orange" />
             </div>

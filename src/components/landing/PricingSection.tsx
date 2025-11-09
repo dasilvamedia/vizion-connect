@@ -1,7 +1,28 @@
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 
+import { useEffect, useRef, useState } from "react";
+
 export const PricingSection = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
   const plans = [
     {
       name: "Basis-Service",
@@ -73,26 +94,30 @@ export const PricingSection = () => {
   ];
 
   return (
-    <section id="preise" className="py-20 bg-muted/30">
+    <section ref={sectionRef} id="preise" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4 animate-fade-in">
             Transparente Service-Pakete für jeden Bedarf
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
             Wählen Sie das Service-Paket, das am besten zu Ihrem Unternehmen passt. Alles wird von uns betreut.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {plans.map((plan, index) => (
             <div 
               key={index} 
               className={`relative p-8 rounded-lg border ${
-                plan.popular 
-                  ? 'border-orange shadow-xl scale-105' 
-                  : 'border-border bg-card'
+                plan.popular ? 'border-orange bg-orange/5 scale-105' : 'border-border bg-card'
+              } hover:shadow-2xl transition-all duration-500 hover:scale-110 ${
+                isVisible ? 'animate-fade-in opacity-100' : 'opacity-0'
               }`}
+              style={{ 
+                animationDelay: `${index * 200}ms`,
+                transitionDelay: `${index * 100}ms`
+              }}
             >
               {plan.popular && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-orange text-white px-4 py-1 rounded-full text-sm font-semibold">
