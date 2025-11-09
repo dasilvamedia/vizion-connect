@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useEffect, useState } from "react";
 import heroVideo from "@/assets/hero-background.mp4";
+import heroVideoMobile from "@/assets/hero-background-mobile.mp4";
 
 export const LandingHero = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -16,12 +17,24 @@ export const LandingHero = () => {
     <section className="relative min-h-screen flex flex-col overflow-hidden">
       {/* Video Background */}
       <div className="absolute inset-0">
+        {/* Mobile Video (Portrait) */}
         <video
           autoPlay
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover md:hidden"
+        >
+          <source src={heroVideoMobile} type="video/mp4" />
+        </video>
+        
+        {/* Desktop/Tablet Video (Landscape) */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover hidden md:block"
         >
           <source src={heroVideo} type="video/mp4" />
         </video>
