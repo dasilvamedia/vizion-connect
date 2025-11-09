@@ -83,12 +83,12 @@ export const LandingHero = () => {
         <div className="relative inline-block">
           <a 
             href="tel:+4973613893011" 
-            className="inline-flex items-center gap-2 bg-white hover:bg-orange text-foreground hover:text-white font-semibold px-5 py-3 rounded-full text-base shadow-2xl transition-all duration-300 hover:scale-105 border-2 border-orange group"
+            className="inline-flex items-center gap-2 bg-white hover:bg-orange text-foreground hover:text-white font-semibold px-4 py-2 rounded-full text-sm shadow-2xl transition-all duration-300 hover:scale-105 border border-white/30"
           >
             <svg 
               xmlns="http://www.w3.org/2000/svg" 
-              width="20" 
-              height="20" 
+              width="16" 
+              height="16" 
               viewBox="0 0 24 24" 
               fill="none" 
               stroke="currentColor" 
@@ -99,29 +99,30 @@ export const LandingHero = () => {
             >
               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
             </svg>
-            07361 3893011
+            📞 07361 3893011
           </a>
           
           {/* Handwritten "Ruf mich an" with arrow */}
-          <div className="absolute -right-20 top-1/2 -translate-y-1/2 hidden lg:block animate-fade-in" style={{ animationDelay: '1s' }}>
-            <svg width="120" height="80" viewBox="0 0 120 80" className="drop-shadow-lg">
-              {/* Curved arrow pointing to the button */}
+          <div className="absolute left-full ml-4 top-1/2 -translate-y-1/2 hidden lg:flex items-center gap-2 animate-fade-in" style={{ animationDelay: '1s' }}>
+            <svg width="80" height="60" viewBox="0 0 80 60" className="drop-shadow-lg">
+              {/* Arrow pointing left to the button */}
               <path
-                d="M 10 40 Q 40 10, 70 25"
+                d="M 60 30 Q 40 15, 15 28"
                 fill="none"
                 stroke="white"
-                strokeWidth="2"
+                strokeWidth="2.5"
                 strokeLinecap="round"
               />
+              {/* Arrow head */}
               <path
-                d="M 70 25 L 65 20 M 70 25 L 65 30"
+                d="M 15 28 L 20 23 M 15 28 L 20 33"
                 fill="none"
                 stroke="white"
-                strokeWidth="2"
+                strokeWidth="2.5"
                 strokeLinecap="round"
               />
             </svg>
-            <p className="text-white text-lg font-handwriting -mt-2 ml-2" style={{ fontFamily: 'cursive', transform: 'rotate(-5deg)' }}>
+            <p className="text-white text-base whitespace-nowrap" style={{ fontFamily: 'cursive', transform: 'rotate(-3deg)' }}>
               Ruf mich an
             </p>
           </div>
