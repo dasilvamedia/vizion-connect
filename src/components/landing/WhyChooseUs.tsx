@@ -41,7 +41,7 @@ export const WhyChooseUs = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           {reasons.map((reason, index) => (
             <div key={index} className="p-8 rounded-lg border border-border bg-card">
               <div className="w-14 h-14 rounded-lg bg-orange/10 flex items-center justify-center mb-6">

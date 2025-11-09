@@ -33,7 +33,7 @@ export const WhyTestSection = () => {
         </h2>
       </div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-12">
         {reasons.map((reason, index) => (
           <div key={index} className="text-center">
             <div className="w-16 h-16 rounded-full bg-orange/10 flex items-center justify-center mx-auto mb-4">
