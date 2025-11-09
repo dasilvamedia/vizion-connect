@@ -102,28 +102,30 @@ export const LandingHero = () => {
             📞 07361 3893011
           </a>
           
-          {/* Handwritten "Ruf mich an" with arrow */}
-          <div className="absolute left-full ml-4 top-1/2 -translate-y-1/2 hidden lg:flex items-center gap-2 animate-fade-in" style={{ animationDelay: '1s' }}>
-            <svg width="80" height="60" viewBox="0 0 80 60" className="drop-shadow-lg">
-              {/* Arrow pointing left to the button */}
+          {/* Handwritten "Ruf mich an" with arrow - visible on all devices */}
+          <div className="absolute left-full ml-2 sm:ml-4 top-1/2 -translate-y-1/2 flex items-center animate-fade-in" style={{ animationDelay: '1s' }}>
+            {/* Sanfter, geschwungener Pfeil */}
+            <svg width="60" height="50" viewBox="0 0 60 50" className="drop-shadow-lg -ml-2">
+              {/* Sanfte geschwungene Linie zum Button */}
               <path
-                d="M 60 30 Q 40 15, 15 28"
+                d="M 50 25 Q 35 10, 12 22"
                 fill="none"
                 stroke="white"
-                strokeWidth="2.5"
+                strokeWidth="1.5"
                 strokeLinecap="round"
+                strokeDasharray="none"
               />
-              {/* Arrow head */}
+              {/* Pfeilspitze */}
               <path
-                d="M 15 28 L 20 23 M 15 28 L 20 33"
+                d="M 12 22 L 16 18 M 12 22 L 16 26"
                 fill="none"
                 stroke="white"
-                strokeWidth="2.5"
+                strokeWidth="1.5"
                 strokeLinecap="round"
               />
             </svg>
-            <p className="text-white text-base whitespace-nowrap" style={{ fontFamily: 'cursive', transform: 'rotate(-3deg)' }}>
-              Ruf mich an
+            <p className="text-white text-xs sm:text-sm whitespace-nowrap ml-1" style={{ fontFamily: 'cursive, "Comic Sans MS", "Brush Script MT"', fontWeight: '500', transform: 'rotate(-2deg)' }}>
+              RUF MICH AN
             </p>
           </div>
         </div>
