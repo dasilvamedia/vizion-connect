@@ -12,13 +12,20 @@ export const ContactSection = () => {
         {/* Left: Features Grid + Contact Form Placeholder */}
         <div className="space-y-8">
           <div className="grid grid-cols-2 gap-4 md:gap-6">
-            {features.map((feature, idx) => {})}
+            {features.map((feature, idx) => (
+              <div key={idx} className="flex items-start gap-3 p-4 bg-card rounded-lg border border-border">
+                <Check className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                <span className="text-sm text-foreground">{feature}</span>
+              </div>
+            ))}
           </div>
 
-          <div className="bg-muted/50 border border-border rounded-lg p-8 min-h-[200px] flex items-center justify-center">
-            <p className="text-muted-foreground text-center">
-              Kontaktformular Platzhalter<br />
-              <span className="text-sm">(Embed Code folgt)</span>
+          <div className="bg-gradient-to-br from-primary/10 via-background to-accent/10 border-2 border-primary/20 rounded-2xl p-8 shadow-lg">
+            <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+              Jetzt anfragen
+            </h3>
+            <p className="text-muted-foreground text-lg leading-relaxed">
+              Interesse an HalloPetra geweckt? Dann trage dich jetzt ein und vereinbare eine kostenlose Demo mit unserem Vertriebsteam.
             </p>
           </div>
         </div>
