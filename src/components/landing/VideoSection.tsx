@@ -32,9 +32,11 @@ export const VideoSection = () => {
         >
           <video
             className="w-full h-auto"
-            controls
+            autoPlay
+            loop
+            muted
             playsInline
-            preload="metadata"
+            preload="auto"
           >
             <source src={anfrageVideo} type="video/mp4" />
             Ihr Browser unterstützt das Video-Tag nicht.
