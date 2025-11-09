@@ -5,11 +5,11 @@ export const HeroSection = () => {
   return (
     <section className="relative min-h-[100svh] h-[100svh] w-full overflow-hidden flex items-center justify-center">
       {/* Logo */}
-      <div className="absolute top-2 sm:top-3 left-4 sm:left-6 z-10">
+      <div className="absolute top-4 sm:top-6 left-4 sm:left-6 z-10">
         <img 
           src={logo} 
           alt="Lead Connect by DaSilvamedia" 
-          className="h-48 sm:h-64 w-auto"
+          className="h-32 sm:h-40 w-auto"
         />
       </div>
       {/* Background Video */}
