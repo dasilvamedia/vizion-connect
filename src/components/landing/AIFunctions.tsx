@@ -49,7 +49,13 @@ export const AIFunctions = () => {
       </div>
 
       <div className="text-center">
-        <Button size="lg" className="bg-orange hover:bg-orange/90 text-white">
+        <Button 
+          size="lg" 
+          className="bg-orange hover:bg-orange/90 text-white"
+          onClick={() => {
+            document.getElementById('kontakt')?.scrollIntoView({ behavior: 'smooth' });
+          }}
+        >
           KI-Agenten jetzt testen
         </Button>
       </div>

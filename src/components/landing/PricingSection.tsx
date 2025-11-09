@@ -27,7 +27,7 @@ export const PricingSection = () => {
     {
       name: "Basis-Service",
       subtitle: "Perfekt für Selbständige und kleine Unternehmen",
-      price: "599€",
+      price: "897€",
       period: "pro Monat",
       features: [
         "1 KI-Agent für Ihr Unternehmen",
@@ -49,7 +49,7 @@ export const PricingSection = () => {
     {
       name: "Business-Service",
       subtitle: "Ideal für wachsende Unternehmen",
-      price: "1.499€",
+      price: "2.497€",
       period: "pro Monat",
       features: [
         "Bis zu 3 KI-Agenten",
@@ -153,6 +153,8 @@ export const PricingSection = () => {
                 className={`w-full ${
                   plan.popular 
                     ? 'bg-orange hover:bg-orange/90 text-white' 
+                    : index === 0 || index === 2
+                    ? 'bg-secondary hover:bg-secondary/80 border-2 border-orange'
                     : 'bg-secondary hover:bg-secondary/80'
                 }`}
               >

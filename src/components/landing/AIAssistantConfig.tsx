@@ -121,7 +121,13 @@ export const AIAssistantConfig = () => {
           <p className="text-base md:text-lg text-foreground mb-4">
             Lassen Sie uns gemeinsam Ihren perfekten KI-Assistenten konfigurieren
           </p>
-          <Button size="lg" className="bg-orange hover:bg-orange/90 text-white">
+          <Button 
+            size="lg" 
+            className="bg-orange hover:bg-orange/90 text-white"
+            onClick={() => {
+              document.getElementById('kontakt')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+          >
             Kostenlose Beratung vereinbaren
           </Button>
         </div>

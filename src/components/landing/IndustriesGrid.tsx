@@ -140,7 +140,14 @@ export const IndustriesGrid = () => {
 
       <div className="text-center">
         <p className="text-lg text-foreground mb-4">Deine Branche nicht dabei? Kein Problem!</p>
-        <Button size="lg" variant="outline" className="border-orange text-orange hover:bg-orange hover:text-white">
+        <Button 
+          size="lg" 
+          variant="outline" 
+          className="border-orange text-orange hover:bg-orange hover:text-white"
+          onClick={() => {
+            document.getElementById('kontakt')?.scrollIntoView({ behavior: 'smooth' });
+          }}
+        >
           Individuelle Lösung anfragen
         </Button>
       </div>
