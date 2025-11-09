@@ -1,17 +1,8 @@
 import heroVideo from "@/assets/hero-video.mov";
-import logo from "@/assets/logo.png";
 
 export const HeroSection = () => {
   return (
     <section className="relative min-h-[100svh] h-[100svh] w-full overflow-hidden flex items-center justify-center">
-      {/* Logo */}
-      <div className="absolute top-1 sm:top-3 left-1/2 -translate-x-1/2 sm:left-6 sm:translate-x-0 z-10">
-        <img 
-          src={logo} 
-          alt="Lead Connect by DaSilvamedia" 
-          className="h-24 sm:h-40 w-auto"
-        />
-      </div>
       {/* Background Video */}
       <div className="absolute inset-0">
         <video
