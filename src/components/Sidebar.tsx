@@ -50,17 +50,6 @@ const SidebarContent = ({ selectedIndustry, onSelectIndustry, agents }: SidebarP
           </button>
         ))}
       </nav>
-
-      <div className="pt-6 border-t border-border">
-        <div className="space-y-3">
-          <a href="/" className="block w-full text-left px-4 py-2 rounded-lg text-sm text-foreground/70 hover:text-foreground hover:bg-muted transition-all duration-200">
-            Home
-          </a>
-          <a href="/#kontakt" className="block w-full px-4 py-2 rounded-lg text-sm font-medium bg-orange text-white hover:bg-orange/90 transition-all duration-200 text-center">
-            Termin Buchen
-          </a>
-        </div>
-      </div>
     </div>
   );
 };

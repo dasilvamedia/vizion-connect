@@ -32,12 +32,12 @@ export const MobileSidebar = ({ selectedIndustry, onSelectIndustry, agents }: Mo
         <Button 
           variant="outline" 
           size="icon"
-          className="lg:hidden fixed top-4 left-4 z-50 bg-background/80 backdrop-blur-sm"
+          className="lg:hidden fixed top-4 right-4 z-50 bg-background/80 backdrop-blur-sm"
         >
           <Menu className="h-5 w-5" />
         </Button>
       </SheetTrigger>
-      <SheetContent side="left" className="w-64 p-0">
+      <SheetContent side="right" className="w-64 p-0">
         <div className="p-6 space-y-6 overflow-y-auto h-full">
           <div>
             <h2 className="text-2xl font-bold text-foreground mb-2">Lead Connect</h2>
@@ -71,17 +71,6 @@ export const MobileSidebar = ({ selectedIndustry, onSelectIndustry, agents }: Mo
               </button>
             ))}
           </nav>
-
-          <div className="pt-6 border-t border-border">
-            <div className="space-y-3">
-              <button className="w-full text-left px-4 py-2 rounded-lg text-sm text-foreground/70 hover:text-foreground hover:bg-muted transition-all duration-200">
-                Home
-              </button>
-              <button className="w-full px-4 py-2 rounded-lg text-sm font-medium bg-orange text-white hover:bg-orange/90 transition-all duration-200">
-                Termin Buchen
-              </button>
-            </div>
-          </div>
         </div>
       </SheetContent>
     </Sheet>
