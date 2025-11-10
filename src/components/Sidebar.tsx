@@ -6,6 +6,7 @@ interface SidebarProps {
   selectedIndustry: string;
   onSelectIndustry: (industry: string) => void;
   agents: Agent[];
+  className?: string;
 }
 
 const SidebarContent = ({ selectedIndustry, onSelectIndustry, agents }: SidebarProps) => {
@@ -54,9 +55,9 @@ const SidebarContent = ({ selectedIndustry, onSelectIndustry, agents }: SidebarP
   );
 };
 
-export const Sidebar = ({ selectedIndustry, onSelectIndustry, agents }: SidebarProps) => {
+export const Sidebar = ({ selectedIndustry, onSelectIndustry, agents, className }: SidebarProps) => {
   return (
-    <aside className="hidden lg:block w-64 border-r border-border bg-card/50 backdrop-blur-sm sticky top-0 self-start">
+    <aside className={cn("hidden lg:block w-64 border-r border-border bg-card/50 backdrop-blur-sm", className)}>
       <div className="h-screen overflow-y-auto">
         <SidebarContent selectedIndustry={selectedIndustry} onSelectIndustry={onSelectIndustry} agents={agents} />
       </div>
