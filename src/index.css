@@ -134,7 +134,7 @@ All colors MUST be HSL.
   }
 
   .animate-scroll {
-    animation: scroll 8s linear infinite;
+    animation: scroll 14s linear infinite;
   }
 
   @keyframes marquee {
