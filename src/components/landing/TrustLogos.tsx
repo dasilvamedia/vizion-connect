@@ -60,9 +60,9 @@ export const TrustLogos = () => {
   return (
     <section className="py-6 border-y border-border overflow-hidden bg-muted/30">
       <div className="relative w-full">
-        <div className="flex animate-scroll">
+        <div className="flex animate-scroll will-change-transform">
           {[...logos, ...logos].map((logo, index) => (
-            <div key={index} className="flex items-center justify-center px-3 whitespace-nowrap flex-shrink-0">
+            <div key={index} className="flex items-center justify-center px-2 whitespace-nowrap flex-shrink-0">
               <img 
                 src={logo.src} 
                 alt={logo.name}
