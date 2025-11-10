@@ -24,171 +24,181 @@ const Datenschutz = () => {
         <div className="prose prose-gray max-w-none space-y-8 text-muted-foreground">
           <section>
             <p className="mb-4">
-              Wir freuen uns über Ihr Interesse an unserem Unternehmen. Datenschutz hat einen besonders hohen Stellenwert für uns. Wir nehmen den Schutz Ihrer persönlichen Daten sehr ernst und behandeln Ihre personenbezogenen Daten vertraulich und entsprechend der gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung. Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder E-Mail-Adressen) erhoben werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis. Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben.
+              Im Rahmen der Nutzung unserer Webseite werden Ihre personenbezogenen Daten (nachfolgend nur „Daten") verarbeitet. Zu den Daten können beispielsweise Ihr Name, Ihre Adresse, E-Mail-Adresse sowie weitere Angaben zu Ihrer Person zählen. Eine Verarbeitung stellt hierbei im Grunde jede Art und Weise des Umgangs mit diesen Daten dar.
             </p>
             <p className="mb-4">
-              <strong>Info gemäß Artikel 13 DSGVO:</strong> Als Betreiber dieser Seite ist es uns wichtig Sie darüber zu informieren, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.
+              Im Folgenden erhalten Sie daher Informationen zur Verarbeitung Ihrer Daten im Rahmen der Nutzung von https://www.lead-connect.de und https://app.lead-connect.de auf Grundlage der Bestimmungen der Datenschutz-Grundverordnung (DSGVO) sowie der geltenden Bundes- und Landesdatenschutzgesetze.
             </p>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold text-foreground mb-4">Zwecke und Rechtsgrundlagen unserer Datenverarbeitung</h2>
+            
+            <h3 className="text-xl font-semibold text-foreground mb-3 mt-6">Kontaktformular</h3>
             <p className="mb-4">
-              <strong>Art. 6 Abs. 1 lit. a DSGVO:</strong>
+              Die Website stellt zur Kontaktaufnahme ein Kontaktformular zur Verfügung. Die hierbei eingegebenen Daten werden, insofern es sich um personenbezogene Daten handelt, auf dem Server des Hostinganbieters gespeichert und sodann via E-Mail an das hierfür vorgesehene Empfangspostfach weitergeleitet. Die Weiterleitung erfolgt hierbei ausschließlich serverintern, sodass eine Gefährdung der Vertraulichkeit der Daten effektiv ausgeschlossen ist. Die Rechtsgrundlage für die Verarbeitung stellt Art. 6 Abs. 1 S. 1 b) DSGVO dar. Abweichend hierfür ist die Rechtsgrundlage für die Erhebung des Namens Art. 6 Abs. 1 S. 1 f) DSGVO; das berechtigte Interesse ist eine persönlichere Ansprache des Anfragestellers.
             </p>
+
+            <h3 className="text-xl font-semibold text-foreground mb-3 mt-6">E-Mail-Kontakt</h3>
             <p className="mb-4">
-              Die Verarbeitung ist rechtmäßig, wenn die betroffene Person ihre Einwilligung zu der Verarbeitung der sie betreffenden personenbezogenen Daten für einen oder mehrere bestimmte Zwecke gegeben hat. Die Einwilligung muss freiwillig, für den konkreten Fall, in informierter Weise und unmissverständlich abgegeben worden sein. Jede Einwilligung muss durch eine eindeutige bestätigende Handlung erfolgen.
+              An verschiedenen Stellen der Website ist eine Kontaktaufnahme über die bereitgestellte E-Mail-Adresse möglich. Es findet hierbei eine Speicherung der übermittelten personenbezogenen Daten, insbesondere der E-Mail-Adresse selbst, statt. Eine Weitergabe dieser Daten an Dritte erfolgt nicht. Die Daten werden ausschließlich für die Verarbeitung der Anfrage verwendet. Rechtsgrundlage für die Verarbeitung der Daten ist Art. 6 Abs. 1 S. 1 f) DSGVO. Eine Löschung der Daten erfolgt nach Wegfall des Zweckes oder Beendigung der Kommunikation; im Falle eines Vertragsabschlusses gelten die entsprechenden Aufbewahrungsfristen.
             </p>
+
+            <h3 className="text-xl font-semibold text-foreground mb-3 mt-6">Newsletter</h3>
             <p className="mb-4">
-              <strong>Art. 6 Abs. 1 lit. b DSGVO:</strong>
-            </p>
-            <p>
-              Die Verarbeitung ist rechtmäßig, wenn sie für die Erfüllung eines Vertrags, dessen Vertragspartei die betroffene Person ist, oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist, die auf Anfrage der betroffenen Person erfolgen.
+              Wir verarbeiten auch Daten, um Ihnen aufgrund einer von Ihnen ggf. abgegebenen Einwilligung in den Versand von Newslettern E-Mails zuzusenden. Rechtsgrundlage für die Verarbeitung dieser Daten ist Ihre Einwilligung gemäß Art. 6 Abs. 1 S. 1 a) DSGVO. Sie können Ihre Einwilligung jederzeit widerrufen und somit die Löschung Ihrer Daten bewirken.
             </p>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold text-foreground mb-4">Hosting und Content Delivery Networks (CDN)</h2>
             <p className="mb-4">
-              <strong>Externes Hosting:</strong>
-            </p>
-            <p className="mb-4">
-              Diese Website wird bei einem externen Dienstleister gehostet (Hoster). Die personenbezogenen Daten, die auf dieser Website erfasst werden, werden auf den Servern des Hosters gespeichert. Hierbei kann es sich v. a. um IP-Adressen, Kontaktanfragen, Meta- und Kommunikationsdaten, Vertragsdaten, Kontaktdaten, Namen, Webseitenzugriffe und sonstige Daten, die über eine Website generiert werden, handeln.
-            </p>
-            <p className="mb-4">
-              Der Einsatz des Hosters erfolgt zum Zwecke der Vertragserfüllung gegenüber unseren potenziellen und bestehenden Kunden (Art. 6 Abs. 1 lit. b DSGVO) und im Interesse einer sicheren, schnellen und effizienten Bereitstellung unseres Online-Angebots durch einen professionellen Anbieter (Art. 6 Abs. 1 lit. f DSGVO).
-            </p>
-            <p>
-              Unser Hoster wird Ihre Daten nur insoweit verarbeiten, wie dies zur Erfüllung seiner Leistungspflichten erforderlich ist und unsere Weisungen in Bezug auf diese Daten befolgen.
+              Wir nutzen den Service „Cloudflare", Cloudflare Inc., 101 Townsend St., San Francisco, CA 94107, USA. Cloudflare bietet ein weltweit verteiltes Content Delivery Network mit DNS an, welches Ihre Verbindung zu unserer Website absichert und optimiert. Der Einsatz von Cloudflare beruht auf unserem berechtigten Interesse an einer möglichst fehlerfreien und sicheren Bereitstellung unseres Webangebotes (Art. 6 Abs. 1 S. 1 f) DSGVO). Die Datenübertragung in die USA wird auf die Standardvertragsklauseln der EU-Kommission gestützt. Weitere Informationen zum Datenschutz bei Cloudflare finden Sie unter: https://www.cloudflare.com/privacypolicy/.
             </p>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold text-foreground mb-4">IT-Sicherheit</h2>
             <p className="mb-4">
-              Wir setzen technische und organisatorische Sicherheitsmaßnahmen ein, um zu gewährleisten, dass die Vorschriften der Datenschutzgesetze eingehalten werden und um die durch uns verwalteten Daten gegen zufällige oder vorsätzliche Manipulationen, Verlust, Zerstörung oder gegen den Zugriff unberechtigter Personen zu schützen. Unsere Sicherheitsmaßnahmen werden entsprechend der technologischen Entwicklung fortlaufend verbessert.
-            </p>
-            <p className="mb-4">
-              Die Server, auf welchen personenbezogene Daten verarbeitet werden, befinden sich in gesicherten Rechenzentren. Der Zugang zu den Räumlichkeiten ist geschützt, um unbefugten Zutritt zu vermeiden. Ebenso ist der Zugriff auf die Datenbank, in welcher Ihre personenbezogenen Daten liegen, durch Authentifizierungen geschützt. Ein Zugriff ist nur durch berechtigte Administratoren mit Zugriffsbeschränkung möglich und wird protokolliert.
+              Wir verarbeiten auch in Ihrem und unserem Interesse Daten, um die Integrität, Vertraulichkeit und Verfügbarkeit der datenverarbeitenden Systeme, d. h. insbesondere die Sicherheit und Verfügbarkeit Ihrer Daten bei https://www.lead-connect.de bzw. https://app.lead-connect.de zu gewährleisten. Rechtsgrundlage ist Art. 6 Abs. 1 S. 1 f) DSGVO; unser berechtigtes Interesse besteht in der Aufrechterhaltung und sicheren Erbringung unserer Dienstleistungen.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-foreground mb-4">Datenweitergabe über das Gesamt der EU hinaus</h2>
+            <h2 className="text-2xl font-bold text-foreground mb-4">Datenweitergabe über die Grenzen der EU hinaus</h2>
             <p className="mb-4">
-              Ihre Daten werden teilweise auch in Nicht-EU-Ländern, sogenannte Drittländer, verarbeitet. Darunter fallen die Vereinigten Staaten von Amerika (USA), dies jedoch ausschließlich bei solchen Firmen, die dem sog. Privacy-Shield Abkommen beigetreten sind. Das Privacy Shield Abkommen stellt eine Vereinbarung zwischen der Europäischen Union und den USA dar, welches die Einhaltung europäischer Datenschutzstandards in den USA gewährleisten soll. Jedes nach dem Privacy Shield zertifizierte Unternehmen verpflichtet sich dazu, diese Datenschutzstandards einzuhalten.
+              Die von uns erhobenen Daten werden primär auf Servern in der Europäischen Union gespeichert. Eine Übermittlung von Daten an Unternehmen außerhalb der Europäischen Union erfolgt nicht ohne Ihre ausdrückliche Zustimmung oder geeignete Garantien (z. B. EU-Standardvertragsklauseln).
             </p>
-            <p>
-              Wir verwenden Dienste von Unternehmen aus Drittländern, d.h. außerhalb der Europäischen Union. Dabei haben wir dafür Sorge zu tragen, dass Ihr Datenschutz auch bei diesen Dienstleistern gewahrt wird. Diese Unternehmen sind deshalb entweder ebenfalls Privacy Shield zertifiziert oder wir haben gesonderte Verträge mit ihnen abgeschlossen, sog. Standard-Datenschutzklauseln. Das heißt, sie haben sich uns und der EU gegenüber vertraglich dazu verpflichtet, die in Europa geltenden Datenschutz-Bestimmungen einzuhalten.
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold text-foreground mb-4">Datenempfänger</h2>
+            <p className="mb-4">
+              Wir geben Daten im Rahmen einer gesetzlich zulässigen Auftragsverarbeitung an sorgfältig ausgewählte und schriftlich beauftragte Dienstleister weiter. Diese erhalten nur die für die Erfüllung ihres Auftrages erforderlichen Daten.
             </p>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold text-foreground mb-4">Dauer der Datenspeicherung</h2>
             <p className="mb-4">
-              Die Löschung gespeicherter personenbezogener Daten erfolgt, wenn Sie Ihre Einwilligung zur Speicherung widerrufen, wenn deren Kenntnis zur Erfüllung des mit der Speicherung verfolgten Zwecks nicht mehr erforderlich ist oder wenn ihre Speicherung aus sonstigen gesetzlichen Gründen unzulässig ist. Daten, die aus handels- oder steuerrechtlichen Gründen aufbewahrt werden müssen, werden in ihrem Verwendungszweck eingeschränkt. Diese Daten sind dann gesperrt und werden nicht für andere Zwecke verwendet. Zur Feststellung und Geltendmachung etwaiger Ansprüche und zur Verteidigung bei etwaigen Streitigkeiten behalten wir uns vor, bestimmte Daten für die Dauer der jeweiligen gesetzlichen Verjährungsfrist, also höchstens für die Dauer von drei Jahren, zu speichern.
+              Ihre Daten werden so lange gespeichert, wie der Kontakt zwischen Ihnen und https://www.lead-connect.de besteht. Entsteht ein Vertragsverhältnis, werden die dafür notwendigen Daten weiter gespeichert. Danach erfolgt eine Löschung, sobald der Zweck entfällt oder gesetzliche Anforderungen es vorsehen.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-foreground mb-4">Datenverarbeitung durch implementierte Plug-ins</h2>
+            <h2 className="text-2xl font-bold text-foreground mb-4">Verwendung von Cookies</h2>
+            <p className="mb-4">
+              Die Webseite verwendet Cookies. Dies sind kleine Textdateien, die auf Ihrem Endgerät gespeichert werden und z. B. ein Wiedererkennen beim weiteren Besuch der Website ermöglichen. Sie können die Nutzung von Cookies in Ihrem Browser individuell einstellen. Details entnehmen Sie den jeweiligen Plug-in-Beschreibungen.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold text-foreground mb-4">Datenverarbeitung durch implementierte Plug-Ins</h2>
             
             <h3 className="text-xl font-semibold text-foreground mb-3 mt-6">Terminbuchung mit cal.com</h3>
             <p className="mb-4">
-              Auf dieser Website ist ein Terminbuchungs-Tool integriert. Dieses wird von der Firma Cal.com, Inc., 2261 Market Street, San Francisco, CA 94114, USA bereitgestellt. Wenn Sie einen Termin über unser Buchungstool vereinbaren, werden die von Ihnen eingegebenen Daten (Name, E-Mail-Adresse, Telefonnummer und weitere optional angegebene Informationen) an Cal.com übermittelt und dort gespeichert.
+              Zur Terminbuchung wird das Tool „cal.com" verwendet (Cal.com, Inc., 2261 Market Street #4456, San Francisco, CA 94114, USA). Die eingegebenen Daten werden für Planung, Durchführung und Nachbereitung des Termins verwendet und auf den Servern von cal.com gespeichert. Datenschutzhinweise: https://cal.com/privacy. Rechtsgrundlage ist Art. 6 Abs. 1 S. 1 f) DSGVO bzw. bei Einwilligung Art. 6 Abs. 1 S. 1 a) DSGVO.
             </p>
 
-            <h3 className="text-xl font-semibold text-foreground mb-3 mt-6">Facebook Cookies Audience & Facebook Connect</h3>
+            <h3 className="text-xl font-semibold text-foreground mb-3 mt-6">Facebook Custom Audience & Facebook Connect</h3>
             <p className="mb-4">
-              Auf unseren Internetseiten werden Facebook Pixel/Cookies unseres Partners Facebook (Facebook Ireland Ltd., 4 Grand Canal Square, Grand Canal Harbour, Dublin 2, Irland) eingesetzt. Dies ermöglicht das Verhalten von Nutzern nachzuverfolgen, nachdem diese durch Klick auf eine Facebook-Werbeanzeige auf die Webseite weitergeleitet wurden. Dieses Verfahren dient dazu, die Wirksamkeit der Facebook-Werbeanzeigen für statistische und Marktforschungszwecke auszuwerten und kann dazu beitragen, zukünftige Werbemaßnahmen zu optimieren.
+              Für Marketingmaßnahmen und die Registrierung via Facebook werden Daten durch Facebook (Meta Platforms Ireland Limited) verarbeitet. Die erhobenen Daten sind für uns anonym und werden ausschließlich mit Ihrer Einwilligung gemäß Art. 6 Abs. 1 S. 1 a) DSGVO genutzt. Details zu Facebook: https://www.facebook.com/about/privacy/.
             </p>
 
             <h3 className="text-xl font-semibold text-foreground mb-3 mt-6">Vimeo</h3>
             <p className="mb-4">
-              Auf dieser Website sind Plugins des Videoportals Vimeo der Vimeo, LLC, 555 West 18th Street, New York, New York 10011, USA integriert. Bei jedem Aufruf einer Seite, die ein oder mehrere Vimeo-Videoclips anbietet, wird eine direkte Verbindung zwischen Ihrem Browser und einem Server von Vimeo in den USA hergestellt. Dabei werden Informationen über Ihren Besuch und Ihre IP-Adresse dort gespeichert. Durch Interaktionen mit den Vimeo Plugins (z.B. Klicken des Start-Buttons) werden diese Informationen ebenfalls an Vimeo übermittelt und dort gespeichert.
+              Auf dieser Website sind Plugins von Vimeo integriert. Beim Besuch der Seite wird eine Verbindung zu den Vimeo-Servern hergestellt. Die Nutzung erfolgt nur mit Ihrer Einwilligung gemäß Art. 6 Abs. 1 S. 1 a) DSGVO. Weitere Hinweise: https://vimeo.com/privacy.
             </p>
 
             <h3 className="text-xl font-semibold text-foreground mb-3 mt-6">Google Analytics</h3>
             <p className="mb-4">
-              Diese Website benutzt Google Analytics, einen Webanalysedienst der Google Ireland Limited. Wenn der Verantwortliche für die Datenverarbeitung auf dieser Website außerhalb des Europäischen Wirtschaftsraumes oder der Schweiz sitzt, dann erfolgt die Google Analytics Datenverarbeitung durch Google LLC. Google LLC und Google Ireland Limited werden nachfolgend "Google" genannt.
-            </p>
-            <p className="mb-4">
-              Über die gewonnenen Statistiken können wir unser Angebot verbessern und für Sie als Nutzer interessanter ausgestalten. Diese Website verwendet Google Analytics zudem für eine geräteübergreifende Analyse von Besucherströmen, die über eine User-ID durchgeführt wird.
+              Wir nutzen Google Analytics (Google Ireland Limited) zur Analyse und Verbesserung unseres Angebotes mit Ihrer Einwilligung (Art. 6 Abs. 1 S. 1 a) DSGVO) und auf Basis berechtigten Interesses (Art. 6 Abs. 1 S. 1 f) DSGVO). Die Datenverarbeitung erfolgt pseudonymisiert, eine vollständige IP-Anonymisierung ist aktiviert. Details: https://policies.google.com/privacy.
             </p>
 
-            <h3 className="text-xl font-semibold text-foreground mb-3 mt-6">Hevo-Plezi und Convermax-API</h3>
+            <h3 className="text-xl font-semibold text-foreground mb-3 mt-6">Meta Pixel und Conversion API</h3>
             <p className="mb-4">
-              Zur Verwaltung von Marketing-Kampagnen und Lead-Generierung nutzen wir die Dienste von Hevo-Plezi und Convermax. Diese Tools helfen uns dabei, Ihre Interessen besser zu verstehen und relevante Inhalte bereitzustellen. Dabei werden Daten wie IP-Adresse, Browser-Informationen und Interaktionen mit unserer Website erfasst.
+              Zur Analyse und Optimierung unserer Werbung verwenden wir das Meta Pixel und die Meta Conversion API (Meta Platforms Ireland Ltd.), basierend auf Ihrer Einwilligung (Art. 6 Abs. 1 a DSGVO). Details: https://www.facebook.com/about/privacy/.
             </p>
 
             <h3 className="text-xl font-semibold text-foreground mb-3 mt-6">Google AdSense</h3>
             <p className="mb-4">
-              Diese Website verwendet Google AdSense, einen Dienst zum Einbinden von Werbeanzeigen der Google Ireland Limited ("Google"). Google AdSense verwendet sog. "Cookies", Textdateien, die auf Ihrem Computer gespeichert werden und die eine Analyse der Benutzung der Website ermöglichen.
+              Für Werbeanzeigen wird Google AdSense (Google Inc.) verwendet, auf Ihrer Einwilligung beruhend (Art. 6 Abs. 1 S. 1 a) DSGVO). Weitere Infos: https://policies.google.com/privacy.
             </p>
 
-            <h3 className="text-xl font-semibold text-foreground mb-3 mt-6">Hevo Help</h3>
+            <h3 className="text-xl font-semibold text-foreground mb-3 mt-6">Google Webfonts</h3>
             <p className="mb-4">
-              Für unseren Kundensupport verwenden wir Hevo Help. Dies ermöglicht es uns, Supportanfragen effizient zu bearbeiten und die Qualität unseres Kundenservices kontinuierlich zu verbessern. Ihre Kontaktdaten und Anfragen werden in diesem System gespeichert.
+              Zur Darstellung von Schriftarten werden Google Web Fonts verwendet. Die Nutzung erfolgt aus berechtigtem Interesse an einheitlicher Darstellung (Art. 6 Abs. 1 S. 1 f) DSGVO); bei Einwilligung auf Art. 6 Abs. 1 S. 1 a) DSGVO.
             </p>
 
-            <h3 className="text-xl font-semibold text-foreground mb-3 mt-6">Plezi Mautic</h3>
+            <h3 className="text-xl font-semibold text-foreground mb-3 mt-6">New Relic</h3>
             <p className="mb-4">
-              Wir nutzen Plezi Mautic für Marketing-Automation. Dies hilft uns, personalisierte Inhalte bereitzustellen und die Effektivität unserer Marketing-Maßnahmen zu messen.
+              Zur Analyse der Seitenperformance wird New Relic (New Relic Inc.) eingesetzt, nur mit Ihrer Einwilligung (Art. 6 Abs. 1 S. 1 a) DSGVO): https://newrelic.com/privacy.
             </p>
 
-            <h3 className="text-xl font-semibold text-foreground mb-3 mt-6">Telefony</h3>
+            <h3 className="text-xl font-semibold text-foreground mb-3 mt-6">Cloudflare Insights</h3>
             <p className="mb-4">
-              Zur Verbesserung unseres Telefonservice und zur Qualitätssicherung nutzen wir Telefony. Dabei können Anrufdaten und -inhalte aufgezeichnet und analysiert werden.
+              Zur technischen Analyse nutzen wir Cloudflare Insights (Art. 6 Abs. 1 S. 1 f) DSGVO bzw. bei Einwilligung Art. 6 Abs. 1 a) DSGVO). Infos: https://www.cloudflare.com/privacypolicy/.
             </p>
 
-            <h3 className="text-xl font-semibold text-foreground mb-3 mt-6">Tidee Mindten</h3>
+            <h3 className="text-xl font-semibold text-foreground mb-3 mt-6">Clickfunnels</h3>
             <p className="mb-4">
-              Wir verwenden Tidee Mindten zur Optimierung unserer Geschäftsprozesse und zur besseren Koordination von Kundenterminen.
+              Marketingfunnels werden per Clickfunnels (Etison LLC) dargestellt, ausschließlich auf Einwilligungsbasis (Art. 6 Abs. 1 S. 1 a) DSGVO). Hinweis: Datenübermittlung in die USA ist möglich, siehe https://signup.clickfunnels.com/dpa.
+            </p>
+
+            <h3 className="text-xl font-semibold text-foreground mb-3 mt-6">Fullstory</h3>
+            <p className="mb-4">
+              Zur UX-Analyse verwenden wir Fullstory (Fullstory Inc.), Daten werden nur nach Ihrer Einwilligung verarbeitet (Art. 6 Abs. 1 S. 1 a) DSGVO). Details und Widerspruch: https://www.fullstory.com/optout.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-foreground mb-4">Datenschutzkontakt</h2>
+            <h2 className="text-2xl font-bold text-foreground mb-4">Soziale Medien</h2>
             <p className="mb-4">
-              Sollten Sie Fragen bezüglich der Verarbeitung Ihrer persönlichen Daten haben, können Sie sich direkt an unseren Datenschutzbeauftragten wenden:
+              Unsere Präsenzen in sozialen Netzwerken unterliegen jeweils den Datenschutzbestimmungen dieser Anbieter.
             </p>
-            <p className="mb-2"><strong>Name:</strong> Kevin da Silva</p>
-            <p className="mb-2"><strong>Adresse:</strong> 73434 Aalen - Deutschland</p>
-            <p className="mb-2"><strong>Telefon:</strong> 07361 3893011</p>
-            <p className="mb-4"><strong>E-Mail:</strong> hallo@lead-connect.de</p>
+          </section>
+
+          <section>
+            <h2 className="text-2xl font-bold text-foreground mb-4">Datensicherheit</h2>
+            <p className="mb-4">
+              Datensicherheit und der Schutz Ihrer Daten werden durch umfassende technische und organisatorische Maßnahmen gemäß den gesetzlichen Vorgaben implementiert.
+            </p>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold text-foreground mb-4">Ihre Rechte und Beschwerdemöglichkeiten</h2>
             <p className="mb-4">
-              Ihnen stehen grundsätzlich die Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit, Widerruf und Widerspruch zu. Wenn Sie glauben, dass die Verarbeitung Ihrer Daten gegen das Datenschutzrecht verstößt oder Ihre datenschutzrechtlichen Ansprüche sonst in einer Weise verletzt worden sind, können Sie sich bei der Aufsichtsbehörde beschweren. Sie haben folgende Rechte:
+              Sie haben gegenüber uns folgende Rechte hinsichtlich der Sie betreffenden Daten:
             </p>
-            <ul className="list-disc pl-6 space-y-2">
+            <ul className="list-disc pl-6 space-y-2 mb-4">
               <li>Recht auf Auskunft</li>
               <li>Recht auf Berichtigung oder Löschung</li>
               <li>Recht auf Einschränkung der Verarbeitung</li>
+              <li>Recht auf Widerruf Ihrer Einwilligung</li>
               <li>Recht auf Widerspruch gegen die Verarbeitung</li>
               <li>Recht auf Datenübertragbarkeit</li>
             </ul>
-            <p className="mt-4">
-              Sie haben zudem das Recht, sich bei einer Datenschutz-Aufsichtsbehörde über die Verarbeitung Ihrer personenbezogenen Daten durch uns zu beschweren.
+            <p className="mb-4">
+              Zur Geltendmachung wenden Sie sich bitte an hallo@lead-connect.de.
+            </p>
+            <p className="mb-4">
+              Sie haben zudem das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren.
             </p>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold text-foreground mb-4">Verantwortliche Stelle</h2>
             <p className="mb-2"><strong>Firma:</strong> da Silva Media</p>
-            <p className="mb-2"><strong>Anschrift:</strong> 73434 Aalen - Deutschland</p>
-            <p className="mb-2"><strong>Telefon:</strong> 07361 3893011</p>
+            <p className="mb-2"><strong>Anschrift:</strong> 73434 Aalen, Deutschland</p>
             <p className="mb-4"><strong>E-Mail:</strong> hallo@lead-connect.de</p>
           </section>
 
           <section>
             <h2 className="text-2xl font-bold text-foreground mb-4">Datenschutzbeauftragter</h2>
-            <p className="mb-2"><strong>Name:</strong> Kevin da Silva</p>
-            <p className="mb-2"><strong>Anschrift:</strong> da Silva Media, 73434 Aalen - Deutschland</p>
-            <p className="mb-2"><strong>Telefon:</strong> 07361 3893011</p>
-            <p className="mb-4"><strong>E-Mail:</strong> hallo@lead-connect.de; info@dasilvamedia.de</p>
+            <p className="mb-2"><strong>Firma:</strong> Marie-Kathrin Wünsche (LL.M.)</p>
+            <p className="mb-2"><strong>Anschrift:</strong> Franziska-Tiburtius-Str. 4a, 01326 Dresden</p>
+            <p className="mb-2"><strong>Telefon:</strong> +49 1724508345</p>
+            <p className="mb-4"><strong>E-Mail:</strong> wuensche@wuensche-consulting.de</p>
           </section>
         </div>
       </main>
