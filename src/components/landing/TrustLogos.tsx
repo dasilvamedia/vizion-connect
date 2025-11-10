@@ -8,6 +8,14 @@ import gutenberg from "@/assets/logos/gutenberg.png";
 import infraFuerth from "@/assets/logos/infra-fuerth.png";
 import lewo from "@/assets/logos/lewo.png";
 import cypasol from "@/assets/logos/cypasol.webp";
+import fegaSchmitt from "@/assets/logos/fega-schmitt.jpeg";
+import eugler from "@/assets/logos/eugler.png";
+import kuechenKaatz from "@/assets/logos/kuechen-kaatz.jpeg";
+import rkElektrotechnik from "@/assets/logos/rk-elektrotechnik.jpg";
+import hambrock from "@/assets/logos/hambrock.webp";
+import ziegler from "@/assets/logos/ziegler.webp";
+import edeka from "@/assets/logos/edeka.webp";
+import dnata from "@/assets/logos/dnata.webp";
 
 export const TrustLogos = () => {
   const logos = [
@@ -21,6 +29,14 @@ export const TrustLogos = () => {
     { src: infraFuerth, name: "Infra Fürth" },
     { src: lewo, name: "Lewo" },
     { src: cypasol, name: "Cypasol" },
+    { src: fegaSchmitt, name: "Fega & Schmitt" },
+    { src: eugler, name: "Eugler Elektrotechnik" },
+    { src: kuechenKaatz, name: "Küchen Kaatz" },
+    { src: rkElektrotechnik, name: "RK Elektrotechnik" },
+    { src: hambrock, name: "Hambrock" },
+    { src: ziegler, name: "Ziegler" },
+    { src: edeka, name: "Edeka" },
+    { src: dnata, name: "Dnata Catering" },
   ];
 
   return (
