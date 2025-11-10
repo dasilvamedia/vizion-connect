@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { ContactSection } from "@/components/landing/ContactSection";
 
 const Datenschutz = () => {
   return (
@@ -202,6 +203,9 @@ const Datenschutz = () => {
           </section>
         </div>
       </main>
+
+      {/* Contact Section */}
+      <ContactSection />
 
       {/* Footer */}
       <footer className="bg-card border-t border-border py-12 mt-16">

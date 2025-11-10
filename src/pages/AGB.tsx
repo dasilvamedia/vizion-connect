@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { ContactSection } from "@/components/landing/ContactSection";
 
 const AGB = () => {
   return (
@@ -209,6 +210,9 @@ const AGB = () => {
           </section>
         </div>
       </main>
+
+      {/* Contact Section */}
+      <ContactSection />
 
       {/* Footer */}
       <footer className="bg-card border-t border-border py-12 mt-16">

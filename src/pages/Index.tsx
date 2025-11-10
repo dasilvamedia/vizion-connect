@@ -3,6 +3,7 @@ import { HeroSection } from "@/components/HeroSection";
 import { Sidebar } from "@/components/Sidebar";
 import { MobileSidebar } from "@/components/MobileSidebar";
 import { AgentsGrid } from "@/components/AgentsGrid";
+import { ContactSection } from "@/components/landing/ContactSection";
 import { LandingFooter } from "@/components/landing/LandingFooter";
 import { agents } from "@/data/agents";
 
@@ -41,6 +42,9 @@ const Index = () => {
           />
         </div>
       </div>
+
+      {/* Contact Section */}
+      <ContactSection />
 
       {/* Footer */}
       <LandingFooter />
