@@ -19,15 +19,9 @@ const SidebarContent = ({ selectedIndustry, onSelectIndustry, agents }: SidebarP
 
   return (
     <div className="p-6 space-y-6">
-      <div>
-        <h2 className="text-2xl font-bold text-foreground mb-2">Lead Connect</h2>
-        <p className="text-sm text-muted-foreground">AI-gestützte Agenten</p>
-      </div>
 
       <nav className="space-y-1">
-        <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wide mb-3">
-          Branchen
-        </h3>
+        <h2 className="text-sm font-semibold text-muted-foreground tracking-wide mb-3">Branchen</h2>
         {industries.map((industry) => (
           <button
             key={industry}

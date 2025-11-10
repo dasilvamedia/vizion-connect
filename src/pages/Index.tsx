@@ -18,8 +18,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       {/* Hero Section */}
-      
-
+      <HeroSection />
       {/* Mobile Sidebar */}
       <MobileSidebar
         selectedIndustry={selectedIndustry}
@@ -28,14 +27,13 @@ const Index = () => {
       />
 
       {/* Main Content */}
-      <div className="flex flex-1 min-h-[100svh] max-h-[100svh] overflow-hidden">
+      <div className="flex flex-1">
         <Sidebar 
           selectedIndustry={selectedIndustry}
           onSelectIndustry={handleIndustrySelect}
           agents={agents}
         />
-        <div ref={agentsGridRef} className="flex-1 overflow-y-auto">
-          <HeroSection />
+        <div ref={agentsGridRef} className="flex-1">
           <AgentsGrid 
             agents={agents}
             selectedIndustry={selectedIndustry}
