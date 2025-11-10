@@ -78,46 +78,46 @@ export const LandingHero = () => {
               <Menu className="h-5 w-5 text-white" />
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="w-64">
-            <div className="flex flex-col gap-6 mt-8">
+          <SheetContent side="right" className="w-64 bg-black/80 backdrop-blur-xl border-l border-white/10">
+            <div className="flex flex-col gap-4 mt-8">
               <a 
                 href="/#funktionen" 
-                className="text-lg font-medium hover:text-primary transition-colors"
+                className="px-4 py-3 text-lg font-medium text-white bg-white/5 hover:bg-white/20 rounded-xl transition-all duration-300 hover:scale-[1.02] border border-white/10 hover:border-white/30"
                 onClick={() => setOpen(false)}
               >
                 Funktionen
               </a>
               <a 
                 href="/#vorteile" 
-                className="text-lg font-medium hover:text-primary transition-colors"
+                className="px-4 py-3 text-lg font-medium text-white bg-white/5 hover:bg-white/20 rounded-xl transition-all duration-300 hover:scale-[1.02] border border-white/10 hover:border-white/30"
                 onClick={() => setOpen(false)}
               >
                 Vorteile
               </a>
               <a 
                 href="/#branche" 
-                className="text-lg font-medium hover:text-primary transition-colors"
+                className="px-4 py-3 text-lg font-medium text-white bg-white/5 hover:bg-white/20 rounded-xl transition-all duration-300 hover:scale-[1.02] border border-white/10 hover:border-white/30"
                 onClick={() => setOpen(false)}
               >
                 Branche
               </a>
               <a 
                 href="/agenten" 
-                className="text-lg font-medium hover:text-primary transition-colors"
+                className="px-4 py-3 text-lg font-medium text-white bg-white/5 hover:bg-white/20 rounded-xl transition-all duration-300 hover:scale-[1.02] border border-white/10 hover:border-white/30"
                 onClick={() => setOpen(false)}
               >
                 Agenten
               </a>
               <a 
                 href="/#preise" 
-                className="text-lg font-medium hover:text-primary transition-colors"
+                className="px-4 py-3 text-lg font-medium text-white bg-white/5 hover:bg-white/20 rounded-xl transition-all duration-300 hover:scale-[1.02] border border-white/10 hover:border-white/30"
                 onClick={() => setOpen(false)}
               >
                 Preise
               </a>
               <a 
                 href="/#kontakt" 
-                className="text-lg font-medium hover:text-primary transition-colors"
+                className="px-4 py-3 text-lg font-medium text-white bg-white/5 hover:bg-white/20 rounded-xl transition-all duration-300 hover:scale-[1.02] border border-white/10 hover:border-white/30"
                 onClick={() => setOpen(false)}
               >
                 Kontakt
