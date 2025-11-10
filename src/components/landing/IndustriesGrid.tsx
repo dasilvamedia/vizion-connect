@@ -27,73 +27,73 @@ export const IndustriesGrid = () => {
     {
       icon: Building2,
       title: "Immobilien",
-      description: "Terminbuchungen, Objektinfos, Besichtigungen – nie wieder verpasste Leads",
+      description: "Terminbuchungen, Objektinfos, Besichtigungen, nie wieder verpasste Leads",
       features: ["Terminbuchung", "Objektinformationen", "Besichtigungen"]
     },
     {
       icon: Heart,
       title: "Gesundheitswesen",
-      description: "Terminvereinbarung, Sprechstunden, Notfälle – kompetent und einfühlsam",
+      description: "Terminvereinbarung, Sprechstunden, Notfälle, kompetent und einfühlsam",
       features: ["Terminvereinbarung", "Sprechstunden", "Patientenbetreuung"]
     },
     {
       icon: Landmark,
       title: "Finanzdienstleistungen",
-      description: "Kontoanfragen, Kreditberatung, Versicherungen – sicher und diskret",
+      description: "Kontoanfragen, Kreditberatung, Versicherungen, sicher und diskret",
       features: ["Kontoanfragen", "Kreditberatung", "Versicherungsinfos"]
     },
     {
       icon: Phone,
       title: "Telekommunikation",
-      description: "Tariffragen, Störungsmeldungen, Upgrades – technisch kompetent",
+      description: "Tariffragen, Störungsmeldungen, Upgrades, technisch kompetent",
       features: ["Tariffragen", "Störungsmeldungen", "Vertragswechsel"]
     },
     {
       icon: Users,
       title: "Personalwesen",
-      description: "Bewerbungsprozess, HR-Fragen, Onboarding – professionell und herzlich",
+      description: "Bewerbungsprozess, HR-Fragen, Onboarding, professionell und herzlich",
       features: ["Bewerbungsprozess", "HR-Anfragen", "Employee Support"]
     },
     {
       icon: Plane,
       title: "Reise & Tourismus",
-      description: "Buchungen, Reiseinfos, Stornierungen – weltweite Expertise",
+      description: "Buchungen, Reiseinfos, Stornierungen, weltweite Expertise",
       features: ["Reisebuchungen", "Destination Info", "Umbuchungen"]
     },
     {
       icon: Rocket,
       title: "Startups",
-      description: "Kundenakquise, Support, Growth – skalierbar von Tag 1",
+      description: "Kundenakquise, Support, Growth, skalierbar von Tag 1",
       features: ["Lead Qualification", "Customer Support", "Growth Hacking"]
     },
     {
       icon: ShoppingBag,
       title: "Einzelhandel",
-      description: "Produktverfügbarkeit, Öffnungszeiten, Reservierungen – lokal präsent",
+      description: "Produktverfügbarkeit, Öffnungszeiten, Reservierungen, lokal präsent",
       features: ["Produktverfügbarkeit", "Store Infos", "Reservierungen"]
     },
     {
       icon: Package,
       title: "Großhandel",
-      description: "B2B Anfragen, Konditionen, Lieferzeiten – business-ready",
+      description: "B2B Anfragen, Konditionen, Lieferzeiten, business-ready",
       features: ["B2B Anfragen", "Preisanfragen", "Lieferzeiten"]
     },
     {
       icon: Sparkles,
       title: "Beauty & Wellness",
-      description: "Terminbuchung, Behandlungsberatung, Nachsorge – schön und entspannt",
+      description: "Terminbuchung, Behandlungsberatung, Nachsorge, schön und entspannt",
       features: ["Terminbuchung", "Behandlungsberatung", "Nachsorge"]
     },
     {
       icon: Hotel,
       title: "Hotels",
-      description: "Zimmerreservierung, Concierge-Service, Check-in/out – gastfreundlich rund um die Uhr",
+      description: "Zimmerreservierung, Concierge-Service, Check-in/out, gastfreundlich rund um die Uhr",
       features: ["Zimmerreservierung", "Concierge Service", "Guest Relations"]
     },
     {
       icon: Car,
       title: "Fahrschule",
-      description: "Fahrstunden buchen, Theorieprüfung, Führerschein-Infos – sicher zum Ziel",
+      description: "Fahrstunden buchen, Theorieprüfung, Führerschein-Infos, sicher zum Ziel",
       features: ["Fahrstunden buchen", "Prüfungstermine", "Führerschein Beratung"]
     }
   ];
@@ -105,7 +105,7 @@ export const IndustriesGrid = () => {
           Lead Connect in Ihrer Branche
         </h2>
         <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-          Egal in welcher Branche Sie tätig sind – Lead Connect Voice Agents übernehmen repetitive Aufgaben 
+          Egal in welcher Branche Sie tätig sind, Lead Connect Voice Agents übernehmen repetitive Aufgaben 
           und lassen Ihr Team sich auf das Wesentliche konzentrieren.
         </p>
       </div>

@@ -32,7 +32,7 @@ export const AIAssistantConfig = () => {
     {
       icon: Mic,
       title: "Passende Stimme",
-      description: "Männlich, weiblich, jung oder erfahren – Sie entscheiden"
+      description: "Männlich, weiblich, jung oder erfahren, Sie entscheiden"
     },
     {
       icon: Languages,

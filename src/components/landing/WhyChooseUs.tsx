@@ -11,7 +11,7 @@ export const WhyChooseUs = () => {
     {
       icon: Shield,
       title: "Zuverlässiger Service ohne Ausfälle",
-      description: "Unser KI-System ist 365 Tage im Jahr für Sie da – keine Ausfälle durch Krankheit, Urlaub oder andere Abwesenheiten.",
+      description: "Unser KI-System ist 365 Tage im Jahr für Sie da, keine Ausfälle durch Krankheit, Urlaub oder andere Abwesenheiten.",
       stat: "100% Verfügbarkeit garantiert"
     },
     {

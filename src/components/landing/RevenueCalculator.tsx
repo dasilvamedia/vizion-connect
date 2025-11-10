@@ -19,7 +19,7 @@ export const RevenueCalculator = () => {
             Wie viel Geld verlieren Sie jeden Tag?
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Berechnen Sie Ihren tatsächlichen Umsatzverlust durch verpasste Anrufe – das Ergebnis wird Sie überraschen.
+            Berechnen Sie Ihren tatsächlichen Umsatzverlust durch verpasste Anrufe, das Ergebnis wird Sie überraschen.
           </p>
         </div>
 

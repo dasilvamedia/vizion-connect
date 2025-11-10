@@ -6,7 +6,7 @@ export const AIFunctions = () => {
     {
       icon: Phone,
       title: "KI-Telefoncaller",
-      description: "Inbound & Outbound Calls KI-gesteuert, qualifizieren Sie Leads und buchen Sie diese automatisch in den Terminkalender ein – 100% automatisiert."
+      description: "Inbound & Outbound Calls KI-gesteuert, qualifizieren Sie Leads und buchen Sie diese automatisch in den Terminkalender ein, 100% automatisiert."
     },
     {
       icon: MessageCircle,
