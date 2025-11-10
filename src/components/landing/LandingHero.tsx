@@ -68,8 +68,8 @@ export const LandingHero = () => {
         className="flex-1 container mx-auto px-4 flex flex-col items-center justify-center text-center relative z-10"
         style={{ transform: `translateY(${scrollY * 0.2}px)` }}
       >
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 max-w-5xl animate-fade-in drop-shadow-2xl">
-          Die Plattform für sichere KI-Agenten
+        <h1 className="text-4xl md:text-5xl lg:text-6xl lg:whitespace-nowrap font-bold text-white mb-6 max-w-5xl animate-fade-in drop-shadow-2xl">
+          Die Plattform für <span className="text-orange">sichere KI-Agenten</span>
         </h1>
         <p className="text-lg md:text-xl text-white/95 mb-8 max-w-3xl drop-shadow-lg">
           Entwickelt für Marktführer und innovative Unternehmen.

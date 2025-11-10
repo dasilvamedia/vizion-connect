@@ -28,7 +28,7 @@ const Index = () => {
       />
 
       {/* Main Content */}
-      <div className="flex flex-1">
+      <div className="flex flex-1 lg:pl-64">
         <Sidebar 
           selectedIndustry={selectedIndustry}
           onSelectIndustry={handleIndustrySelect}
