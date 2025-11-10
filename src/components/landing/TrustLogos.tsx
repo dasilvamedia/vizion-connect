@@ -61,12 +61,12 @@ export const TrustLogos = () => {
     <section className="py-8 border-y border-border overflow-hidden bg-muted/30">
       <div className="relative w-full">
         <div className="flex animate-scroll">
-          {[...logos, ...logos, ...logos].map((logo, index) => (
-            <div key={index} className="flex items-center justify-center px-6 whitespace-nowrap min-w-[180px]">
+          {[...logos, ...logos, ...logos, ...logos].map((logo, index) => (
+            <div key={index} className="flex items-center justify-center px-4 whitespace-nowrap min-w-[140px]">
               <img 
                 src={logo.src} 
                 alt={logo.name}
-                className="h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
+                className="h-14 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
                 loading="lazy"
               />
             </div>
