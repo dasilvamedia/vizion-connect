@@ -1,7 +1,7 @@
 import { Agent, industries } from "@/data/agents";
 import { AgentCard } from "./AgentCard";
 import { cn } from "@/lib/utils";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface AgentsGridProps {
   agents: Agent[];
@@ -13,6 +13,7 @@ export const AgentsGrid = ({ agents, selectedIndustry, onSelectIndustry }: Agent
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const activeButtonRef = useRef<HTMLButtonElement>(null);
   const indicatorRef = useRef<HTMLDivElement>(null);
+  const buttonRefs = useRef<Map<string, HTMLButtonElement>>(new Map());
   
   const filteredAgents = selectedIndustry === "Alle" 
     ? agents 
@@ -25,27 +26,48 @@ export const AgentsGrid = ({ agents, selectedIndustry, onSelectIndustry }: Agent
     return agents.filter(agent => agent.industry === industry).length;
   };
 
+  // Update indicator position
+  const updateIndicatorPosition = () => {
+    if (activeButtonRef.current && indicatorRef.current && scrollContainerRef.current) {
+      const button = activeButtonRef.current;
+      const container = scrollContainerRef.current;
+      const buttonLeft = button.offsetLeft - container.scrollLeft;
+      const buttonWidth = button.offsetWidth;
+      
+      indicatorRef.current.style.transform = `translateX(${buttonLeft}px)`;
+      indicatorRef.current.style.width = `${buttonWidth}px`;
+    }
+  };
+
   // Auto-scroll to active filter and update indicator position
   useEffect(() => {
     if (activeButtonRef.current && scrollContainerRef.current) {
       const button = activeButtonRef.current;
       const container = scrollContainerRef.current;
-      const buttonLeft = button.offsetLeft;
       const buttonWidth = button.offsetWidth;
       const containerWidth = container.offsetWidth;
-      const scrollLeft = buttonLeft - (containerWidth / 2) + (buttonWidth / 2);
+      const scrollLeft = button.offsetLeft - (containerWidth / 2) + (buttonWidth / 2);
       
       container.scrollTo({
         left: scrollLeft,
         behavior: 'smooth'
       });
 
-      // Update indicator position
-      if (indicatorRef.current) {
-        indicatorRef.current.style.left = `${buttonLeft}px`;
-        indicatorRef.current.style.width = `${buttonWidth}px`;
-      }
+      updateIndicatorPosition();
     }
+  }, [selectedIndustry]);
+
+  // Update indicator on scroll
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+
+    const handleScroll = () => {
+      updateIndicatorPosition();
+    };
+
+    container.addEventListener('scroll', handleScroll);
+    return () => container.removeEventListener('scroll', handleScroll);
   }, [selectedIndustry]);
 
   return (
@@ -77,21 +99,26 @@ export const AgentsGrid = ({ agents, selectedIndustry, onSelectIndustry }: Agent
                 {industries.map((industry) => (
                   <button
                     key={industry}
-                    ref={selectedIndustry === industry ? activeButtonRef : null}
+                    ref={(el) => {
+                      if (el) buttonRefs.current.set(industry, el);
+                      if (selectedIndustry === industry && el) {
+                        activeButtonRef.current = el;
+                      }
+                    }}
                     onClick={() => onSelectIndustry(industry)}
                     className={cn(
                       "px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 flex items-center gap-2 whitespace-nowrap flex-shrink-0",
                       selectedIndustry === industry
-                        ? "text-accent-foreground bg-accent/10 font-semibold"
-                        : "text-foreground/70 hover:text-foreground hover:bg-muted/50"
+                        ? "text-accent-foreground bg-accent/20 font-bold border border-accent/30"
+                        : "text-foreground/60"
                     )}
                   >
                     <span>{industry}</span>
                     <span className={cn(
                       "text-xs px-2 py-0.5 rounded-full transition-all duration-300",
                       selectedIndustry === industry
-                        ? "bg-accent/20 font-semibold"
-                        : "bg-muted"
+                        ? "bg-accent/30 font-bold"
+                        : "bg-muted/50"
                     )}>
                       {getAgentCount(industry)}
                     </span>
@@ -100,8 +127,8 @@ export const AgentsGrid = ({ agents, selectedIndustry, onSelectIndustry }: Agent
                 {/* Animated indicator line */}
                 <div 
                   ref={indicatorRef}
-                  className="absolute bottom-0 h-0.5 bg-accent transition-all duration-500 ease-in-out"
-                  style={{ left: 0, width: 0 }}
+                  className="absolute bottom-0 h-0.5 bg-accent transition-all duration-300 ease-out"
+                  style={{ width: 0, transform: 'translateX(0)' }}
                 />
               </div>
             </div>
