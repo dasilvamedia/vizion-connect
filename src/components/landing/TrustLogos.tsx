@@ -58,16 +58,11 @@ export const TrustLogos = () => {
   ];
 
   return (
-    <section className="py-16 border-y border-border overflow-hidden bg-muted/30">
-      <div className="max-w-7xl mx-auto px-4 mb-8">
-        <h2 className="text-2xl font-bold text-center text-foreground">
-          Vertrauen von führenden Unternehmen
-        </h2>
-      </div>
+    <section className="py-8 border-y border-border overflow-hidden bg-muted/30">
       <div className="relative w-full">
         <div className="flex animate-scroll">
           {[...logos, ...logos, ...logos].map((logo, index) => (
-            <div key={index} className="flex items-center justify-center px-8 whitespace-nowrap min-w-[200px]">
+            <div key={index} className="flex items-center justify-center px-6 whitespace-nowrap min-w-[180px]">
               <img 
                 src={logo.src} 
                 alt={logo.name}
