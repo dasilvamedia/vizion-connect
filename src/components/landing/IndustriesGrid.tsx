@@ -102,11 +102,11 @@ export const IndustriesGrid = () => {
     <section id="branche" className="py-20 container mx-auto px-4">
       <div className="text-center mb-16">
         <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
-          Lead Connect in deiner Branche
+          Lead Connect in Ihrer Branche
         </h2>
         <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-          Egal in welcher Branche du tätig bist – Lead Connect Voice Agents übernehmen repetitive Aufgaben 
-          und lassen dein Team sich auf das Wesentliche konzentrieren.
+          Egal in welcher Branche Sie tätig sind – Lead Connect Voice Agents übernehmen repetitive Aufgaben 
+          und lassen Ihr Team sich auf das Wesentliche konzentrieren.
         </p>
       </div>
 
@@ -139,8 +139,8 @@ export const IndustriesGrid = () => {
       </div>
 
       <div className="text-center">
-        <p className="text-lg text-foreground mb-4">Deine Branche nicht dabei? Kein Problem!</p>
-        <Button 
+        <p className="text-lg text-foreground mb-4">Ihre Branche nicht dabei? Kein Problem!</p>
+        <Button
           size="lg" 
           variant="outline" 
           className="border-orange text-orange hover:bg-orange hover:text-white"

@@ -23,7 +23,7 @@ export const ContactSection = () => {
               Jetzt anfragen
             </h3>
             <p className="text-muted-foreground text-lg leading-relaxed">Interesse an Lead Connect geweckt?
-Dann trage dich jetzt ein und vereinbare eine kostenlose Demo mit unserem Vertriebsteam.</p>
+Dann tragen Sie sich jetzt ein und vereinbaren Sie eine kostenlose Demo mit unserem Vertriebsteam.</p>
           </div>
         </div>
 

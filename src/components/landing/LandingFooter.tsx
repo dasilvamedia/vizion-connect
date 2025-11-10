@@ -15,11 +15,12 @@ export const LandingFooter = () => {
           <div>
             <h4 className="font-semibold text-foreground mb-3">Navigation</h4>
             <ul className="space-y-2">
-              <li><a href="#funktionen" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Funktionen</a></li>
-              <li><a href="#vorteile" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Vorteile</a></li>
-              <li><a href="#branche" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Branche</a></li>
-              <li><a href="#preise" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Preise</a></li>
-              <li><a href="#kontakt" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Kontakt</a></li>
+              <li><a href="/#funktionen" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Funktionen</a></li>
+              <li><a href="/#vorteile" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Vorteile</a></li>
+              <li><a href="/#branche" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Branche</a></li>
+              <li><a href="/agenten" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Agenten</a></li>
+              <li><a href="/#preise" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Preise</a></li>
+              <li><a href="/#kontakt" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Kontakt</a></li>
             </ul>
           </div>
 

@@ -72,7 +72,7 @@ export const LandingHero = () => {
         <p className="text-lg md:text-xl text-white/95 mb-8 max-w-3xl drop-shadow-lg">
           Entwickelt für Marktführer und innovative Unternehmen.
           <br />
-          KI-Agenten, die sicher, DSGVO-konform und perfekt in deine Prozesse integriert sind.
+          KI-Agenten, die sicher, DSGVO-konform und perfekt in Ihre Prozesse integriert sind.
         </p>
         
         {/* Badges */}

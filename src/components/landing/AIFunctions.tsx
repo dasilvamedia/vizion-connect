@@ -32,7 +32,7 @@ export const AIFunctions = () => {
           Simple, aber effiziente KI-Funktionen
         </h2>
         <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-          KI-Agenten für dich oder deine Kunden und buche autonom Termine in den hinterlegten Kalender und vieles mehr...
+          KI-Agenten für Sie oder Ihre Kunden, die autonom Termine in den hinterlegten Kalender buchen und vieles mehr...
         </p>
       </div>
 
