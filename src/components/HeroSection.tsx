@@ -1,6 +1,5 @@
 import heroVideo from "@/assets/hero-video.mov";
 import logo from "@/assets/logo-new.png";
-import { Headset } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export const HeroSection = () => {
@@ -10,14 +9,6 @@ export const HeroSection = () => {
       <nav className="absolute top-0 left-0 right-0 z-20 container mx-auto px-4 py-6 flex items-center justify-between">
         <Link to="/" className="flex items-center">
           <img src={logo} alt="Lead Connect Logo" className="h-12 md:h-16 w-auto" />
-        </Link>
-        
-        <Link 
-          to="/" 
-          className="flex items-center justify-center text-white/90 hover:text-white transition-colors group"
-          aria-label="Zur Startseite"
-        >
-          <Headset className="w-6 h-6 transition-transform group-hover:scale-110" />
         </Link>
       </nav>
 
