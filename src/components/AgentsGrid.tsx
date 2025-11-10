@@ -35,7 +35,38 @@ export const AgentsGrid = ({ agents, selectedIndustry, onSelectIndustry }: Agent
 
         {/* Branchen Filter */}
         <div className="space-y-6">
-          <div className="flex flex-wrap gap-2 justify-center">
+          {/* Mobile: Horizontal Slider */}
+          <div className="lg:hidden">
+            <div className="overflow-x-auto scrollbar-hide -mx-4 px-4">
+              <div className="flex gap-2 min-w-min pb-2">
+                {industries.map((industry) => (
+                  <button
+                    key={industry}
+                    onClick={() => onSelectIndustry(industry)}
+                    className={cn(
+                      "px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 flex items-center gap-2 whitespace-nowrap flex-shrink-0",
+                      selectedIndustry === industry
+                        ? "bg-accent text-accent-foreground shadow-sm"
+                        : "bg-card text-foreground/70 hover:text-foreground hover:bg-muted border border-border"
+                    )}
+                  >
+                    <span>{industry}</span>
+                    <span className={cn(
+                      "text-xs px-2 py-0.5 rounded-full",
+                      selectedIndustry === industry
+                        ? "bg-accent-foreground/20"
+                        : "bg-muted"
+                    )}>
+                      {getAgentCount(industry)}
+                    </span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+          
+          {/* Desktop: Wrapped Grid */}
+          <div className="hidden lg:flex flex-wrap gap-2 justify-center">
             {industries.map((industry) => (
               <button
                 key={industry}
