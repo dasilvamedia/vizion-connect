@@ -82,15 +82,15 @@ export const AgentsGrid = ({ agents, selectedIndustry, onSelectIndustry }: Agent
                     className={cn(
                       "px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 flex items-center gap-2 whitespace-nowrap flex-shrink-0",
                       selectedIndustry === industry
-                        ? "text-accent-foreground"
-                        : "text-foreground/70 hover:text-foreground"
+                        ? "text-accent-foreground bg-accent/10 font-semibold"
+                        : "text-foreground/70 hover:text-foreground hover:bg-muted/50"
                     )}
                   >
                     <span>{industry}</span>
                     <span className={cn(
                       "text-xs px-2 py-0.5 rounded-full transition-all duration-300",
                       selectedIndustry === industry
-                        ? "bg-accent/20"
+                        ? "bg-accent/20 font-semibold"
                         : "bg-muted"
                     )}>
                       {getAgentCount(industry)}
@@ -100,7 +100,7 @@ export const AgentsGrid = ({ agents, selectedIndustry, onSelectIndustry }: Agent
                 {/* Animated indicator line */}
                 <div 
                   ref={indicatorRef}
-                  className="absolute bottom-0 h-0.5 bg-accent transition-all duration-300 ease-out"
+                  className="absolute bottom-0 h-0.5 bg-accent transition-all duration-500 ease-in-out"
                   style={{ left: 0, width: 0 }}
                 />
               </div>
