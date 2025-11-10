@@ -82,42 +82,42 @@ export const LandingHero = () => {
             <div className="flex flex-col gap-4 mt-8">
               <a 
                 href="/#funktionen" 
-                className="px-4 py-3 text-lg font-medium text-white bg-white/5 hover:bg-white/20 rounded-xl transition-all duration-300 hover:scale-[1.02] border border-white/10 hover:border-white/30"
+                className="px-4 py-3 text-lg font-medium text-white bg-black/50 hover:bg-black/70 rounded-xl transition-all duration-300 hover:scale-[1.02] border border-white/10 hover:border-white/30 backdrop-blur-sm"
                 onClick={() => setOpen(false)}
               >
                 Funktionen
               </a>
               <a 
                 href="/#vorteile" 
-                className="px-4 py-3 text-lg font-medium text-white bg-white/5 hover:bg-white/20 rounded-xl transition-all duration-300 hover:scale-[1.02] border border-white/10 hover:border-white/30"
+                className="px-4 py-3 text-lg font-medium text-white bg-black/50 hover:bg-black/70 rounded-xl transition-all duration-300 hover:scale-[1.02] border border-white/10 hover:border-white/30 backdrop-blur-sm"
                 onClick={() => setOpen(false)}
               >
                 Vorteile
               </a>
               <a 
                 href="/#branche" 
-                className="px-4 py-3 text-lg font-medium text-white bg-white/5 hover:bg-white/20 rounded-xl transition-all duration-300 hover:scale-[1.02] border border-white/10 hover:border-white/30"
+                className="px-4 py-3 text-lg font-medium text-white bg-black/50 hover:bg-black/70 rounded-xl transition-all duration-300 hover:scale-[1.02] border border-white/10 hover:border-white/30 backdrop-blur-sm"
                 onClick={() => setOpen(false)}
               >
                 Branche
               </a>
               <a 
                 href="/agenten" 
-                className="px-4 py-3 text-lg font-medium text-white bg-white/5 hover:bg-white/20 rounded-xl transition-all duration-300 hover:scale-[1.02] border border-white/10 hover:border-white/30"
+                className="px-4 py-3 text-lg font-medium text-white bg-black/50 hover:bg-black/70 rounded-xl transition-all duration-300 hover:scale-[1.02] border border-white/10 hover:border-white/30 backdrop-blur-sm"
                 onClick={() => setOpen(false)}
               >
                 Agenten
               </a>
               <a 
                 href="/#preise" 
-                className="px-4 py-3 text-lg font-medium text-white bg-white/5 hover:bg-white/20 rounded-xl transition-all duration-300 hover:scale-[1.02] border border-white/10 hover:border-white/30"
+                className="px-4 py-3 text-lg font-medium text-white bg-black/50 hover:bg-black/70 rounded-xl transition-all duration-300 hover:scale-[1.02] border border-white/10 hover:border-white/30 backdrop-blur-sm"
                 onClick={() => setOpen(false)}
               >
                 Preise
               </a>
               <a 
                 href="/#kontakt" 
-                className="px-4 py-3 text-lg font-medium text-white bg-white/5 hover:bg-white/20 rounded-xl transition-all duration-300 hover:scale-[1.02] border border-white/10 hover:border-white/30"
+                className="px-4 py-3 text-lg font-medium text-white bg-black/50 hover:bg-black/70 rounded-xl transition-all duration-300 hover:scale-[1.02] border border-white/10 hover:border-white/30 backdrop-blur-sm"
                 onClick={() => setOpen(false)}
               >
                 Kontakt
