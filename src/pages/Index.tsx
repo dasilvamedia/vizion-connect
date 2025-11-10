@@ -16,7 +16,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background flex flex-col">
       {/* Hero Section */}
       <HeroSection />
 
@@ -28,13 +28,13 @@ const Index = () => {
       />
 
       {/* Main Content */}
-      <div className="flex h-screen">
+      <div className="flex flex-1">
         <Sidebar 
           selectedIndustry={selectedIndustry}
           onSelectIndustry={handleIndustrySelect}
           agents={agents}
         />
-        <div ref={agentsGridRef} className="flex-1 overflow-y-auto">
+        <div ref={agentsGridRef} className="flex-1">
           <AgentsGrid 
             agents={agents}
             selectedIndustry={selectedIndustry}
