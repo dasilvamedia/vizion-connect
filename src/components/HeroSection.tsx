@@ -1,14 +1,8 @@
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
 import heroVideo from "@/assets/hero-video.mov";
 import logo from "@/assets/logo-new.png";
 import { Link } from "react-router-dom";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Button } from "@/components/ui/button";
 
 export const HeroSection = () => {
-  const [open, setOpen] = useState(false);
-
   return (
     <section className="relative min-h-[100svh] h-[100svh] w-full overflow-hidden flex items-center justify-center">
       {/* Navigation */}
@@ -16,44 +10,6 @@ export const HeroSection = () => {
         <Link to="/" className="flex items-center">
           <img src={logo} alt="Lead Connect Logo" className="h-12 md:h-16 w-auto" />
         </Link>
-        
-        {/* Mobile Menu */}
-        <Sheet open={open} onOpenChange={setOpen}>
-          <SheetTrigger asChild>
-            <Button 
-              variant="outline" 
-              size="icon"
-              className="lg:hidden bg-background/80 backdrop-blur-sm"
-            >
-              <Menu className="h-5 w-5" />
-            </Button>
-          </SheetTrigger>
-          <SheetContent side="right" className="w-64">
-            <div className="flex flex-col gap-6 mt-8">
-              <Link 
-                to="/" 
-                className="text-lg font-medium hover:text-primary transition-colors"
-                onClick={() => setOpen(false)}
-              >
-                Home
-              </Link>
-              <Link 
-                to="/agenten" 
-                className="text-lg font-medium hover:text-primary transition-colors"
-                onClick={() => setOpen(false)}
-              >
-                KI-Agenten
-              </Link>
-              <a 
-                href="/#kontakt" 
-                className="text-lg font-medium hover:text-primary transition-colors"
-                onClick={() => setOpen(false)}
-              >
-                Kontakt
-              </a>
-            </div>
-          </SheetContent>
-        </Sheet>
       </nav>
 
       {/* Background Video */}

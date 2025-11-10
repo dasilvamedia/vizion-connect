@@ -1,12 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useEffect, useState } from "react";
+import { Menu } from "lucide-react";
 import heroVideo from "@/assets/hero-background.mp4";
 import heroVideoMobile from "@/assets/hero-background-mobile.mp4";
 import logo from "@/assets/logo-new.png";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 export const LandingHero = () => {
   const [scrollY, setScrollY] = useState(0);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -53,6 +56,8 @@ export const LandingHero = () => {
       {/* Navigation */}
       <nav className="container mx-auto px-4 py-6 flex items-center justify-between relative z-20">
         <img src={logo} alt="Lead Connect Logo" className="h-12 md:h-16 w-auto" />
+        
+        {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
           <a href="/#funktionen" className="text-sm text-white/90 hover:text-white transition-colors">Funktionen</a>
           <a href="/#vorteile" className="text-sm text-white/90 hover:text-white transition-colors">Vorteile</a>
@@ -61,6 +66,65 @@ export const LandingHero = () => {
           <a href="/#preise" className="text-sm text-white/90 hover:text-white transition-colors">Preise</a>
           <a href="/#kontakt" className="text-sm text-white/90 hover:text-white transition-colors">Kontakt</a>
         </div>
+
+        {/* Mobile Menu */}
+        <Sheet open={open} onOpenChange={setOpen}>
+          <SheetTrigger asChild>
+            <Button 
+              variant="ghost" 
+              size="icon"
+              className="md:hidden bg-white/10 backdrop-blur-sm hover:bg-white/20 border border-white/20"
+            >
+              <Menu className="h-5 w-5 text-white" />
+            </Button>
+          </SheetTrigger>
+          <SheetContent side="right" className="w-64">
+            <div className="flex flex-col gap-6 mt-8">
+              <a 
+                href="/#funktionen" 
+                className="text-lg font-medium hover:text-primary transition-colors"
+                onClick={() => setOpen(false)}
+              >
+                Funktionen
+              </a>
+              <a 
+                href="/#vorteile" 
+                className="text-lg font-medium hover:text-primary transition-colors"
+                onClick={() => setOpen(false)}
+              >
+                Vorteile
+              </a>
+              <a 
+                href="/#branche" 
+                className="text-lg font-medium hover:text-primary transition-colors"
+                onClick={() => setOpen(false)}
+              >
+                Branche
+              </a>
+              <a 
+                href="/agenten" 
+                className="text-lg font-medium hover:text-primary transition-colors"
+                onClick={() => setOpen(false)}
+              >
+                Agenten
+              </a>
+              <a 
+                href="/#preise" 
+                className="text-lg font-medium hover:text-primary transition-colors"
+                onClick={() => setOpen(false)}
+              >
+                Preise
+              </a>
+              <a 
+                href="/#kontakt" 
+                className="text-lg font-medium hover:text-primary transition-colors"
+                onClick={() => setOpen(false)}
+              >
+                Kontakt
+              </a>
+            </div>
+          </SheetContent>
+        </Sheet>
       </nav>
 
       {/* Hero Content */}
