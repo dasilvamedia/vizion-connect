@@ -78,7 +78,7 @@ export const LandingHero = () => {
               <Menu className="h-5 w-5 text-white" />
             </Button>
           </SheetTrigger>
-          <SheetContent side="right" className="w-64 bg-black/80 backdrop-blur-xl border-l border-white/10">
+          <SheetContent side="right" className="w-64 bg-transparent border-none shadow-none">
             <div className="flex flex-col gap-4 mt-8">
               <a 
                 href="/#funktionen" 
