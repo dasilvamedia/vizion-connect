@@ -56,8 +56,10 @@ const SidebarContent = ({ selectedIndustry, onSelectIndustry, agents }: SidebarP
 
 export const Sidebar = ({ selectedIndustry, onSelectIndustry, agents }: SidebarProps) => {
   return (
-    <aside className="hidden lg:block w-64 border-r border-border bg-card/50 backdrop-blur-sm sticky top-0 h-fit max-h-screen overflow-y-auto">
-      <SidebarContent selectedIndustry={selectedIndustry} onSelectIndustry={onSelectIndustry} agents={agents} />
+    <aside className="hidden lg:block w-64 border-r border-border bg-card/50 backdrop-blur-sm sticky top-0 self-start">
+      <div className="h-screen overflow-y-auto">
+        <SidebarContent selectedIndustry={selectedIndustry} onSelectIndustry={onSelectIndustry} agents={agents} />
+      </div>
     </aside>
   );
 };
