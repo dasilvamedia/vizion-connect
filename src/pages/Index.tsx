@@ -28,13 +28,13 @@ const Index = () => {
       />
 
       {/* Main Content */}
-      <div className="flex">
+      <div className="flex h-screen">
         <Sidebar 
           selectedIndustry={selectedIndustry}
           onSelectIndustry={handleIndustrySelect}
           agents={agents}
         />
-        <div ref={agentsGridRef} className="flex-1">
+        <div ref={agentsGridRef} className="flex-1 overflow-y-auto">
           <AgentsGrid 
             agents={agents}
             selectedIndustry={selectedIndustry}

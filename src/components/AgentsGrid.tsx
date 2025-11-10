@@ -12,7 +12,7 @@ export const AgentsGrid = ({ agents, selectedIndustry }: AgentsGridProps) => {
     : agents.filter(agent => agent.industry === selectedIndustry);
 
   return (
-    <div className="overflow-y-auto">
+    <div>
       <div className="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8 space-y-6 sm:space-y-8">
         {/* Header */}
         <div className="space-y-2 animate-fade-in pt-16 lg:pt-0">
