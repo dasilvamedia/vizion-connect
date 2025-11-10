@@ -29,7 +29,7 @@ Dann tragen Sie sich jetzt ein und vereinbaren Sie eine kostenlose Demo mit unse
 
         {/* Right: Video */}
         <div className="rounded-lg overflow-hidden shadow-xl">
-          <video autoPlay loop muted playsInline className="w-full h-full object-cover">
+          <video autoPlay loop muted playsInline preload="metadata" className="w-full h-full object-cover">
             <source src={contactVideo} type="video/mp4" />
           </video>
         </div>

@@ -24,6 +24,7 @@ export const LandingHero = () => {
           loop
           muted
           playsInline
+          preload="metadata"
           className="absolute top-0 left-0 w-full h-full object-cover md:hidden"
           style={{ 
             minWidth: '100%', 
@@ -40,6 +41,7 @@ export const LandingHero = () => {
           loop
           muted
           playsInline
+          preload="metadata"
           className="absolute top-0 left-0 w-full h-full object-cover hidden md:block"
         >
           <source src={heroVideo} type="video/mp4" />

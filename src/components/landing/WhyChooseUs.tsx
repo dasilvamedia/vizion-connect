@@ -11,19 +11,19 @@ export const WhyChooseUs = () => {
     {
       icon: Shield,
       title: "Zuverlässiger Service ohne Ausfälle",
-      description: "Unser KI-System ist 365 Tage im Jahr für Sie da - keine Ausfälle durch Krankheit, Urlaub oder andere Abwesenheiten.",
+      description: "Unser KI-System ist 365 Tage im Jahr für Sie da – keine Ausfälle durch Krankheit, Urlaub oder andere Abwesenheiten.",
       stat: "100% Verfügbarkeit garantiert"
     },
     {
       icon: Award,
       title: "Professioneller Auftritt garantiert",
-      description: "Wir sorgen dafür, dass Ihr Unternehmen stets professionell, freundlich und kompetent repräsentiert wird - in der gewünschten Tonalität.",
+      description: "Wir sorgen dafür, dass Ihr Unternehmen stets professionell, freundlich und kompetent repräsentiert wird in der gewünschten Tonalität.",
       stat: "Konstant hohe Servicequalität"
     },
     {
       icon: TrendingUp,
       title: "Komplette Anrufbetreuung",
-      description: "Wir übernehmen jeden Anruf und bearbeiten jede Anfrage professionell - auch außerhalb Ihrer Geschäftszeiten.",
+      description: "Wir übernehmen jeden Anruf und bearbeiten jede Anfrage professionell, auch außerhalb Ihrer Geschäftszeiten.",
       stat: "Durchschnittlich 20% mehr Termine"
     }
   ];

@@ -32,7 +32,7 @@ export const AIAssistantConfig = () => {
     {
       icon: Mic,
       title: "Passende Stimme",
-      description: "Männlich, weiblich, jung oder erfahren - Sie entscheiden"
+      description: "Männlich, weiblich, jung oder erfahren – Sie entscheiden"
     },
     {
       icon: Languages,
@@ -53,10 +53,10 @@ export const AIAssistantConfig = () => {
           {/* Left Column - Content and Features */}
           <div className={`transition-all duration-700 ${isVisible ? 'animate-fade-in opacity-100' : 'opacity-0'}`}>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-              Ihr persönlicher KI-Assistent - <span className="text-orange">genau wie Sie ihn wollen</span>
+              Ihr persönlicher KI-Assistent <span className="text-orange">genau wie Sie ihn wollen</span>
             </h2>
             <p className="text-base md:text-lg text-muted-foreground mb-8">
-              Ihr Assistent ist selbstverständlich individuell anpassbar - egal ob Kaina, Emma, Petra oder Daniel. 
+              Ihr Assistent ist selbstverständlich individuell anpassbar, egal ob Kaina, Emma, Petra oder Daniel. 
               Name, Stimme und Sprachen werden genau nach Ihren Wünschen konfiguriert, damit der Service perfekt 
               zu Ihrem Unternehmen und Ihren Anforderungen passt.
             </p>

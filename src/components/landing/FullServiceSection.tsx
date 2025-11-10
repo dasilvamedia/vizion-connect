@@ -26,7 +26,7 @@ export const FullServiceSection = () => {
     {
       icon: Phone,
       title: "Professionelle Anrufbearbeitung",
-      description: "Unser KI-Service beantwortet jeden Anruf für Sie professionell und freundlich - in der Sprache Ihrer Kunden, 24 Stunden am Tag."
+      description: "Unser KI-Service beantwortet jeden Anruf für Sie professionell und freundlich in der Sprache Ihrer Kunden, 24 Stunden am Tag."
     },
     {
       icon: Calendar,

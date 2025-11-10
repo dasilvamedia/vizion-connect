@@ -39,7 +39,7 @@ export const VideoSection = () => {
             loop
             muted
             playsInline
-            preload="auto"
+            preload="metadata"
           >
             <source src={anfrageVideo} type="video/mp4" />
             Ihr Browser unterstützt das Video-Tag nicht.

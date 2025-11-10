@@ -6,7 +6,7 @@ export const FinalCTA = () => {
     "3 Tage vollkommen kostenlos",
     "Sofortige Aktivierung Ihrer AI-Agenten",
     "Alle Funktionen inklusive",
-    "Keine Kündigung nötig - endet automatisch",
+    "Keine Kündigung nötig – endet automatisch",
     "Persönliche Beratung inklusive"
   ];
 
