@@ -21,8 +21,8 @@ const Landing = () => {
       <FullServiceSection />
       <AIAssistantConfig />
       <AIFunctions />
-      <VideoSection />
       <WhyChooseUs />
+      <VideoSection />
       <StatsSection />
       <IndustriesGrid />
       <PricingSection />
