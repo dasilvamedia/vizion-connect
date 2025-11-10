@@ -156,10 +156,9 @@ const Impressum = () => {
             <div>
               <h4 className="font-semibold text-foreground mb-3">Rechtliches</h4>
               <ul className="space-y-2">
-                <li><Link to="/datenschutz" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Datenschutz</Link></li>
-                <li><Link to="/impressum" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Impressum</Link></li>
-                <li><Link to="/agb" className="text-sm text-muted-foreground hover:text-foreground transition-colors">AGB</Link></li>
-                <li><Link to="/cookies" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Cookies</Link></li>
+                 <li><Link to="/datenschutz" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Datenschutz</Link></li>
+                 <li><Link to="/impressum" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Impressum</Link></li>
+                 <li><Link to="/agb" className="text-sm text-muted-foreground hover:text-foreground transition-colors">AGB</Link></li>
               </ul>
             </div>
           </div>

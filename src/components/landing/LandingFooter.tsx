@@ -44,7 +44,6 @@ export const LandingFooter = () => {
               <li><a href="/datenschutz" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Datenschutz</a></li>
               <li><a href="/impressum" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Impressum</a></li>
               <li><a href="/agb" className="text-sm text-muted-foreground hover:text-foreground transition-colors">AGB</a></li>
-              <li><a href="/cookies" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Cookies</a></li>
             </ul>
           </div>
         </div>
