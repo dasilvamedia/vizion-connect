@@ -58,17 +58,25 @@ export const TrustLogos = () => {
   ];
 
   return (
-    <section className="py-12 border-y border-border overflow-hidden bg-muted/30">
-      <div className="flex animate-scroll">
-        {[...logos, ...logos, ...logos].map((logo, index) => (
-          <div key={index} className="flex items-center justify-center px-12 whitespace-nowrap">
-            <img 
-              src={logo.src} 
-              alt={logo.name}
-              className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
-            />
-          </div>
-        ))}
+    <section className="py-16 border-y border-border overflow-hidden bg-muted/30">
+      <div className="max-w-7xl mx-auto px-4 mb-8">
+        <h2 className="text-2xl font-bold text-center text-foreground">
+          Vertrauen von führenden Unternehmen
+        </h2>
+      </div>
+      <div className="relative w-full">
+        <div className="flex animate-scroll">
+          {[...logos, ...logos, ...logos].map((logo, index) => (
+            <div key={index} className="flex items-center justify-center px-8 whitespace-nowrap min-w-[200px]">
+              <img 
+                src={logo.src} 
+                alt={logo.name}
+                className="h-16 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
+                loading="lazy"
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
