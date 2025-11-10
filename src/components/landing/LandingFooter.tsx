@@ -1,3 +1,5 @@
+import logoFooter from "@/assets/logo-footer.png";
+
 export const LandingFooter = () => {
   return (
     <footer id="kontakt" className="bg-card border-t border-border py-12">
@@ -5,7 +7,7 @@ export const LandingFooter = () => {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div>
-            <h3 className="text-xl font-bold text-foreground mb-3">Lead Connect</h3>
+            <img src={logoFooter} alt="Lead Connect Logo" className="h-16 mb-3" />
             <p className="text-sm text-muted-foreground">
               Ihre intelligente AI-Agenten für professionelle Kundenbetreuung rund um die Uhr.
             </p>
