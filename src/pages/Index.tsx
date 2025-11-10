@@ -35,6 +35,7 @@ const Index = () => {
           agents={agents}
         />
         <div ref={agentsGridRef} className="flex-1 overflow-y-auto">
+          <HeroSection />
           <AgentsGrid 
             agents={agents}
             selectedIndustry={selectedIndustry}
