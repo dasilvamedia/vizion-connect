@@ -1,6 +1,6 @@
 import heroVideo from "@/assets/hero-video.mov";
 import logo from "@/assets/logo-new.png";
-import { Home } from "lucide-react";
+import { Headset } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export const HeroSection = () => {
@@ -14,10 +14,10 @@ export const HeroSection = () => {
         
         <Link 
           to="/" 
-          className="flex items-center gap-2 text-sm font-medium text-white/90 hover:text-white transition-colors group"
+          className="flex items-center justify-center text-white/90 hover:text-white transition-colors group"
+          aria-label="Zur Startseite"
         >
-          <Home className="w-5 h-5 transition-transform group-hover:scale-110" />
-          <span className="hidden sm:inline">Zur Startseite</span>
+          <Headset className="w-6 h-6 transition-transform group-hover:scale-110" />
         </Link>
       </nav>
 
