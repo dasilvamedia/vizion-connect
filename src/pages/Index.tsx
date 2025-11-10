@@ -3,6 +3,7 @@ import { HeroSection } from "@/components/HeroSection";
 import { Sidebar } from "@/components/Sidebar";
 import { MobileSidebar } from "@/components/MobileSidebar";
 import { AgentsGrid } from "@/components/AgentsGrid";
+import { LandingFooter } from "@/components/landing/LandingFooter";
 import { agents } from "@/data/agents";
 
 const Index = () => {
@@ -40,6 +41,9 @@ const Index = () => {
           />
         </div>
       </div>
+
+      {/* Footer */}
+      <LandingFooter />
     </div>
   );
 };

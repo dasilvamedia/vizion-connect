@@ -51,12 +51,12 @@ export const LandingHero = () => {
       <nav className="container mx-auto px-4 py-6 flex items-center justify-between relative z-20">
         <div className="text-2xl font-bold text-white">Lead Connect</div>
         <div className="hidden md:flex items-center gap-8">
-          <a href="#funktionen" className="text-sm text-white/90 hover:text-white transition-colors">Funktionen</a>
-          <a href="#vorteile" className="text-sm text-white/90 hover:text-white transition-colors">Vorteile</a>
-          <a href="#branche" className="text-sm text-white/90 hover:text-white transition-colors">Branche</a>
-          <a href="#agenten" className="text-sm text-white/90 hover:text-white transition-colors">Agenten</a>
-          <a href="#preise" className="text-sm text-white/90 hover:text-white transition-colors">Preise</a>
-          <a href="#kontakt" className="text-sm text-white/90 hover:text-white transition-colors">Kontakt</a>
+          <a href="/#funktionen" className="text-sm text-white/90 hover:text-white transition-colors">Funktionen</a>
+          <a href="/#vorteile" className="text-sm text-white/90 hover:text-white transition-colors">Vorteile</a>
+          <a href="/#branche" className="text-sm text-white/90 hover:text-white transition-colors">Branche</a>
+          <a href="/agenten" className="text-sm text-white/90 hover:text-white transition-colors">Agenten</a>
+          <a href="/#preise" className="text-sm text-white/90 hover:text-white transition-colors">Preise</a>
+          <a href="/#kontakt" className="text-sm text-white/90 hover:text-white transition-colors">Kontakt</a>
         </div>
       </nav>
 
