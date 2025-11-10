@@ -79,7 +79,7 @@ export const LandingHero = () => {
             </Button>
           </SheetTrigger>
           <SheetContent side="right" className="w-64 bg-transparent border-none shadow-none">
-            <div className="flex flex-col gap-4 mt-8">
+            <div className="flex flex-col gap-4 mt-8 bg-zinc-800/90 backdrop-blur-xl p-6 rounded-2xl border border-white/10">
               <a 
                 href="/#funktionen" 
                 className="px-4 py-3 text-lg font-medium text-white bg-white/5 hover:bg-white/20 rounded-xl transition-all duration-300 hover:scale-[1.02] border border-white/10 hover:border-white/30"
