@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { AgentPageHeader } from "@/components/AgentPageHeader";
+import { HeroSection } from "@/components/HeroSection";
 import { Sidebar } from "@/components/Sidebar";
 import { MobileSidebar } from "@/components/MobileSidebar";
 import { AgentsGrid } from "@/components/AgentsGrid";
@@ -17,8 +17,8 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <AgentPageHeader />
+      {/* Hero Section */}
+      <HeroSection />
 
       {/* Mobile Sidebar */}
       <MobileSidebar
