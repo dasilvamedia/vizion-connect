@@ -59,10 +59,24 @@ export const TrustLogos = () => {
 
   return (
     <section className="py-6 border-y border-border overflow-hidden bg-muted/30">
-      <div className="relative w-full">
-        <div className="flex animate-scroll will-change-transform">
-          {[...logos, ...logos].map((logo, index) => (
-            <div key={index} className="flex items-center justify-center px-2 whitespace-nowrap flex-shrink-0">
+      <div className="relative w-full overflow-hidden">
+        {/* Track 1 */}
+        <div className="flex w-max animate-marquee will-change-transform">
+          {logos.map((logo, index) => (
+            <div key={`a-${index}`} className="flex items-center justify-center px-3 whitespace-nowrap flex-shrink-0">
+              <img 
+                src={logo.src} 
+                alt={logo.name}
+                className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all duration-300 opacity-70 hover:opacity-100"
+                loading="lazy"
+              />
+            </div>
+          ))}
+        </div>
+        {/* Track 2 (offset) */}
+        <div className="absolute top-0 left-full flex w-max animate-marquee will-change-transform" aria-hidden="true">
+          {logos.map((logo, index) => (
+            <div key={`b-${index}`} className="flex items-center justify-center px-3 whitespace-nowrap flex-shrink-0">
               <img 
                 src={logo.src} 
                 alt={logo.name}
