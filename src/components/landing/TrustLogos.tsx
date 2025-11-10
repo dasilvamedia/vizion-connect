@@ -16,6 +16,15 @@ import hambrock from "@/assets/logos/hambrock.webp";
 import ziegler from "@/assets/logos/ziegler.webp";
 import edeka from "@/assets/logos/edeka.webp";
 import dnata from "@/assets/logos/dnata.webp";
+import kraft from "@/assets/logos/kraft.png";
+import bspplan from "@/assets/logos/bspplan.png";
+import kreissparkasse from "@/assets/logos/kreissparkasse.jpg";
+import generationRed from "@/assets/logos/generation-red.jpg";
+import schlosser from "@/assets/logos/schlosser.jpeg";
+import kuecheAktiv from "@/assets/logos/kueche-aktiv.png";
+import bauerProfiltechnik from "@/assets/logos/bauer-profiltechnik.png";
+import expert from "@/assets/logos/expert.png";
+import estilo from "@/assets/logos/estilo.jpg";
 
 export const TrustLogos = () => {
   const logos = [
@@ -37,6 +46,15 @@ export const TrustLogos = () => {
     { src: ziegler, name: "Ziegler" },
     { src: edeka, name: "Edeka" },
     { src: dnata, name: "Dnata Catering" },
+    { src: kraft, name: "Kraft" },
+    { src: bspplan, name: "bspPlan" },
+    { src: kreissparkasse, name: "Kreissparkasse Ostalb" },
+    { src: generationRed, name: "Generation Red" },
+    { src: schlosser, name: "Schlosser" },
+    { src: kuecheAktiv, name: "Küche Aktiv" },
+    { src: bauerProfiltechnik, name: "Bauer Profiltechnik" },
+    { src: expert, name: "Expert" },
+    { src: estilo, name: "Estilo Schiehlen Hotels" },
   ];
 
   return (
