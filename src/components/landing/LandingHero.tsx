@@ -65,6 +65,9 @@ export const LandingHero = () => {
           <a href="/agenten" className="text-sm text-white/90 hover:text-white transition-colors">Agenten</a>
           <a href="/#preise" className="text-sm text-white/90 hover:text-white transition-colors">Preise</a>
           <a href="/#kontakt" className="text-sm text-white/90 hover:text-white transition-colors">Kontakt</a>
+          <Button variant="termin" size="sm" asChild>
+            <a href="/#kontakt">Termin Buchen</a>
+          </Button>
         </div>
 
         {/* Mobile Menu */}
@@ -121,6 +124,13 @@ export const LandingHero = () => {
                 onClick={() => setOpen(false)}
               >
                 Kontakt
+              </a>
+              <a 
+                href="/#kontakt" 
+                className="px-4 py-3 text-lg font-semibold text-white bg-orange hover:bg-orange/90 rounded-xl transition-all duration-300 hover:scale-[1.02]"
+                onClick={() => setOpen(false)}
+              >
+                Termin Buchen
               </a>
             </div>
           </SheetContent>

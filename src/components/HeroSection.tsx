@@ -1,6 +1,7 @@
 import heroVideo from "@/assets/hero-video.mov";
 import logo from "@/assets/logo-new.png";
 import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 export const HeroSection = () => {
   return (
@@ -10,6 +11,9 @@ export const HeroSection = () => {
         <Link to="/" className="flex items-center">
           <img src={logo} alt="Lead Connect Logo" className="h-12 md:h-16 w-auto" />
         </Link>
+        <Button variant="termin" size="sm" asChild>
+          <a href="/#kontakt">Termin Buchen</a>
+        </Button>
       </nav>
 
       {/* Background Video */}
