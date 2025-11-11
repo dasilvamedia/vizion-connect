@@ -19,11 +19,21 @@ export const ContactSection = () => {
           </div>
 
           <div className="bg-gradient-to-br from-primary/10 via-background to-accent/10 border-2 border-primary/20 rounded-2xl p-8 shadow-lg">
-            <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+            <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
               Jetzt anfragen
             </h3>
-            <p className="text-muted-foreground text-lg leading-relaxed">Interesse an Lead Connect geweckt?
+            <p className="text-muted-foreground text-lg leading-relaxed mb-6">Interesse an Lead Connect geweckt?
 Dann tragen Sie sich jetzt ein und vereinbaren Sie eine kostenlose Demo mit unserem Vertriebsteam.</p>
+            <div className="w-full">
+              <iframe 
+                src="https://api.leadconnectorhq.com/widget/survey/RDhG7vTB0onpmZo9pJEX" 
+                style={{border: 'none', width: '100%'}} 
+                scrolling="no" 
+                id="RDhG7vTB0onpmZo9pJEX" 
+                title="survey"
+                className="min-h-[400px]"
+              />
+            </div>
           </div>
         </div>
 
