@@ -66,7 +66,7 @@ export const LandingHero = () => {
           <a href="/#preise" className="text-sm text-white/90 hover:text-white transition-colors">Preise</a>
           <a href="/#kontakt" className="text-sm text-white/90 hover:text-white transition-colors">Kontakt</a>
           <Button variant="termin" size="sm" asChild>
-            <a href="/#kontakt">Termin Buchen</a>
+            <a href="/termin">Termin Buchen</a>
           </Button>
         </div>
 
@@ -126,7 +126,7 @@ export const LandingHero = () => {
                 Kontakt
               </a>
               <a 
-                href="/#kontakt" 
+                href="/termin" 
                 className="px-4 py-3 text-lg font-semibold text-white bg-orange hover:bg-orange/90 rounded-xl transition-all duration-300 hover:scale-[1.02]"
                 onClick={() => setOpen(false)}
               >

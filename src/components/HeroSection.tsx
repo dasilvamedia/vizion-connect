@@ -12,7 +12,7 @@ export const HeroSection = () => {
           <img src={logo} alt="Lead Connect Logo" className="h-12 md:h-16 w-auto" />
         </Link>
         <Button variant="termin" size="sm" asChild>
-          <a href="/#kontakt">Termin Buchen</a>
+          <Link to="/termin">Termin Buchen</Link>
         </Button>
       </nav>
 
