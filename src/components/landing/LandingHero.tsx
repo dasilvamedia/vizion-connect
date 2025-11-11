@@ -142,13 +142,11 @@ export const LandingHero = () => {
         className="flex-1 container mx-auto px-4 flex flex-col items-center justify-center text-center relative z-10"
         style={{ transform: `translateY(${scrollY * 0.2}px)` }}
       >
-        <h1 className="text-4xl md:text-5xl lg:text-6xl lg:whitespace-nowrap font-bold text-white mb-6 max-w-5xl animate-fade-in drop-shadow-2xl">
-          Die Plattform für <span className="text-orange">sichere KI-Agenten</span>
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 max-w-5xl animate-fade-in drop-shadow-2xl">
+          Wir übernehmen <span className="text-orange">die komplette Umsetzung.</span>
         </h1>
         <p className="text-lg md:text-xl text-white/95 mb-8 max-w-3xl drop-shadow-lg">
-          Entwickelt für Marktführer und innovative Unternehmen.
-          <br />
-          KI-Agenten, die sicher, DSGVO-konform und perfekt in Ihre Prozesse integriert sind.
+          Sie definieren das Ziel; wir liefern den maßgeschneiderten KI-Agenten. Aufbau, Implementierung, Integration, Überwachung und Optimierung. Alles aus einer Hand für sofortige und nachhaltige Effizienz.
         </p>
         
         {/* Badges */}
@@ -160,6 +158,11 @@ export const LandingHero = () => {
             ✓ DSGVO-konform
           </Badge>
         </div>
+
+        {/* Headline */}
+        <p className="text-base md:text-lg text-white/90 mb-8 max-w-4xl drop-shadow-lg font-medium">
+          Ihr Vorteil: Sie gewinnen Freiraum für Ihr Kerngeschäft, während wir für das professionelle Setup, konstantes Monitoring und die garantierte Leistungssteigerung sorgen.
+        </p>
 
         <div className="relative inline-block">
           <a 
