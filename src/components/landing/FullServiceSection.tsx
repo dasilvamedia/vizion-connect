@@ -59,10 +59,13 @@ export const FullServiceSection = () => {
     <section ref={sectionRef} id="funktionen" className="py-20 container mx-auto px-4">
       <div className="text-center mb-16">
         <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
-          Unser Full-Service für perfekte Kundenbetreuung
+          Wir übernehmen <span className="text-orange">die komplette Umsetzung.</span>
         </h2>
-        <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-          Wir übernehmen sämtliche Aufgaben rund um Kundenkontakt und Terminmanagement, sodass Sie wertvolle Zeit für Ihr Geschäft gewinnen.
+        <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-4">
+          Sie definieren das Ziel; wir liefern den maßgeschneiderten KI-Agenten. Aufbau, Implementierung, Integration, Überwachung und Optimierung. Alles aus einer Hand für sofortige und nachhaltige Effizienz.
+        </p>
+        <p className="text-sm md:text-base text-muted-foreground max-w-3xl mx-auto font-medium">
+          Ihr Vorteil: Sie gewinnen Freiraum für Ihr Kerngeschäft, während wir für das professionelle Setup, konstantes Monitoring und die garantierte Leistungssteigerung sorgen.
         </p>
       </div>
 
