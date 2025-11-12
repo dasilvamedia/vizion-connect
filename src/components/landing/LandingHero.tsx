@@ -91,8 +91,7 @@ export const LandingHero = () => {
       transform: `translateY(${scrollY * 0.2}px)`
     }}>
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 max-w-5xl animate-fade-in drop-shadow-2xl">
-          Ihr Business. Ihre Regeln. <span className="text-orange">
-Ihre Kundenzufriedenheit.</span>
+          Ihr Business. Ihre Regeln. <span className="text-orange">Ihre Kundenzufriedenheit.</span>
         </h1>
         <p className="text-lg md:text-xl text-white/95 mb-8 max-w-3xl drop-shadow-lg">
           Entwickelt für Marktführer und innovative Unternehmen.
