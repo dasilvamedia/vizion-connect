@@ -6,11 +6,12 @@ import { useEffect } from "react";
 const Contact = () => {
   const contactInfo = {
     name: "Marcio da Silva",
-    phone: "073613893011",
-    privatePhone: "073613893010",
+    phone: "+49 7361 3893010",
     email: "marcio@dasilvamedia.de",
-    linkedin: "https://www.linkedin.com/in/marcio-da-silva",
-    instagram: "https://www.instagram.com/dasilvamedia"
+    website1: "https://www.dasilvamedia.de",
+    website2: "https://lead-connect.de/",
+    linkedin: "https://www.linkedin.com/in/marciodasilva23/",
+    instagram: "https://www.instagram.com/da.silvamedia/"
   };
 
   useEffect(() => {
@@ -31,8 +32,9 @@ VERSION:3.0
 FN:${contactInfo.name}
 N:da Silva;Marcio;;;
 TEL;TYPE=WORK,VOICE:${contactInfo.phone}
-TEL;TYPE=HOME,VOICE:${contactInfo.privatePhone}
 EMAIL:${contactInfo.email}
+URL:${contactInfo.website1}
+URL:${contactInfo.website2}
 URL:${contactInfo.linkedin}
 URL:${contactInfo.instagram}
 END:VCARD`;
@@ -97,7 +99,7 @@ END:VCARD`;
         </div>
 
         {/* Action Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-20">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-2 mb-20">
           <ActionCard
             icon={Mail}
             label="E-Mail"
@@ -109,19 +111,14 @@ END:VCARD`;
             href={`tel:${contactInfo.phone}`}
           />
           <ActionCard
-            icon={Download}
-            label="Kontakt speichern"
-            onClick={generateVCard}
+            icon={Globe}
+            label="Da Silva Media"
+            href={contactInfo.website1}
           />
           <ActionCard
             icon={Globe}
-            label="Website"
-            href="/"
-          />
-          <ActionCard
-            icon={Calendar}
-            label="Termin buchen"
-            href="/termin"
+            label="Lead Connect"
+            href={contactInfo.website2}
           />
           <ActionCard
             icon={Linkedin}
@@ -132,11 +129,6 @@ END:VCARD`;
             icon={Instagram}
             label="Instagram"
             href={contactInfo.instagram}
-          />
-          <ActionCard
-            icon={User}
-            label="Mehr erfahren"
-            href="/"
           />
         </div>
 
@@ -158,6 +150,15 @@ END:VCARD`;
           </div>
         </div>
       </div>
+
+      {/* Floating Save Contact Button */}
+      <button
+        onClick={generateVCard}
+        className="fixed bottom-8 right-8 bg-green-500 hover:bg-green-600 text-white font-semibold py-4 px-6 rounded-full shadow-2xl transition-all duration-300 hover:scale-105 active:scale-95 flex items-center gap-2 z-50"
+      >
+        <Download className="w-5 h-5" />
+        Kontakt speichern
+      </button>
     </div>
   );
 };
