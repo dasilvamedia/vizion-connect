@@ -27,7 +27,7 @@ export const PricingSection = () => {
     {
       name: "Basis-Service",
       subtitle: "Perfekt für Selbständige und kleine Unternehmen",
-      price: "897€",
+      price: "899€",
       period: "pro Monat",
       features: [
         "1 KI-Agent für Ihr Unternehmen",
