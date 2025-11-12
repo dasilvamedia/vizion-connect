@@ -1,6 +1,6 @@
 import { Calendar, Phone, Mail, User, Linkedin, Instagram, Globe, Download } from "lucide-react";
 import { toast } from "sonner";
-import logo from "@/assets/logo-new.png";
+import marcioProfile from "@/assets/marcio-profile.png";
 import { useEffect } from "react";
 
 const Contact = () => {
@@ -84,9 +84,9 @@ END:VCARD`;
         <div className="flex justify-center mb-8">
           <div className="w-32 h-32 rounded-full bg-gradient-to-br from-[#ff4500] to-[#ff6a33] p-1 shadow-lg">
             <img 
-              src={logo}
-              alt="Da Silva Media Logo"
-              className="w-full h-full rounded-full object-cover bg-white p-2"
+              src={marcioProfile}
+              alt="Marcio da Silva"
+              className="w-full h-full rounded-full object-cover"
             />
           </div>
         </div>
