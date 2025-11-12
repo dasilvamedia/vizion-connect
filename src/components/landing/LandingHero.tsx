@@ -145,8 +145,8 @@ export const LandingHero = () => {
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 max-w-5xl animate-fade-in drop-shadow-2xl">
           Wir übernehmen <span className="text-orange">die komplette Umsetzung.</span>
         </h1>
-        <p className="text-lg md:text-xl text-white/95 mb-8 max-w-3xl drop-shadow-lg">
-          Sie definieren das Ziel; wir liefern den maßgeschneiderten KI-Agenten. Aufbau, Implementierung, Integration, Überwachung und Optimierung. Alles aus einer Hand für sofortige und nachhaltige Effizienz.
+        <p className="text-lg md:text-xl text-white/95 mb-4 max-w-3xl drop-shadow-lg">
+          Sie definieren das Ziel. Wir liefern den maßgeschneiderten KI-Agenten. Aufbau, Implementierung, Integration, Überwachung und Optimierung. Alles aus einer Hand für sofortige und nachhaltige Effizienz.
         </p>
         
         {/* Badges */}
@@ -160,7 +160,7 @@ export const LandingHero = () => {
         </div>
 
         {/* Headline */}
-        <p className="text-base md:text-lg text-white/90 mb-8 max-w-4xl drop-shadow-lg font-medium">
+        <p className="text-sm md:text-base text-white/85 mb-8 max-w-4xl drop-shadow-lg">
           Ihr Vorteil: Sie gewinnen Freiraum für Ihr Kerngeschäft, während wir für das professionelle Setup, konstantes Monitoring und die garantierte Leistungssteigerung sorgen.
         </p>
 
