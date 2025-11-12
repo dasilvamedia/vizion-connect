@@ -132,8 +132,19 @@ END:VCARD`;
           />
         </div>
 
+        {/* Save Contact Button */}
+        <div className="flex justify-center mb-12">
+          <button
+            onClick={generateVCard}
+            className="bg-green-500 hover:bg-green-600 text-white font-semibold py-4 px-8 rounded-full shadow-lg transition-all duration-300 hover:scale-105 active:scale-95 flex items-center gap-2"
+          >
+            <Download className="w-5 h-5" />
+            Kontakt speichern
+          </button>
+        </div>
+
         {/* Calendar Section */}
-        <div className="mt-20">
+        <div className="mt-8">
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold text-foreground mb-3">Termin vereinbaren</h2>
             <p className="text-muted-foreground">Wählen Sie einen passenden Zeitpunkt für unser Gespräch</p>
@@ -150,15 +161,6 @@ END:VCARD`;
           </div>
         </div>
       </div>
-
-      {/* Floating Save Contact Button */}
-      <button
-        onClick={generateVCard}
-        className="fixed bottom-8 right-8 bg-green-500 hover:bg-green-600 text-white font-semibold py-4 px-6 rounded-full shadow-2xl transition-all duration-300 hover:scale-105 active:scale-95 flex items-center gap-2 z-50"
-      >
-        <Download className="w-5 h-5" />
-        Kontakt speichern
-      </button>
     </div>
   );
 };
