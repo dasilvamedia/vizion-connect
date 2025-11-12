@@ -1,16 +1,16 @@
 import { Calendar, Phone, Mail, User, Linkedin, Instagram, Globe, Download } from "lucide-react";
 import { toast } from "sonner";
-import marcioProfile from "@/assets/marcio-profile.png";
+import robertProfile from "@/assets/robert-profile.jpg";
 import { useEffect } from "react";
 
 const Robert = () => {
   const contactInfo = {
-    name: "Robert",
-    phone: "+49 7361 3893010",
-    email: "robert@dasilvamedia.de",
+    name: "Robert Bückel",
+    phone: "+49 7361 3893033",
+    email: "robert@lead-connect.de",
     website1: "https://www.dasilvamedia.de",
     website2: "https://lead-connect.de/",
-    linkedin: "https://www.linkedin.com/in/marciodasilva23/",
+    linkedin: "https://www.linkedin.com/in/robertbueckel/",
     instagram: "https://www.instagram.com/da.silvamedia/"
   };
 
@@ -27,10 +27,10 @@ const Robert = () => {
   }, []);
 
   const generateVCard = () => {
-    const vcard = `BEGIN:VCARD
+const vcard = `BEGIN:VCARD
 VERSION:3.0
 FN:${contactInfo.name}
-N:Robert;;;
+N:Bückel;Robert;;;
 TEL;TYPE=WORK,VOICE:${contactInfo.phone}
 EMAIL:${contactInfo.email}
 URL:${contactInfo.website1}
@@ -43,7 +43,7 @@ END:VCARD`;
     const url = window.URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;
-    link.download = "Robert.vcf";
+    link.download = "Robert-Bueckel.vcf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -84,8 +84,8 @@ END:VCARD`;
         <div className="flex justify-center mb-8">
           <div className="w-32 h-32 rounded-full bg-gradient-to-br from-[#ff4500] to-[#ff6a33] p-1 shadow-lg">
             <img 
-              src={marcioProfile}
-              alt="Robert"
+              src={robertProfile}
+              alt="Robert Bückel"
               className="w-full h-full rounded-full object-cover"
             />
           </div>
@@ -93,7 +93,7 @@ END:VCARD`;
 
         {/* Name and Title */}
         <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold text-foreground mb-3">Robert</h1>
+          <h1 className="text-4xl font-bold text-foreground mb-3">Robert Bückel</h1>
           <p className="text-xl text-[#ff4500] font-semibold mb-2">Let's Connect!</p>
           <p className="text-muted-foreground">Marketing Expert • Digital Strategy • Business Growth</p>
         </div>
@@ -152,10 +152,10 @@ END:VCARD`;
           
           <div className="bg-card rounded-2xl shadow-lg overflow-hidden border border-border">
             <iframe 
-              src="https://api.leadconnectorhq.com/widget/booking/Om1xlzYiuOVpbz9JrBzw" 
+              src="https://api.leadconnectorhq.com/widget/booking/UWyeI0vjaO6lVaWLSAxu" 
               style={{ width: '100%', border: 'none', overflow: 'hidden', minHeight: '600px' }} 
               scrolling="no" 
-              id="Om1xlzYiuOVpbz9JrBzw_1762908646402"
+              id="UWyeI0vjaO6lVaWLSAxu_1762910945393"
               title="Booking Calendar"
             />
           </div>
