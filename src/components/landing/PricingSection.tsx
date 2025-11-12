@@ -49,7 +49,7 @@ export const PricingSection = () => {
     {
       name: "Business-Service",
       subtitle: "Ideal für wachsende Unternehmen",
-      price: "2.497€",
+      price: "2.499€",
       period: "pro Monat",
       features: [
         "Bis zu 3 KI-Agenten",
