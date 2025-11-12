@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Landing from "./pages/Landing";
 import Termin from "./pages/Termin";
+import Contact from "./pages/Contact";
 import Datenschutz from "./pages/Datenschutz";
 import Impressum from "./pages/Impressum";
 import AGB from "./pages/AGB";
@@ -23,6 +24,7 @@ const App = () => (
           <Route path="/" element={<Landing />} />
           <Route path="/agenten" element={<Index />} />
           <Route path="/termin" element={<Termin />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/datenschutz" element={<Datenschutz />} />
           <Route path="/impressum" element={<Impressum />} />
           <Route path="/agb" element={<AGB />} />
