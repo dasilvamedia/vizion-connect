@@ -143,7 +143,7 @@ export const LandingHero = () => {
         style={{ transform: `translateY(${scrollY * 0.2}px)` }}
       >
         <h1 className="text-4xl md:text-5xl lg:text-6xl lg:whitespace-nowrap font-bold text-white mb-6 max-w-5xl animate-fade-in drop-shadow-2xl">
-          Die Plattform für <span className="text-orange">sichere KI-Agenten</span>
+          Ihr Business. Ihre Regeln. <span className="text-orange">Ihre Kundenzufriedenheit.</span>
         </h1>
         <p className="text-lg md:text-xl text-white/95 mb-8 max-w-3xl drop-shadow-lg">
           Entwickelt für Marktführer und innovative Unternehmen.
