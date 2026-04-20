@@ -76,6 +76,7 @@ END:VCARD`;
     }
   };
 
+  const ActionCard = ({ icon: Icon, label, onClick, href }: any) => {
     const content = (
       <div 
         onClick={onClick}
