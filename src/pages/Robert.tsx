@@ -1,4 +1,4 @@
-import { Calendar, Phone, Mail, User, Linkedin, Instagram, Globe, Download } from "lucide-react";
+import { Calendar, Phone, Mail, User, Linkedin, Instagram, Globe, Download, Share2 } from "lucide-react";
 import { toast } from "sonner";
 import robertProfile from "@/assets/robert-profile.jpg";
 import { useEffect } from "react";
@@ -31,6 +31,7 @@ const vcard = `BEGIN:VCARD
 VERSION:3.0
 FN:${contactInfo.name}
 N:Bückel;Robert;;;
+TEL;TYPE=CELL,VOICE:${contactInfo.phone}
 TEL;TYPE=WORK,VOICE:${contactInfo.phone}
 EMAIL:${contactInfo.email}
 URL:${contactInfo.website1}
@@ -50,6 +51,29 @@ END:VCARD`;
     window.URL.revokeObjectURL(url);
     
     toast.success("Kontakt wird heruntergeladen!");
+  };
+
+  const handleShare = async () => {
+    const shareData = {
+      title: `${contactInfo.name} - Kontakt`,
+      text: `Kontaktiere ${contactInfo.name}`,
+      url: window.location.href,
+    };
+
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+      } catch (err) {
+        // User cancelled
+      }
+    } else {
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        toast.success("Link wurde kopiert!");
+      } catch {
+        toast.error("Teilen nicht möglich");
+      }
+    }
   };
 
   const ActionCard = ({ icon: Icon, label, onClick, href }: any) => {
@@ -132,14 +156,21 @@ END:VCARD`;
           />
         </div>
 
-        {/* Save Contact Button */}
-        <div className="flex justify-center mb-12">
+        {/* Save Contact & Share Buttons */}
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-3 mb-12">
           <button
             onClick={generateVCard}
             className="bg-green-500 hover:bg-green-600 text-white font-semibold py-4 px-8 rounded-full shadow-lg transition-all duration-300 hover:scale-105 active:scale-95 flex items-center gap-2"
           >
             <Download className="w-5 h-5" />
             Kontakt speichern
+          </button>
+          <button
+            onClick={handleShare}
+            className="bg-[#ff4500] hover:bg-[#ff4500]/90 text-white font-semibold py-4 px-8 rounded-full shadow-lg transition-all duration-300 hover:scale-105 active:scale-95 flex items-center gap-2"
+          >
+            <Share2 className="w-5 h-5" />
+            Seite teilen
           </button>
         </div>
 
