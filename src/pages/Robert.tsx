@@ -6,7 +6,7 @@ import { useEffect } from "react";
 const Robert = () => {
   const contactInfo = {
     name: "Robert Bückel",
-    phone: "+49 7361 3893033",
+    phone: "+491742175714",
     email: "robert@lead-connect.de",
     website1: "https://www.dasilvamedia.de",
     website2: "https://lead-connect.de/",
