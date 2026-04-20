@@ -8,6 +8,7 @@ import Landing from "./pages/Landing";
 import Termin from "./pages/Termin";
 import Contact from "./pages/Contact";
 import Robert from "./pages/Robert";
+import Jorge from "./pages/Jorge";
 import Datenschutz from "./pages/Datenschutz";
 import Impressum from "./pages/Impressum";
 import AGB from "./pages/AGB";
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/termin" element={<Termin />} />
           <Route path="/marcio" element={<Contact />} />
           <Route path="/robert" element={<Robert />} />
+          <Route path="/jorge" element={<Jorge />} />
           <Route path="/datenschutz" element={<Datenschutz />} />
           <Route path="/impressum" element={<Impressum />} />
           <Route path="/agb" element={<AGB />} />
