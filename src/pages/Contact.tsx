@@ -6,7 +6,8 @@ import { useEffect } from "react";
 const Contact = () => {
   const contactInfo = {
     name: "Marcio da Silva",
-    phone: "+49 7361 3893010",
+    workPhone: "+49 7361 3893010",
+    mobilePhone: "+491742175714",
     email: "marcio@dasilvamedia.de",
     website1: "https://www.dasilvamedia.de",
     website2: "https://lead-connect.de/",
@@ -31,8 +32,8 @@ const Contact = () => {
 VERSION:3.0
 FN:${contactInfo.name}
 N:da Silva;Marcio;;;
-TEL;TYPE=CELL,VOICE:${contactInfo.phone}
-TEL;TYPE=WORK,VOICE:${contactInfo.phone}
+TEL;TYPE=WORK,VOICE:${contactInfo.workPhone}
+TEL;TYPE=CELL,VOICE:${contactInfo.mobilePhone}
 EMAIL:${contactInfo.email}
 URL:${contactInfo.website1}
 URL:${contactInfo.website2}
@@ -132,7 +133,7 @@ END:VCARD`;
           <ActionCard
             icon={Phone}
             label="Anrufen"
-            href={`tel:${contactInfo.phone}`}
+            href={`tel:${contactInfo.mobilePhone}`}
           />
           <ActionCard
             icon={Globe}
