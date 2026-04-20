@@ -53,7 +53,29 @@ END:VCARD`;
     toast.success("Kontakt wird heruntergeladen!");
   };
 
-  const ActionCard = ({ icon: Icon, label, onClick, href }: any) => {
+  const handleShare = async () => {
+    const shareData = {
+      title: `${contactInfo.name} - Kontakt`,
+      text: `Kontaktiere ${contactInfo.name}`,
+      url: window.location.href,
+    };
+
+    if (navigator.share) {
+      try {
+        await navigator.share(shareData);
+      } catch (err) {
+        // User cancelled
+      }
+    } else {
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        toast.success("Link wurde kopiert!");
+      } catch {
+        toast.error("Teilen nicht möglich");
+      }
+    }
+  };
+
     const content = (
       <div 
         onClick={onClick}
