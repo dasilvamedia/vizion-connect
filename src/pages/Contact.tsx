@@ -77,16 +77,23 @@ END:VCARD`;
     }
   };
 
-  const ActionCard = ({ icon: Icon, label, onClick, href }: any) => {
+  const ActionCard = ({ icon: Icon, customIcon, label, description, onClick, href }: any) => {
     const content = (
       <div 
         onClick={onClick}
-        className="flex flex-col items-center gap-4 p-8 cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95 group"
+        className="flex flex-col items-center gap-3 p-6 cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95 group"
       >
-        <div className="w-16 h-16 flex items-center justify-center rounded-2xl bg-[#ff4500]/10 group-hover:bg-[#ff4500]/20 transition-colors">
-          <Icon className="w-8 h-8 text-[#ff4500]" />
+        <div className="w-16 h-16 flex items-center justify-center rounded-2xl bg-[#ff4500]/10 group-hover:bg-[#ff4500]/20 transition-colors overflow-hidden">
+          {customIcon ? (
+            <img src={customIcon} alt={label} className="w-10 h-10 object-contain" />
+          ) : (
+            <Icon className="w-8 h-8 text-[#ff4500]" />
+          )}
         </div>
-        <p className="text-sm font-medium text-center text-foreground/80 group-hover:text-foreground transition-colors">{label}</p>
+        <div className="text-center">
+          <p className="text-sm font-semibold text-foreground/90 group-hover:text-foreground transition-colors">{label}</p>
+          <p className="text-xs text-muted-foreground mt-0.5">{description}</p>
+        </div>
       </div>
     );
 
@@ -124,35 +131,41 @@ END:VCARD`;
         </div>
 
         {/* Action Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-2 mb-20">
+        <div className="grid grid-cols-2 gap-2 mb-20">
           <ActionCard
             icon={Mail}
             label="E-Mail"
+            description="Schreib mir eine Nachricht"
             href={`mailto:${contactInfo.email}`}
           />
           <ActionCard
             icon={Phone}
             label="Anrufen"
+            description="Direkt durchklingeln"
             href={`tel:${contactInfo.mobilePhone}`}
           />
           <ActionCard
             icon={Globe}
             label="Da Silva Media"
+            description="Marketing & Webdesign Agentur"
             href={contactInfo.website1}
           />
           <ActionCard
             icon={Globe}
             label="Lead Connect"
+            description="KI-Agenten für mehr Umsatz"
             href={contactInfo.website2}
           />
           <ActionCard
             icon={Linkedin}
             label="LinkedIn"
+            description="Lass uns vernetzen"
             href={contactInfo.linkedin}
           />
           <ActionCard
             icon={Instagram}
             label="Instagram"
+            description="Folge mir für Insights"
             href={contactInfo.instagram}
           />
         </div>
