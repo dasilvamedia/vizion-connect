@@ -1,6 +1,8 @@
 import { Calendar, Phone, Mail, User, Linkedin, Instagram, Globe, Download, Share2 } from "lucide-react";
 import { toast } from "sonner";
 import marcioProfile from "@/assets/marcio-profile.png";
+import leadConnectLogo from "@/assets/leadconnect-logo.png";
+import daSilvaMediaLogo from "@/assets/dasilvamedia-logo.jpg";
 import { useEffect } from "react";
 
 const Contact = () => {
@@ -146,13 +148,13 @@ END:VCARD`;
             href={`tel:${contactInfo.mobilePhone}`}
           />
           <ActionCard
-            icon={Globe}
+            customIcon={daSilvaMediaLogo}
             label="Da Silva Media"
             description="Marketing & Webdesign Agentur"
             href={contactInfo.website1}
           />
           <ActionCard
-            icon={Globe}
+            customIcon={leadConnectLogo}
             label="Lead Connect"
             description="KI-Agenten für mehr Umsatz"
             href={contactInfo.website2}
