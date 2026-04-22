@@ -109,44 +109,6 @@ export const LandingHero = () => {
           </Badge>
         </div>
 
-        <div className="relative inline-block">
-          <a href="tel:+4973613893011" className="inline-flex items-center gap-2 bg-white hover:bg-orange text-foreground hover:text-white font-semibold px-4 py-2 rounded-full text-sm shadow-2xl transition-all duration-300 md:hover:scale-105 border border-white/30">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-colors">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-            </svg>
-            07361 3893011
-          </a>
-          
-          {/* Handwritten "Ruf mich an" with arrow - Desktop: rechts, Mobile: unten */}
-          <div className="hidden md:absolute md:left-full md:ml-2 lg:ml-4 md:top-1/2 md:-translate-y-1/2 md:flex items-center animate-fade-in" style={{
-          animationDelay: '1s'
-        }}>
-            {/* Sanfter, geschwungener Pfeil */}
-            <svg width="60" height="50" viewBox="0 0 60 50" className="drop-shadow-lg -ml-2">
-              {/* Sanfte geschwungene Linie zum Button */}
-              <path d="M 50 25 Q 35 10, 12 22" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeDasharray="none" />
-              {/* Pfeilspitze */}
-              <path d="M 12 22 L 16 18 M 12 22 L 16 26" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
-            </svg>
-            <p className="text-white text-xs sm:text-sm whitespace-nowrap ml-1 font-handwriting" style={{
-            transform: 'rotate(-2deg)'
-          }}>
-              RUF MICH AN
-            </p>
-          </div>
-          
-          {/* Mobile: Unter dem Button */}
-          <div className="md:hidden mt-2 flex justify-center animate-fade-in" style={{
-          animationDelay: '1s'
-        }}>
-            <p className="text-white text-sm font-handwriting drop-shadow-lg" style={{
-            transform: 'rotate(-2deg)'
-          }}>
-              ↑ RUF MICH AN
-            </p>
-          </div>
-        </div>
-
         <p className="text-sm text-white/90 mt-6 drop-shadow">
           Vertrauen von über 400+ zufriedenen Kunden
         </p>
