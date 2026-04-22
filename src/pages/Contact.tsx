@@ -138,10 +138,11 @@ END:VCARD`;
         {/* Action Grid */}
         <div className="grid grid-cols-2 gap-2 mb-20">
           <ActionCard
-            customIconBg="bg-gradient-to-b from-[#3FA7F4] to-[#0A7CEA]"
+            customIconBg="bg-gradient-to-b from-[#5BC8FA] to-[#1D8EF0]"
             customNode={
-              <svg viewBox="0 0 24 24" className="w-11 h-11" fill="white" aria-hidden="true">
-                <path d="M3 5.5A2.5 2.5 0 015.5 3h13A2.5 2.5 0 0121 5.5v13a2.5 2.5 0 01-2.5 2.5h-13A2.5 2.5 0 013 18.5v-13zm2.78.5a.75.75 0 00-.53 1.28l6.22 6.22a.75.75 0 001.06 0l6.22-6.22A.75.75 0 0018.22 6H5.78zm13.22 2.31l-5.41 5.41a2.25 2.25 0 01-3.18 0L5 8.31V18.5c0 .28.22.5.5.5h13a.5.5 0 00.5-.5V8.31z"/>
+              <svg viewBox="0 0 24 24" className="w-12 h-12" aria-hidden="true">
+                <rect x="2.5" y="5" width="19" height="14" rx="2.5" fill="white"/>
+                <path d="M3.5 7.2l7.6 5.6a1.5 1.5 0 001.8 0l7.6-5.6" fill="none" stroke="#1D8EF0" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             }
             label="E-Mail"
@@ -149,10 +150,10 @@ END:VCARD`;
             href={`mailto:${contactInfo.email}`}
           />
           <ActionCard
-            customIconBg="bg-gradient-to-b from-[#5BD25B] to-[#2BB02B]"
+            customIconBg="bg-gradient-to-b from-[#6EE26E] to-[#1FA81F]"
             customNode={
               <svg viewBox="0 0 24 24" className="w-11 h-11" fill="white" aria-hidden="true">
-                <path d="M6.62 10.79a15.054 15.054 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A18 18 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.24.2 2.45.57 3.57a1 1 0 01-.24 1.02l-2.21 2.2z"/>
+                <path d="M19.6 17.1l-2.7-2.7c-.5-.5-1.4-.5-1.9.1l-1 1c-.3.3-.7.4-1.1.2-1.5-.7-2.9-1.7-4.1-2.9-1.2-1.2-2.2-2.6-2.9-4.1-.2-.4-.1-.8.2-1.1l1-1c.6-.6.6-1.4.1-1.9L4.5 1.9c-.5-.6-1.4-.6-2 0L1.1 3.4C.4 4 0 5 .1 6c.4 3.7 2.5 7.7 5.9 11.1 3.4 3.4 7.4 5.6 11.1 5.9 1 .1 2-.3 2.6-1l1.5-1.5c.6-.5.6-1.4 0-1.9z" transform="translate(1 0)"/>
               </svg>
             }
             label="Anrufen"
