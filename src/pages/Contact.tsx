@@ -180,13 +180,6 @@ END:VCARD`;
             <Download className="w-5 h-5" />
             Kontakt speichern
           </button>
-          <button
-            onClick={handleShare}
-            className="bg-[#ff4500] hover:bg-[#ff4500]/90 text-white font-semibold py-4 px-8 rounded-full shadow-lg transition-all duration-300 hover:scale-105 active:scale-95 flex items-center gap-2"
-          >
-            <Share2 className="w-5 h-5" />
-            Seite teilen
-          </button>
         </div>
 
         {/* Calendar Section */}
