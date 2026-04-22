@@ -138,13 +138,23 @@ END:VCARD`;
         {/* Action Grid */}
         <div className="grid grid-cols-2 gap-2 mb-20">
           <ActionCard
-            icon={Mail}
+            customIconBg="bg-gradient-to-b from-[#3FA7F4] to-[#0A7CEA]"
+            customNode={
+              <svg viewBox="0 0 24 24" className="w-11 h-11" fill="white" aria-hidden="true">
+                <path d="M3 5.5A2.5 2.5 0 015.5 3h13A2.5 2.5 0 0121 5.5v13a2.5 2.5 0 01-2.5 2.5h-13A2.5 2.5 0 013 18.5v-13zm2.78.5a.75.75 0 00-.53 1.28l6.22 6.22a.75.75 0 001.06 0l6.22-6.22A.75.75 0 0018.22 6H5.78zm13.22 2.31l-5.41 5.41a2.25 2.25 0 01-3.18 0L5 8.31V18.5c0 .28.22.5.5.5h13a.5.5 0 00.5-.5V8.31z"/>
+              </svg>
+            }
             label="E-Mail"
             description="Schreib mir eine Nachricht"
             href={`mailto:${contactInfo.email}`}
           />
           <ActionCard
-            icon={Phone}
+            customIconBg="bg-gradient-to-b from-[#5BD25B] to-[#2BB02B]"
+            customNode={
+              <svg viewBox="0 0 24 24" className="w-11 h-11" fill="white" aria-hidden="true">
+                <path d="M6.62 10.79a15.054 15.054 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A18 18 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.24.2 2.45.57 3.57a1 1 0 01-.24 1.02l-2.21 2.2z"/>
+              </svg>
+            }
             label="Anrufen"
             description="Direkt durchklingeln"
             href={`tel:${contactInfo.mobilePhone}`}
