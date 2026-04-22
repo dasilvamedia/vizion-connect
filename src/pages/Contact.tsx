@@ -88,7 +88,7 @@ END:VCARD`;
       >
         <div className={`w-20 h-20 flex items-center justify-center rounded-2xl transition-colors overflow-hidden ${customIconBg ? customIconBg : 'bg-[#ff4500]/10 group-hover:bg-[#ff4500]/20'}`}>
           {customIcon ? (
-            <img src={customIcon} alt={label} className="w-full h-full object-cover" />
+            <img src={customIcon} alt={label} className="w-full h-full object-cover scale-150" />
           ) : (
             <Icon className="w-9 h-9 text-[#ff4500]" />
           )}
