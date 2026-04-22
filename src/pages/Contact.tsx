@@ -32,13 +32,14 @@ const Contact = () => {
 VERSION:3.0
 FN:${contactInfo.name}
 N:da Silva;Marcio;;;
+ORG:Da Silva Media
 TEL;TYPE=WORK,VOICE:${contactInfo.workPhone}
 TEL;TYPE=CELL,VOICE:${contactInfo.mobilePhone}
-EMAIL:${contactInfo.email}
-URL:${contactInfo.website1}
-URL:${contactInfo.website2}
-URL:${contactInfo.linkedin}
-URL:${contactInfo.instagram}
+EMAIL;TYPE=INTERNET,PREF:${contactInfo.email}
+URL;TYPE=Da Silva Media:${contactInfo.website1}
+URL;TYPE=Lead Connect:${contactInfo.website2}
+URL;TYPE=LinkedIn:${contactInfo.linkedin}
+URL;TYPE=Instagram:${contactInfo.instagram}
 END:VCARD`;
 
     const blob = new Blob([vcard], { type: "text/vcard" });
@@ -91,8 +92,8 @@ END:VCARD`;
           )}
         </div>
         <div className="text-center">
-          <p className="text-sm font-semibold text-foreground/90 group-hover:text-foreground transition-colors">{label}</p>
-          <p className="text-xs text-muted-foreground mt-0.5">{description}</p>
+          <p className="text-sm font-semibold text-foreground group-hover:text-[#ff4500] transition-colors">{label}</p>
+          <p className="text-xs text-foreground/70 mt-1 font-medium">{description}</p>
         </div>
       </div>
     );
