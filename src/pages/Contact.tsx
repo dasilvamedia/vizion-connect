@@ -80,17 +80,17 @@ END:VCARD`;
     }
   };
 
-  const ActionCard = ({ icon: Icon, customIcon, label, description, onClick, href }: any) => {
+  const ActionCard = ({ icon: Icon, customIcon, customIconBg, label, description, onClick, href }: any) => {
     const content = (
       <div 
         onClick={onClick}
         className="flex flex-col items-center gap-3 p-6 cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95 group"
       >
-        <div className="w-16 h-16 flex items-center justify-center rounded-2xl bg-[#ff4500]/10 group-hover:bg-[#ff4500]/20 transition-colors overflow-hidden">
+        <div className={`w-20 h-20 flex items-center justify-center rounded-2xl transition-colors overflow-hidden ${customIconBg ? customIconBg : 'bg-[#ff4500]/10 group-hover:bg-[#ff4500]/20'}`}>
           {customIcon ? (
             <img src={customIcon} alt={label} className="w-full h-full object-cover" />
           ) : (
-            <Icon className="w-8 h-8 text-[#ff4500]" />
+            <Icon className="w-9 h-9 text-[#ff4500]" />
           )}
         </div>
         <div className="text-center">
@@ -155,6 +155,7 @@ END:VCARD`;
           />
           <ActionCard
             customIcon={leadConnectLogo}
+            customIconBg="bg-white"
             label="Lead Connect"
             description="KI-Agenten für mehr Umsatz"
             href={contactInfo.website2}
