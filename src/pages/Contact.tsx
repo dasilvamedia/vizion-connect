@@ -155,6 +155,7 @@ END:VCARD`;
           />
           <ActionCard
             customIcon={leadConnectLogo}
+            customIconBg="bg-white"
             label="Lead Connect"
             description="KI-Agenten für mehr Umsatz"
             href={contactInfo.website2}
