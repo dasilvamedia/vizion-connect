@@ -6,7 +6,7 @@ import daSilvaMediaLogo from "@/assets/dasilvamedia-logo.jpg";
 import crmCheckLogo from "@/assets/crm-check-logo.png";
 import webseitenStudioLogo from "@/assets/webseiten-studio-logo.png";
 import { useEffect, useRef, useState } from "react";
-import { buildVCard, encodeImageToJpegBase64, fetchJpegAsBase64, verifyVCardPhoto } from "@/lib/vcard";
+import { buildVCard, prepareEmbeddedPhotoBase64, verifyVCardPhoto } from "@/lib/vcard";
 
 type Lang = "de" | "pt" | "en" | "fr";
 
@@ -305,10 +305,7 @@ const Contact = () => {
     if (photoBase64Ref.current) return photoBase64Ref.current;
     if (!photoBase64PromiseRef.current) {
       photoBase64PromiseRef.current = (async () => {
-        let base64 = await fetchJpegAsBase64(marcioProfile);
-        if (!base64) {
-          base64 = await encodeImageToJpegBase64(marcioProfile);
-        }
+        const base64 = await prepareEmbeddedPhotoBase64(marcioProfile);
         if (base64) photoBase64Ref.current = base64;
         return base64;
       })().finally(() => {
@@ -341,8 +338,7 @@ const Contact = () => {
     let check = verifyVCardPhoto(vcard);
     if (!check.ok) {
       console.warn("[vCard] photo check failed, retrying:", check.reason);
-      // One forced retry via canvas re-encode
-      const retry = await encodeImageToJpegBase64(marcioProfile);
+      const retry = await prepareEmbeddedPhotoBase64(marcioProfile, 120_000);
       if (retry) {
         photoBase64Ref.current = retry;
         vcard = buildVCard(contactInfo, retry);
