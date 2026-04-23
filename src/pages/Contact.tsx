@@ -422,7 +422,7 @@ const Contact = () => {
     const content = (
       <div 
         onClick={onClick}
-        className="flex flex-col items-center gap-3 p-6 cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95 group"
+        className="flex flex-col items-center gap-3 px-6 py-2 cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95 group"
       >
         <div className={`w-20 h-20 flex items-center justify-center rounded-2xl transition-colors overflow-hidden ${customIconBg ? customIconBg : 'bg-[#ff4500]/10 group-hover:bg-[#ff4500]/20'}`}>
           {customNode ? (
@@ -482,13 +482,13 @@ const Contact = () => {
           </button>
         </div>
 
-        <div className="text-center mb-16">
+        <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-foreground mb-3">Marcio da Silva</h1>
           <p className="text-xl text-[#ff4500] font-semibold mb-2">{t.tagline}</p>
           <p className="text-muted-foreground">{t.role}</p>
         </div>
 
-        <div className="grid grid-cols-2 gap-2 mb-20">
+        <div className="grid grid-cols-2 gap-x-2 gap-y-1 mb-12">
           <ActionCard
             customIconBg="bg-gradient-to-b from-[#5BC8FA] to-[#1D8EF0]"
             customNode={
