@@ -21,6 +21,7 @@ const translations: Record<Lang, Record<string, string>> = {
     lcDesc: "KI-Agenten für mehr Umsatz",
     erpDesc: "Dein ERP im Schnell-Check",
     wsDesc: "Profi-Webseiten ganz einfach",
+    wsLabel: "Webseiten Studio",
     liDesc: "Lass uns vernetzen",
     igDesc: "Folge mir für Insights",
     saveContact: "Kontakt speichern",
@@ -42,6 +43,7 @@ const translations: Record<Lang, Record<string, string>> = {
     lcDesc: "Agentes de IA para mais vendas",
     erpDesc: "Seu ERP em análise rápida",
     wsDesc: "Sites profissionais facilmente",
+    wsLabel: "Estúdio de Sites",
     liDesc: "Vamos nos conectar",
     igDesc: "Siga-me para insights",
     saveContact: "Salvar contato",
@@ -63,6 +65,7 @@ const translations: Record<Lang, Record<string, string>> = {
     lcDesc: "AI agents for more revenue",
     erpDesc: "Your ERP quick check",
     wsDesc: "Pro websites made easy",
+    wsLabel: "Website Studio",
     liDesc: "Let's connect",
     igDesc: "Follow me for insights",
     saveContact: "Save contact",
@@ -84,6 +87,7 @@ const translations: Record<Lang, Record<string, string>> = {
     lcDesc: "Agents IA pour plus de revenus",
     erpDesc: "Votre ERP en un coup d'œil",
     wsDesc: "Sites pros en toute simplicité",
+    wsLabel: "Studio de Sites",
     liDesc: "Connectons-nous",
     igDesc: "Suivez-moi pour des insights",
     saveContact: "Enregistrer le contact",
@@ -193,10 +197,7 @@ const LangSwitcher = ({
                 open ? "translate-x-0" : "translate-x-4"
               }`}
             >
-              <span className="absolute inset-0 rounded-full overflow-hidden">
-                <Flag />
-              </span>
-              <span className="absolute inset-0 rounded-full ring-1 ring-inset ring-black/10" />
+              <Flag />
             </button>
           ))}
         </div>
@@ -207,14 +208,11 @@ const LangSwitcher = ({
           aria-label={active.label}
           aria-expanded={open}
           title={active.label}
-          className={`relative w-7 h-7 rounded-full overflow-hidden flex items-center justify-center transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ring-2 ring-[#ff4500] ring-offset-2 ring-offset-card shadow-md ${
+          className={`relative w-7 h-7 rounded-full overflow-hidden flex items-center justify-center transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] shadow-md ${
             open ? "scale-110" : "hover:scale-110"
           }`}
         >
-          <span className="absolute inset-0 rounded-full overflow-hidden">
-            <active.Flag />
-          </span>
-          <span className="absolute inset-0 rounded-full ring-1 ring-inset ring-black/10" />
+          <active.Flag />
         </button>
       </div>
     </div>
@@ -434,7 +432,7 @@ END:VCARD`;
             customIcon={webseitenStudioLogo}
             customIconBg="bg-white"
             imgScale="scale-110"
-            label="Webseiten Studio"
+            label={t.wsLabel}
             description={t.wsDesc}
             href="https://online.pistazz.io/"
           />
