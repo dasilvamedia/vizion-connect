@@ -19,7 +19,7 @@ export interface ContactInfo {
 
 export function buildPhotoLine(base64: string): string {
   if (!base64) return "";
-  const header = "PHOTO;ENCODING=b;TYPE=JPEG:";
+  const header = PHOTO_HEADER;
   const firstChunkLen = Math.max(1, 75 - header.length);
   const first = base64.slice(0, firstChunkLen);
   const rest = base64.slice(firstChunkLen);
