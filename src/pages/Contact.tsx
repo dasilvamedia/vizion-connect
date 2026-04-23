@@ -3,6 +3,7 @@ import { toast } from "sonner";
 import marcioProfile from "@/assets/marcio-profile.png";
 import leadConnectLogo from "@/assets/leadconnect-logo.png";
 import daSilvaMediaLogo from "@/assets/dasilvamedia-logo.jpg";
+import crmCheckLogo from "@/assets/crm-check-logo.png";
 import { useEffect } from "react";
 
 const Contact = () => {
@@ -173,6 +174,27 @@ END:VCARD`;
             label="Lead Connect"
             description="KI-Agenten für mehr Umsatz"
             href={contactInfo.website2}
+          />
+          <ActionCard
+            customIcon={crmCheckLogo}
+            customIconBg="bg-white"
+            imgScale="scale-110"
+            label="CRM Check"
+            description="Dein All-in-One CRM System"
+            href="https://erp.dasilvamedia.de/"
+          />
+          <ActionCard
+            customIconBg="bg-gradient-to-br from-[#ff4500] to-[#ff6a33]"
+            customNode={
+              <svg viewBox="0 0 24 24" className="w-11 h-11" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <rect x="2" y="3" width="20" height="14" rx="2"/>
+                <path d="M8 21h8M12 17v4"/>
+                <path d="M7 8l3 3-3 3M13 14h4"/>
+              </svg>
+            }
+            label="Webseiten Studio"
+            description="Profi-Webseiten ganz einfach"
+            href="https://online.pistazz.io/"
           />
           <ActionCard
             customIconBg="bg-[#0A66C2]"
