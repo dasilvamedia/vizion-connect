@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { buildVCard, buildPhotoLine, verifyVCardPhoto, type ContactInfo } from "@/lib/vcard";
+import { buildVCard, buildPhotoLine, prepareEmbeddedPhotoBase64, verifyVCardPhoto, type ContactInfo } from "@/lib/vcard";
 
 const contact: ContactInfo = {
   name: "Marcio da Silva",
@@ -85,5 +85,48 @@ describe("vCard generation", () => {
     expect(check.ok).toBe(false);
     expect(check.hasHeader).toBe(true);
     expect(check.base64Length).toBe(4);
+  });
+
+  it("prepareEmbeddedPhotoBase64 keeps embedded images bounded for iOS/Outlook-safe imports", async () => {
+    class MockImage {
+      width = 1536;
+      height = 1920;
+      onload: null | (() => void) = null;
+      onerror: null | (() => void) = null;
+      set src(_value: string) {
+        this.onload?.();
+      }
+    }
+
+    const toDataURL = vi.fn()
+      .mockReturnValueOnce(`data:image/jpeg;base64,${"A".repeat(220000)}`)
+      .mockReturnValueOnce(`data:image/jpeg;base64,${"B".repeat(150000)}`);
+
+    const originalImage = globalThis.Image;
+    const originalCreateElement = document.createElement.bind(document);
+
+    // @ts-expect-error test shim
+    globalThis.Image = MockImage;
+    vi.spyOn(document, "createElement").mockImplementation((tagName: string) => {
+      if (tagName === "canvas") {
+        return {
+          width: 0,
+          height: 0,
+          getContext: () => ({
+            fillStyle: "",
+            fillRect: vi.fn(),
+            drawImage: vi.fn(),
+          }),
+          toDataURL,
+        } as unknown as HTMLCanvasElement;
+      }
+      return originalCreateElement(tagName);
+    });
+
+    const base64 = await prepareEmbeddedPhotoBase64("/test.jpg", 180000);
+    expect(base64.length).toBe(150000);
+
+    vi.restoreAllMocks();
+    globalThis.Image = originalImage;
   });
 });
