@@ -1,4 +1,4 @@
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, vi } from "vitest";
 import { buildVCard, buildPhotoLine, prepareEmbeddedPhotoBase64, verifyVCardPhoto, type ContactInfo } from "@/lib/vcard";
 
 const contact: ContactInfo = {
