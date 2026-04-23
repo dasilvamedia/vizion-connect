@@ -1,4 +1,4 @@
-import { Download } from "lucide-react";
+import { Download, Sun, Moon } from "lucide-react";
 import { toast } from "sonner";
 import marcioProfile from "@/assets/marcio-profile.png";
 import leadConnectLogo from "@/assets/leadconnect-logo.png";
