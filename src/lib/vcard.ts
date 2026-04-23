@@ -57,6 +57,9 @@ export interface VCardPhotoCheck {
   reason?: string;
 }
 
+const PHOTO_HEADER = "PHOTO;ENCODING=b;TYPE=JPEG:";
+const DEFAULT_MAX_EMBEDDED_PHOTO_BASE64_LENGTH = 180_000;
+
 /**
  * Verifies that a generated vCard string contains a non-empty PHOTO field.
  * Reconstructs the folded base64 payload (continuation lines start with a single space)
@@ -64,12 +67,11 @@ export interface VCardPhotoCheck {
  */
 export function verifyVCardPhoto(vcard: string, minBase64Length = 100): VCardPhotoCheck {
   const lines = vcard.split("\r\n");
-  const photoIdx = lines.findIndex((l) => l.startsWith("PHOTO;ENCODING=b;TYPE=JPEG:"));
+  const photoIdx = lines.findIndex((l) => l.startsWith(PHOTO_HEADER));
   if (photoIdx === -1) {
     return { ok: false, hasHeader: false, base64Length: 0, reason: "PHOTO header missing" };
   }
-  const header = "PHOTO;ENCODING=b;TYPE=JPEG:";
-  let payload = lines[photoIdx].slice(header.length);
+  let payload = lines[photoIdx].slice(PHOTO_HEADER.length);
   for (let i = photoIdx + 1; i < lines.length; i++) {
     const line = lines[i];
     if (!line.startsWith(" ")) break;
@@ -110,6 +112,31 @@ export async function fetchJpegAsBase64(src: string): Promise<string> {
   } catch {
     return "";
   }
+}
+
+export async function prepareEmbeddedPhotoBase64(
+  src: string,
+  maxBase64Length = DEFAULT_MAX_EMBEDDED_PHOTO_BASE64_LENGTH,
+): Promise<string> {
+  const attempts = [
+    { maxSize: 640, quality: 0.82 },
+    { maxSize: 512, quality: 0.76 },
+    { maxSize: 420, quality: 0.72 },
+    { maxSize: 320, quality: 0.68 },
+    { maxSize: 240, quality: 0.62 },
+  ];
+
+  let fallback = "";
+  for (const attempt of attempts) {
+    const base64 = await encodeImageToJpegBase64(src, attempt.maxSize, attempt.quality);
+    if (!base64) continue;
+    fallback = base64;
+    if (base64.length <= maxBase64Length) {
+      return base64;
+    }
+  }
+
+  return fallback;
 }
 
 /**
