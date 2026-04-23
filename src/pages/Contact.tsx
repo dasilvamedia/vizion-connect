@@ -29,6 +29,7 @@ const translations: Record<Lang, Record<string, string>> = {
     toastDownload: "Kontakt wird heruntergeladen!",
     toastCopied: "Link wurde kopiert!",
     toastShareFail: "Teilen nicht möglich",
+    langHint: "Sprache wählen",
   },
   pt: {
     tagline: "Vamos nos Conectar!",
@@ -49,6 +50,7 @@ const translations: Record<Lang, Record<string, string>> = {
     toastDownload: "Contato baixando!",
     toastCopied: "Link copiado!",
     toastShareFail: "Compartilhamento não disponível",
+    langHint: "Escolher idioma",
   },
   en: {
     tagline: "Let's Connect!",
@@ -69,6 +71,7 @@ const translations: Record<Lang, Record<string, string>> = {
     toastDownload: "Contact downloading!",
     toastCopied: "Link copied!",
     toastShareFail: "Sharing not available",
+    langHint: "Choose language",
   },
   fr: {
     tagline: "Connectons-nous !",
@@ -89,6 +92,7 @@ const translations: Record<Lang, Record<string, string>> = {
     toastDownload: "Contact en téléchargement !",
     toastCopied: "Lien copié !",
     toastShareFail: "Partage indisponible",
+    langHint: "Choisir la langue",
   },
 };
 
