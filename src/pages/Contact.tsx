@@ -6,6 +6,7 @@ import daSilvaMediaLogo from "@/assets/dasilvamedia-logo.jpg";
 import crmCheckLogo from "@/assets/crm-check-logo.png";
 import webseitenStudioLogo from "@/assets/webseiten-studio-logo.png";
 import { useEffect, useRef, useState } from "react";
+import { buildVCard, encodeImageToJpegBase64 } from "@/lib/vcard";
 
 type Lang = "de" | "pt" | "en" | "fr";
 
@@ -311,101 +312,22 @@ const Contact = () => {
 
   useEffect(() => {
     let cancelled = false;
-    const encode = async () => {
-      try {
-        const img = new Image();
-        // No crossOrigin: marcioProfile is bundled by Vite as same-origin asset
-        await new Promise<void>((resolve, reject) => {
-          img.onload = () => resolve();
-          img.onerror = () => reject(new Error("image load failed"));
-          img.src = marcioProfile;
-        });
-        const maxSize = 600;
-        const scale = Math.min(1, maxSize / Math.max(img.width, img.height));
-        const w = Math.max(1, Math.round(img.width * scale));
-        const h = Math.max(1, Math.round(img.height * scale));
-        const canvas = document.createElement("canvas");
-        canvas.width = w;
-        canvas.height = h;
-        const ctx = canvas.getContext("2d");
-        if (!ctx) throw new Error("no canvas context");
-        ctx.fillStyle = "#ffffff";
-        ctx.fillRect(0, 0, w, h);
-        ctx.drawImage(img, 0, 0, w, h);
-        const dataUrl = canvas.toDataURL("image/jpeg", 0.85);
-        const base64 = dataUrl.split(",")[1] || "";
-        if (!cancelled) photoBase64Ref.current = base64;
-      } catch (err) {
-        console.warn("Profile photo preload/encode failed", err);
-      }
-    };
-    encode();
+    encodeImageToJpegBase64(marcioProfile).then((base64) => {
+      if (!cancelled && base64) photoBase64Ref.current = base64;
+    });
     return () => {
       cancelled = true;
     };
   }, []);
 
-  const buildPhotoLine = (base64: string): string => {
-    if (!base64) return "";
-    // vCard 3.0 line folding: max 75 octets per line, continuation starts with single space, CRLF
-    const header = "PHOTO;ENCODING=b;TYPE=JPEG:";
-    const firstChunkLen = Math.max(1, 75 - header.length);
-    const first = base64.slice(0, firstChunkLen);
-    const rest = base64.slice(firstChunkLen);
-    const restFolded = rest.match(/.{1,74}/g)?.map((c) => " " + c).join("\r\n") || "";
-    return header + first + (restFolded ? "\r\n" + restFolded : "");
-  };
-
   const generateVCard = async () => {
     let base64 = photoBase64Ref.current;
-
-    // Fallback: if preload didn't complete or failed, try synchronously now
     if (!base64) {
-      try {
-        const img = new Image();
-        await new Promise<void>((resolve, reject) => {
-          img.onload = () => resolve();
-          img.onerror = () => reject(new Error("image load failed"));
-          img.src = marcioProfile;
-        });
-        const canvas = document.createElement("canvas");
-        const maxSize = 600;
-        const scale = Math.min(1, maxSize / Math.max(img.width, img.height));
-        canvas.width = Math.max(1, Math.round(img.width * scale));
-        canvas.height = Math.max(1, Math.round(img.height * scale));
-        const ctx = canvas.getContext("2d")!;
-        ctx.fillStyle = "#ffffff";
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-        base64 = (canvas.toDataURL("image/jpeg", 0.85).split(",")[1]) || "";
-        photoBase64Ref.current = base64;
-      } catch (e) {
-        console.warn("vCard photo fallback failed", e);
-      }
+      base64 = await encodeImageToJpegBase64(marcioProfile);
+      if (base64) photoBase64Ref.current = base64;
     }
 
-    const photoLine = buildPhotoLine(base64);
-
-    const lines = [
-      "BEGIN:VCARD",
-      "VERSION:3.0",
-      `FN:${contactInfo.name}`,
-      "N:da Silva;Marcio;;;",
-      "ORG:Da Silva Media",
-      `TEL;TYPE=WORK,VOICE:${contactInfo.workPhone}`,
-      `TEL;TYPE=CELL,VOICE:${contactInfo.mobilePhone}`,
-      `EMAIL;TYPE=INTERNET,PREF:${contactInfo.email}`,
-      `URL;TYPE=Da Silva Media:${contactInfo.website1}`,
-      `URL;TYPE=Lead Connect:${contactInfo.website2}`,
-      `URL;TYPE=ERP Check:https://erp.dasilvamedia.de/`,
-      `URL;TYPE=Webseiten Studio:https://online.pistazz.io/`,
-      `URL;TYPE=LinkedIn:${contactInfo.linkedin}`,
-      `URL;TYPE=Instagram:${contactInfo.instagram}`,
-    ];
-    if (photoLine) lines.push(photoLine);
-    lines.push("END:VCARD");
-    const vcard = lines.join("\r\n") + "\r\n";
-
+    const vcard = buildVCard(contactInfo, base64);
     const blob = new Blob([vcard], { type: "text/vcard;charset=utf-8" });
     const url = window.URL.createObjectURL(blob);
     const link = document.createElement("a");
@@ -422,7 +344,7 @@ const Contact = () => {
     const content = (
       <div 
         onClick={onClick}
-        className="flex flex-col items-center gap-3 px-6 py-2 cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95 group"
+        className="flex flex-col items-center gap-3 px-6 py-4 cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95 group"
       >
         <div className={`w-20 h-20 flex items-center justify-center rounded-2xl transition-colors overflow-hidden ${customIconBg ? customIconBg : 'bg-[#ff4500]/10 group-hover:bg-[#ff4500]/20'}`}>
           {customNode ? (
@@ -488,7 +410,7 @@ const Contact = () => {
           <p className="text-muted-foreground">{t.role}</p>
         </div>
 
-        <div className="grid grid-cols-2 gap-x-2 gap-y-1 mb-12">
+        <div className="grid grid-cols-2 gap-x-2 gap-y-2 mb-12">
           <ActionCard
             customIconBg="bg-gradient-to-b from-[#5BC8FA] to-[#1D8EF0]"
             customNode={
