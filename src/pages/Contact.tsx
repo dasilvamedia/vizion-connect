@@ -5,7 +5,7 @@ import leadConnectLogo from "@/assets/leadconnect-logo.png";
 import daSilvaMediaLogo from "@/assets/dasilvamedia-logo.jpg";
 import crmCheckLogo from "@/assets/crm-check-logo.png";
 import webseitenStudioLogo from "@/assets/webseiten-studio-logo.png";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type Lang = "de" | "pt" | "en" | "fr";
 
