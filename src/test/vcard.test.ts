@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { buildVCard, buildPhotoLine, type ContactInfo } from "@/lib/vcard";
+import { buildVCard, buildPhotoLine, verifyVCardPhoto, type ContactInfo } from "@/lib/vcard";
 
 const contact: ContactInfo = {
   name: "Marcio da Silva",
@@ -61,5 +61,29 @@ describe("vCard generation", () => {
   it("PHOTO is omitted entirely when no photo is provided", () => {
     const vcard = buildVCard(contact, "");
     expect(vcard).not.toContain("PHOTO");
+  });
+
+  it("verifyVCardPhoto reports ok=true for a real photo and reconstructs the base64 payload", () => {
+    const vcard = buildVCard(contact, fakePhoto);
+    const check = verifyVCardPhoto(vcard);
+    expect(check.ok).toBe(true);
+    expect(check.hasHeader).toBe(true);
+    expect(check.base64Length).toBe(fakePhoto.length);
+  });
+
+  it("verifyVCardPhoto reports ok=false when PHOTO is missing", () => {
+    const vcard = buildVCard(contact, "");
+    const check = verifyVCardPhoto(vcard);
+    expect(check.ok).toBe(false);
+    expect(check.hasHeader).toBe(false);
+    expect(check.reason).toMatch(/missing/i);
+  });
+
+  it("verifyVCardPhoto reports ok=false when payload is too short", () => {
+    const vcard = buildVCard(contact, "AAAA");
+    const check = verifyVCardPhoto(vcard);
+    expect(check.ok).toBe(false);
+    expect(check.hasHeader).toBe(true);
+    expect(check.base64Length).toBe(4);
   });
 });

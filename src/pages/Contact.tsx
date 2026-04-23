@@ -6,7 +6,7 @@ import daSilvaMediaLogo from "@/assets/dasilvamedia-logo.jpg";
 import crmCheckLogo from "@/assets/crm-check-logo.png";
 import webseitenStudioLogo from "@/assets/webseiten-studio-logo.png";
 import { useEffect, useRef, useState } from "react";
-import { buildVCard, encodeImageToJpegBase64, fetchJpegAsBase64 } from "@/lib/vcard";
+import { buildVCard, encodeImageToJpegBase64, fetchJpegAsBase64, verifyVCardPhoto } from "@/lib/vcard";
 
 type Lang = "de" | "pt" | "en" | "fr";
 
@@ -335,7 +335,27 @@ const Contact = () => {
   const generateVCard = async () => {
     const base64 = await loadPhotoBase64();
 
-    const vcard = buildVCard(contactInfo, base64);
+    let vcard = buildVCard(contactInfo, base64);
+
+    // Runtime self-check: ensure PHOTO field is present and non-empty.
+    let check = verifyVCardPhoto(vcard);
+    if (!check.ok) {
+      console.warn("[vCard] photo check failed, retrying:", check.reason);
+      // One forced retry via canvas re-encode
+      const retry = await encodeImageToJpegBase64(marcioProfile);
+      if (retry) {
+        photoBase64Ref.current = retry;
+        vcard = buildVCard(contactInfo, retry);
+        check = verifyVCardPhoto(vcard);
+      }
+    }
+    if (!check.ok) {
+      console.error("[vCard] photo missing in download:", check);
+      toast.error("Foto konnte nicht eingebettet werden");
+    } else {
+      console.info(`[vCard] photo OK (${check.base64Length} base64 chars)`);
+    }
+
     const blob = new Blob([vcard], { type: "text/x-vcard;charset=utf-8" });
     const url = window.URL.createObjectURL(blob);
     const link = document.createElement("a");
