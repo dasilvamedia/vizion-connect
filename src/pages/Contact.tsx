@@ -164,19 +164,19 @@ const LangSwitcher = ({
     >
       {/* Hint text */}
       <span
-        className={`text-xs font-medium text-foreground/70 bg-card/80 backdrop-blur-md border border-border rounded-full px-3 py-1.5 shadow-sm transition-all duration-300 ${
-          open ? "opacity-0 translate-x-2 pointer-events-none" : "opacity-100 translate-x-0"
+        className={`text-[10px] font-medium tracking-wide text-foreground/60 bg-card/70 backdrop-blur-md border border-border/60 rounded-full px-2.5 py-1 shadow-sm transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+          open ? "opacity-0 translate-x-3 pointer-events-none" : "opacity-100 translate-x-0"
         }`}
       >
         {hint}
       </span>
 
       {/* Flags container */}
-      <div className="flex items-center gap-1.5 bg-card/80 backdrop-blur-md border border-border rounded-full p-1.5 shadow-lg">
+      <div className="flex items-center gap-1 bg-card/80 backdrop-blur-md border border-border rounded-full p-1 shadow-lg">
         {/* Other flags - slide in from right when open */}
         <div
-          className={`flex items-center gap-1.5 overflow-hidden transition-all duration-300 ease-out ${
-            open ? "max-w-[200px] opacity-100 mr-1" : "max-w-0 opacity-0 mr-0"
+          className={`flex items-center gap-1 overflow-hidden transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+            open ? "max-w-[180px] opacity-100 mr-0.5" : "max-w-0 opacity-0 mr-0"
           }`}
         >
           {others.map(({ code, Flag, label }, idx) => (
@@ -188,8 +188,8 @@ const LangSwitcher = ({
               }}
               aria-label={label}
               title={label}
-              style={{ transitionDelay: open ? `${idx * 60}ms` : "0ms" }}
-              className={`relative w-8 h-8 rounded-full overflow-hidden flex items-center justify-center opacity-80 hover:opacity-100 hover:scale-110 transition-all duration-300 ${
+              style={{ transitionDelay: open ? `${idx * 70}ms` : "0ms" }}
+              className={`relative w-6 h-6 rounded-full overflow-hidden flex items-center justify-center opacity-80 hover:opacity-100 hover:scale-110 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
                 open ? "translate-x-0" : "translate-x-4"
               }`}
             >
@@ -207,7 +207,7 @@ const LangSwitcher = ({
           aria-label={active.label}
           aria-expanded={open}
           title={active.label}
-          className={`relative w-9 h-9 rounded-full overflow-hidden flex items-center justify-center transition-all duration-200 ring-2 ring-[#ff4500] ring-offset-2 ring-offset-card shadow-md ${
+          className={`relative w-7 h-7 rounded-full overflow-hidden flex items-center justify-center transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ring-2 ring-[#ff4500] ring-offset-2 ring-offset-card shadow-md ${
             open ? "scale-110" : "hover:scale-110"
           }`}
         >
