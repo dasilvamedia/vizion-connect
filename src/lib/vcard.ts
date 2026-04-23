@@ -57,7 +57,7 @@ export interface VCardPhotoCheck {
   reason?: string;
 }
 
-const PHOTO_HEADER = "PHOTO;ENCODING=b;TYPE=JPEG:";
+const PHOTO_HEADER = "PHOTO;ENCODING=b;TYPE=JPEG;VALUE=BINARY:";
 const DEFAULT_MAX_EMBEDDED_PHOTO_BASE64_LENGTH = 180_000;
 
 /**

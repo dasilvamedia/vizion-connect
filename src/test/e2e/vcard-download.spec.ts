@@ -1,5 +1,5 @@
 import { expect, test } from "@playwright/test";
-import { verifyVCardPhoto } from "@/lib/vcard";
+import { verifyVCardPhoto } from "../../lib/vcard";
 
 test("downloads the vCard 20 times and every .vcf contains PHOTO", async ({ page }) => {
   await page.goto("/marcio");
