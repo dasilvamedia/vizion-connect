@@ -129,6 +129,135 @@ const FlagFR = () => (
   </svg>
 );
 
+type LangItem = { code: Lang; Flag: React.FC; label: string };
+
+const LangSwitcher = ({
+  lang,
+  setLang,
+  langs,
+  hint,
+}: {
+  lang: Lang;
+  setLang: (l: Lang) => void;
+  langs: LangItem[];
+  hint: string;
+}) => {
+  const [open, setOpen] = useState(false);
+  const active = langs.find((l) => l.code === lang)!;
+  const others = langs.filter((l) => l.code !== lang);
+
+  // Close on outside click
+  useEffect(() => {
+    if (!open) return;
+    const onClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (!target.closest("[data-lang-switcher]")) setOpen(false);
+    };
+    document.addEventListener("mousedown", onClick);
+    return () => document.removeEventListener("mousedown", onClick);
+  }, [open]);
+
+  return (
+    <div
+      data-lang-switcher
+      className="fixed top-4 right-4 z-50 flex items-center gap-2"
+    >
+      {/* Hint text */}
+      <span
+        className={`text-xs font-medium text-foreground/70 bg-card/80 backdrop-blur-md border border-border rounded-full px-3 py-1.5 shadow-sm transition-all duration-300 ${
+          open ? "opacity-0 translate-x-2 pointer-events-none" : "opacity-100 translate-x-0"
+        }`}
+      >
+        {hint}
+      </span>
+
+      {/* Flags container */}
+      <div className="flex items-center gap-1.5 bg-card/80 backdrop-blur-md border border-border rounded-full p-1.5 shadow-lg">
+        {/* Other flags - slide in from right when open */}
+        <div
+          className={`flex items-center gap-1.5 overflow-hidden transition-all duration-300 ease-out ${
+            open ? "max-w-[200px] opacity-100 mr-1" : "max-w-0 opacity-0 mr-0"
+          }`}
+        >
+          {others.map(({ code, Flag, label }, idx) => (
+            <button
+              key={code}
+              onClick={() => {
+                setLang(code);
+                setOpen(false);
+              }}
+              aria-label={label}
+              title={label}
+              style={{ transitionDelay: open ? `${idx * 60}ms` : "0ms" }}
+              className={`relative w-8 h-8 rounded-full overflow-hidden flex items-center justify-center opacity-80 hover:opacity-100 hover:scale-110 transition-all duration-300 ${
+                open ? "translate-x-0" : "translate-x-4"
+              }`}
+            >
+              <span className="absolute inset-0 rounded-full overflow-hidden">
+                <Flag />
+              </span>
+              <span className="absolute inset-0 rounded-full ring-1 ring-inset ring-black/10" />
+            </button>
+          ))}
+        </div>
+
+        {/* Active flag - always visible, click to toggle */}
+        <button
+          onClick={() => setOpen((o) => !o)}
+          aria-label={active.label}
+          aria-expanded={open}
+          title={active.label}
+          className={`relative w-9 h-9 rounded-full overflow-hidden flex items-center justify-center transition-all duration-200 ring-2 ring-[#ff4500] ring-offset-2 ring-offset-card shadow-md ${
+            open ? "scale-110" : "hover:scale-110"
+          }`}
+        >
+          <span className="absolute inset-0 rounded-full overflow-hidden">
+            <active.Flag />
+          </span>
+          <span className="absolute inset-0 rounded-full ring-1 ring-inset ring-black/10" />
+        </button>
+      </div>
+    </div>
+  );
+};
+
+const ThemeToggle = () => {
+  const [isDark, setIsDark] = useState(() => {
+    if (typeof window === "undefined") return false;
+    const saved = localStorage.getItem("marcio-theme");
+    if (saved) return saved === "dark";
+    return document.documentElement.classList.contains("dark");
+  });
+
+  useEffect(() => {
+    const root = document.documentElement;
+    if (isDark) root.classList.add("dark");
+    else root.classList.remove("dark");
+    localStorage.setItem("marcio-theme", isDark ? "dark" : "light");
+  }, [isDark]);
+
+  return (
+    <button
+      onClick={() => setIsDark((v) => !v)}
+      aria-label={isDark ? "Light mode" : "Dark mode"}
+      className="fixed top-4 left-4 z-50 w-10 h-10 rounded-full bg-card/80 backdrop-blur-md border border-border shadow-lg flex items-center justify-center text-foreground hover:scale-110 hover:text-[#ff4500] transition-all duration-300"
+    >
+      <span className="relative w-5 h-5 block">
+        <Sun
+          className={`absolute inset-0 w-5 h-5 transition-all duration-500 ${
+            isDark ? "opacity-0 rotate-90 scale-50" : "opacity-100 rotate-0 scale-100"
+          }`}
+        />
+        <Moon
+          className={`absolute inset-0 w-5 h-5 transition-all duration-500 ${
+            isDark ? "opacity-100 rotate-0 scale-100" : "opacity-0 -rotate-90 scale-50"
+          }`}
+        />
+      </span>
+    </button>
+  );
+};
+
 const Contact = () => {
   const [lang, setLang] = useState<Lang>(() => {
     const saved = (typeof window !== "undefined" && localStorage.getItem("marcio-lang")) as Lang | null;
