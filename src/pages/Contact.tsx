@@ -451,13 +451,18 @@ const Contact = () => {
 
       <div className="max-w-2xl mx-auto px-6 py-16">
         <div className="flex justify-center mb-8">
-          <div className="w-32 h-32 rounded-full bg-gradient-to-br from-[#ff4500] to-[#ff6a33] p-1 shadow-lg">
-            <img 
+          <button
+            type="button"
+            onClick={() => setPhotoOpen(true)}
+            aria-label="Profilbild vergrößern"
+            className="w-32 h-32 rounded-full bg-gradient-to-br from-[#ff4500] to-[#ff6a33] p-1 shadow-lg cursor-zoom-in transition-transform duration-300 hover:scale-105 active:scale-95"
+          >
+            <img
               src={marcioProfile}
               alt="Marcio da Silva"
               className="w-full h-full rounded-full object-cover"
             />
-          </div>
+          </button>
         </div>
 
         <div className="text-center mb-16">
