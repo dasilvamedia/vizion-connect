@@ -6,7 +6,7 @@ import daSilvaMediaLogo from "@/assets/dasilvamedia-logo.jpg";
 import crmCheckLogo from "@/assets/crm-check-logo.png";
 import webseitenStudioLogo from "@/assets/webseiten-studio-logo.png";
 import { useEffect, useRef, useState } from "react";
-import { buildVCard, encodeImageToJpegBase64 } from "@/lib/vcard";
+import { buildVCard, encodeImageToJpegBase64, fetchJpegAsBase64 } from "@/lib/vcard";
 
 type Lang = "de" | "pt" | "en" | "fr";
 
@@ -299,6 +299,24 @@ const Contact = () => {
 
   // Preload + encode profile photo as JPEG base64 for vCard at mount
   const photoBase64Ref = useRef<string>("");
+  const photoBase64PromiseRef = useRef<Promise<string> | null>(null);
+
+  const loadPhotoBase64 = async () => {
+    if (photoBase64Ref.current) return photoBase64Ref.current;
+    if (!photoBase64PromiseRef.current) {
+      photoBase64PromiseRef.current = (async () => {
+        let base64 = await fetchJpegAsBase64(marcioProfile);
+        if (!base64) {
+          base64 = await encodeImageToJpegBase64(marcioProfile);
+        }
+        if (base64) photoBase64Ref.current = base64;
+        return base64;
+      })().finally(() => {
+        photoBase64PromiseRef.current = null;
+      });
+    }
+    return photoBase64PromiseRef.current;
+  };
 
   useEffect(() => {
     const script = document.createElement('script');
@@ -311,32 +329,24 @@ const Contact = () => {
   }, []);
 
   useEffect(() => {
-    let cancelled = false;
-    encodeImageToJpegBase64(marcioProfile).then((base64) => {
-      if (!cancelled && base64) photoBase64Ref.current = base64;
-    });
-    return () => {
-      cancelled = true;
-    };
+    void loadPhotoBase64();
   }, []);
 
   const generateVCard = async () => {
-    let base64 = photoBase64Ref.current;
-    if (!base64) {
-      base64 = await encodeImageToJpegBase64(marcioProfile);
-      if (base64) photoBase64Ref.current = base64;
-    }
+    const base64 = await loadPhotoBase64();
 
     const vcard = buildVCard(contactInfo, base64);
-    const blob = new Blob([vcard], { type: "text/vcard;charset=utf-8" });
+    const blob = new Blob([vcard], { type: "text/x-vcard;charset=utf-8" });
     const url = window.URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;
     link.download = "Marcio_da_Silva.vcf";
     document.body.appendChild(link);
     link.click();
-    document.body.removeChild(link);
-    window.URL.revokeObjectURL(url);
+    window.setTimeout(() => {
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+    }, 1500);
     toast.success(t.toastDownload);
   };
 
