@@ -3,6 +3,7 @@ import { toast } from "sonner";
 import marcioProfile from "@/assets/marcio-profile.png";
 import leadConnectLogo from "@/assets/leadconnect-logo.png";
 import daSilvaMediaLogo from "@/assets/dasilvamedia-logo.jpg";
+import crmCheckLogo from "@/assets/crm-check-logo.png";
 import { useEffect } from "react";
 
 const Contact = () => {
