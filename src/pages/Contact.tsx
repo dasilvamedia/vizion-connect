@@ -193,10 +193,7 @@ const LangSwitcher = ({
                 open ? "translate-x-0" : "translate-x-4"
               }`}
             >
-              <span className="absolute inset-0 rounded-full overflow-hidden">
-                <Flag />
-              </span>
-              <span className="absolute inset-0 rounded-full ring-1 ring-inset ring-black/10" />
+              <Flag />
             </button>
           ))}
         </div>
@@ -207,14 +204,11 @@ const LangSwitcher = ({
           aria-label={active.label}
           aria-expanded={open}
           title={active.label}
-          className={`relative w-7 h-7 rounded-full overflow-hidden flex items-center justify-center transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ring-2 ring-[#ff4500] ring-offset-2 ring-offset-card shadow-md ${
+          className={`relative w-7 h-7 rounded-full overflow-hidden flex items-center justify-center transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] shadow-md ${
             open ? "scale-110" : "hover:scale-110"
           }`}
         >
-          <span className="absolute inset-0 rounded-full overflow-hidden">
-            <active.Flag />
-          </span>
-          <span className="absolute inset-0 rounded-full ring-1 ring-inset ring-black/10" />
+          <active.Flag />
         </button>
       </div>
     </div>
