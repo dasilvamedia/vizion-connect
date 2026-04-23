@@ -268,6 +268,23 @@ const Contact = () => {
     document.documentElement.lang = lang;
   }, [lang]);
 
+  const [photoOpen, setPhotoOpen] = useState(false);
+
+  // Close photo lightbox on ESC and lock body scroll while open
+  useEffect(() => {
+    if (!photoOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setPhotoOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [photoOpen]);
+
   const contactInfo = {
     name: "Marcio da Silva",
     workPhone: "+49 7361 3893010",
@@ -451,13 +468,18 @@ const Contact = () => {
 
       <div className="max-w-2xl mx-auto px-6 py-16">
         <div className="flex justify-center mb-8">
-          <div className="w-32 h-32 rounded-full bg-gradient-to-br from-[#ff4500] to-[#ff6a33] p-1 shadow-lg">
-            <img 
+          <button
+            type="button"
+            onClick={() => setPhotoOpen(true)}
+            aria-label="Profilbild vergrößern"
+            className="w-32 h-32 rounded-full bg-gradient-to-br from-[#ff4500] to-[#ff6a33] p-1 shadow-lg cursor-zoom-in transition-transform duration-300 hover:scale-105 active:scale-95"
+          >
+            <img
               src={marcioProfile}
               alt="Marcio da Silva"
               className="w-full h-full rounded-full object-cover"
             />
-          </div>
+          </button>
         </div>
 
         <div className="text-center mb-16">
@@ -572,6 +594,35 @@ const Contact = () => {
           </div>
         </div>
       </div>
+
+      {/* Profile Photo Lightbox */}
+      {photoOpen && (
+        <div
+          onClick={() => setPhotoOpen(false)}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Profilbild Vorschau"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-md p-6 animate-fade-in cursor-zoom-out"
+        >
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              setPhotoOpen(false);
+            }}
+            aria-label="Schließen"
+            className="absolute top-6 right-6 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center text-2xl leading-none transition-colors"
+          >
+            ×
+          </button>
+          <img
+            src={marcioProfile}
+            alt="Marcio da Silva"
+            onClick={(e) => e.stopPropagation()}
+            className="max-w-[92vw] max-h-[88vh] w-auto h-auto rounded-2xl shadow-2xl object-contain animate-scale-in cursor-default"
+          />
+        </div>
+      )}
     </div>
   );
 };
