@@ -300,6 +300,8 @@ TEL;TYPE=CELL,VOICE:${contactInfo.mobilePhone}
 EMAIL;TYPE=INTERNET,PREF:${contactInfo.email}
 URL;TYPE=Da Silva Media:${contactInfo.website1}
 URL;TYPE=Lead Connect:${contactInfo.website2}
+URL;TYPE=ERP Check:https://erp.dasilvamedia.de/
+URL;TYPE=Webseiten Studio:https://online.pistazz.io/
 URL;TYPE=LinkedIn:${contactInfo.linkedin}
 URL;TYPE=Instagram:${contactInfo.instagram}
 END:VCARD`;
