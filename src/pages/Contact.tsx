@@ -289,7 +289,29 @@ const Contact = () => {
     };
   }, []);
 
-  const generateVCard = () => {
+  const generateVCard = async () => {
+    // Fetch profile image and convert to base64 for embedding in vCard
+    let photoLine = "";
+    try {
+      const res = await fetch(marcioProfile);
+      const blob = await res.blob();
+      const base64 = await new Promise<string>((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onloadend = () => {
+          const result = reader.result as string;
+          resolve(result.split(",")[1] || "");
+        };
+        reader.onerror = reject;
+        reader.readAsDataURL(blob);
+      });
+      const type = blob.type.includes("png") ? "PNG" : "JPEG";
+      // Fold base64 to 75-char lines per vCard spec, continuation lines start with a space
+      const folded = base64.match(/.{1,75}/g)?.join("\r\n ") || base64;
+      photoLine = `\nPHOTO;ENCODING=b;TYPE=${type}:${folded}`;
+    } catch (e) {
+      console.warn("Could not embed profile photo in vCard", e);
+    }
+
     const vcard = `BEGIN:VCARD
 VERSION:3.0
 FN:${contactInfo.name}
@@ -303,7 +325,7 @@ URL;TYPE=Lead Connect:${contactInfo.website2}
 URL;TYPE=ERP Check:https://erp.dasilvamedia.de/
 URL;TYPE=Webseiten Studio:https://online.pistazz.io/
 URL;TYPE=LinkedIn:${contactInfo.linkedin}
-URL;TYPE=Instagram:${contactInfo.instagram}
+URL;TYPE=Instagram:${contactInfo.instagram}${photoLine}
 END:VCARD`;
 
     const blob = new Blob([vcard], { type: "text/vcard" });
