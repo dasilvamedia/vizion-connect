@@ -290,45 +290,74 @@ const Contact = () => {
   }, []);
 
   const generateVCard = async () => {
-    // Fetch profile image and convert to base64 for embedding in vCard
+    // Fetch profile image, convert to JPEG (best compatibility) and base64
     let photoLine = "";
     try {
       const res = await fetch(marcioProfile);
-      const blob = await res.blob();
-      const base64 = await new Promise<string>((resolve, reject) => {
-        const reader = new FileReader();
-        reader.onloadend = () => {
-          const result = reader.result as string;
-          resolve(result.split(",")[1] || "");
+      const sourceBlob = await res.blob();
+
+      // Decode into an Image and re-encode as JPEG via canvas (max ~600px, quality 0.85)
+      const jpegBase64: string = await new Promise((resolve, reject) => {
+        const img = new Image();
+        img.crossOrigin = "anonymous";
+        img.onload = () => {
+          try {
+            const maxSize = 600;
+            const scale = Math.min(1, maxSize / Math.max(img.width, img.height));
+            const w = Math.round(img.width * scale);
+            const h = Math.round(img.height * scale);
+            const canvas = document.createElement("canvas");
+            canvas.width = w;
+            canvas.height = h;
+            const ctx = canvas.getContext("2d");
+            if (!ctx) return reject(new Error("no ctx"));
+            // Fill white background (JPEG has no transparency)
+            ctx.fillStyle = "#ffffff";
+            ctx.fillRect(0, 0, w, h);
+            ctx.drawImage(img, 0, 0, w, h);
+            const dataUrl = canvas.toDataURL("image/jpeg", 0.85);
+            resolve(dataUrl.split(",")[1] || "");
+          } catch (err) {
+            reject(err);
+          }
         };
-        reader.onerror = reject;
-        reader.readAsDataURL(blob);
+        img.onerror = reject;
+        img.src = URL.createObjectURL(sourceBlob);
       });
-      const type = blob.type.includes("png") ? "PNG" : "JPEG";
-      // Fold base64 to 75-char lines per vCard spec, continuation lines start with a space
-      const folded = base64.match(/.{1,75}/g)?.join("\r\n ") || base64;
-      photoLine = `\nPHOTO;ENCODING=b;TYPE=${type}:${folded}`;
+
+      // vCard 3.0 line folding: max 75 octets per line, continuation starts with single space, CRLF separators
+      // First line: "PHOTO;ENCODING=b;TYPE=JPEG:" + first chunk; remaining chunks each on a new folded line
+      const header = "PHOTO;ENCODING=b;TYPE=JPEG:";
+      const firstChunkLen = Math.max(1, 75 - header.length);
+      const first = jpegBase64.slice(0, firstChunkLen);
+      const rest = jpegBase64.slice(firstChunkLen);
+      const restFolded = rest.match(/.{1,74}/g)?.map((c) => " " + c).join("\r\n") || "";
+      photoLine = header + first + (restFolded ? "\r\n" + restFolded : "");
     } catch (e) {
       console.warn("Could not embed profile photo in vCard", e);
     }
 
-    const vcard = `BEGIN:VCARD
-VERSION:3.0
-FN:${contactInfo.name}
-N:da Silva;Marcio;;;
-ORG:Da Silva Media
-TEL;TYPE=WORK,VOICE:${contactInfo.workPhone}
-TEL;TYPE=CELL,VOICE:${contactInfo.mobilePhone}
-EMAIL;TYPE=INTERNET,PREF:${contactInfo.email}
-URL;TYPE=Da Silva Media:${contactInfo.website1}
-URL;TYPE=Lead Connect:${contactInfo.website2}
-URL;TYPE=ERP Check:https://erp.dasilvamedia.de/
-URL;TYPE=Webseiten Studio:https://online.pistazz.io/
-URL;TYPE=LinkedIn:${contactInfo.linkedin}
-URL;TYPE=Instagram:${contactInfo.instagram}${photoLine}
-END:VCARD`;
+    const lines = [
+      "BEGIN:VCARD",
+      "VERSION:3.0",
+      `FN:${contactInfo.name}`,
+      "N:da Silva;Marcio;;;",
+      "ORG:Da Silva Media",
+      `TEL;TYPE=WORK,VOICE:${contactInfo.workPhone}`,
+      `TEL;TYPE=CELL,VOICE:${contactInfo.mobilePhone}`,
+      `EMAIL;TYPE=INTERNET,PREF:${contactInfo.email}`,
+      `URL;TYPE=Da Silva Media:${contactInfo.website1}`,
+      `URL;TYPE=Lead Connect:${contactInfo.website2}`,
+      `URL;TYPE=ERP Check:https://erp.dasilvamedia.de/`,
+      `URL;TYPE=Webseiten Studio:https://online.pistazz.io/`,
+      `URL;TYPE=LinkedIn:${contactInfo.linkedin}`,
+      `URL;TYPE=Instagram:${contactInfo.instagram}`,
+    ];
+    if (photoLine) lines.push(photoLine);
+    lines.push("END:VCARD");
+    const vcard = lines.join("\r\n") + "\r\n";
 
-    const blob = new Blob([vcard], { type: "text/vcard" });
+    const blob = new Blob([vcard], { type: "text/vcard;charset=utf-8" });
     const url = window.URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;
