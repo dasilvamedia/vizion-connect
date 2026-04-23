@@ -50,6 +50,33 @@ export function buildVCard(contact: ContactInfo, photoBase64: string): string {
   return lines.join("\r\n") + "\r\n";
 }
 
+function blobToBase64(blob: Blob): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      const result = reader.result;
+      if (typeof result !== "string") {
+        resolve("");
+        return;
+      }
+      resolve(result.split(",")[1] || "");
+    };
+    reader.onerror = () => reject(new Error("blob read failed"));
+    reader.readAsDataURL(blob);
+  });
+}
+
+export async function fetchJpegAsBase64(src: string): Promise<string> {
+  try {
+    const response = await fetch(src, { cache: "force-cache" });
+    if (!response.ok) return "";
+    const blob = await response.blob();
+    return await blobToBase64(blob);
+  } catch {
+    return "";
+  }
+}
+
 /**
  * Encode an image URL into a JPEG base64 string sized to maxSize px on the long edge.
  * Returns "" on failure.
