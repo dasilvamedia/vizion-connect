@@ -50,6 +50,41 @@ export function buildVCard(contact: ContactInfo, photoBase64: string): string {
   return lines.join("\r\n") + "\r\n";
 }
 
+export interface VCardPhotoCheck {
+  ok: boolean;
+  hasHeader: boolean;
+  base64Length: number;
+  reason?: string;
+}
+
+/**
+ * Verifies that a generated vCard string contains a non-empty PHOTO field.
+ * Reconstructs the folded base64 payload (continuation lines start with a single space)
+ * and checks it is non-trivial (>= 100 chars, looks like base64).
+ */
+export function verifyVCardPhoto(vcard: string, minBase64Length = 100): VCardPhotoCheck {
+  const lines = vcard.split("\r\n");
+  const photoIdx = lines.findIndex((l) => l.startsWith("PHOTO;ENCODING=b;TYPE=JPEG:"));
+  if (photoIdx === -1) {
+    return { ok: false, hasHeader: false, base64Length: 0, reason: "PHOTO header missing" };
+  }
+  const header = "PHOTO;ENCODING=b;TYPE=JPEG:";
+  let payload = lines[photoIdx].slice(header.length);
+  for (let i = photoIdx + 1; i < lines.length; i++) {
+    const line = lines[i];
+    if (!line.startsWith(" ")) break;
+    payload += line.slice(1);
+  }
+  const base64Length = payload.length;
+  if (base64Length < minBase64Length) {
+    return { ok: false, hasHeader: true, base64Length, reason: `payload too short (${base64Length})` };
+  }
+  if (!/^[A-Za-z0-9+/=]+$/.test(payload)) {
+    return { ok: false, hasHeader: true, base64Length, reason: "payload not valid base64" };
+  }
+  return { ok: true, hasHeader: true, base64Length };
+}
+
 function blobToBase64(blob: Blob): Promise<string> {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
