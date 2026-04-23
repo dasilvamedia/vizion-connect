@@ -594,6 +594,35 @@ const Contact = () => {
           </div>
         </div>
       </div>
+
+      {/* Profile Photo Lightbox */}
+      {photoOpen && (
+        <div
+          onClick={() => setPhotoOpen(false)}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Profilbild Vorschau"
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-md p-6 animate-fade-in cursor-zoom-out"
+        >
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              setPhotoOpen(false);
+            }}
+            aria-label="Schließen"
+            className="absolute top-6 right-6 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center text-2xl leading-none transition-colors"
+          >
+            ×
+          </button>
+          <img
+            src={marcioProfile}
+            alt="Marcio da Silva"
+            onClick={(e) => e.stopPropagation()}
+            className="max-w-[92vw] max-h-[88vh] w-auto h-auto rounded-2xl shadow-2xl object-contain animate-scale-in cursor-default"
+          />
+        </div>
+      )}
     </div>
   );
 };
