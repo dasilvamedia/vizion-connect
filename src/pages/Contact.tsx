@@ -228,22 +228,29 @@ END:VCARD`;
   return (
     <div className="min-h-screen bg-background">
       {/* Language Switcher */}
-      <div className="fixed top-4 right-4 z-50 flex gap-2 bg-card/80 backdrop-blur-md border border-border rounded-full px-2 py-1.5 shadow-lg">
-        {langs.map(({ code, Flag, label }) => (
-          <button
-            key={code}
-            onClick={() => setLang(code)}
-            aria-label={label}
-            title={label}
-            className={`w-7 h-7 rounded-full overflow-hidden border transition-all ${
-              lang === code
-                ? "border-[#ff4500] ring-2 ring-[#ff4500]/40 scale-110"
-                : "border-border opacity-70 hover:opacity-100"
-            }`}
-          >
-            <Flag />
-          </button>
-        ))}
+      <div className="fixed top-4 right-4 z-50 flex items-center gap-1.5 bg-card/80 backdrop-blur-md border border-border rounded-full p-1.5 shadow-lg">
+        {langs.map(({ code, Flag, label }) => {
+          const active = lang === code;
+          return (
+            <button
+              key={code}
+              onClick={() => setLang(code)}
+              aria-label={label}
+              aria-pressed={active}
+              title={label}
+              className={`relative w-8 h-8 rounded-full overflow-hidden flex items-center justify-center transition-all duration-200 ${
+                active
+                  ? "ring-2 ring-[#ff4500] ring-offset-2 ring-offset-card scale-110 shadow-md"
+                  : "opacity-60 hover:opacity-100 hover:scale-105"
+              }`}
+            >
+              <span className="absolute inset-0 rounded-full overflow-hidden">
+                <Flag />
+              </span>
+              <span className="absolute inset-0 rounded-full ring-1 ring-inset ring-black/10" />
+            </button>
+          );
+        })}
       </div>
 
       <div className="max-w-2xl mx-auto px-6 py-16">
