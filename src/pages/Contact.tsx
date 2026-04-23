@@ -279,6 +279,9 @@ const Contact = () => {
     instagram: "https://www.instagram.com/da.silvamedia/"
   };
 
+  // Preload + encode profile photo as JPEG base64 for vCard at mount
+  const photoBase64Ref = useRef<string>("");
+
   useEffect(() => {
     const script = document.createElement('script');
     script.src = "https://link.msgsndr.com/js/form_embed.js";
@@ -289,53 +292,82 @@ const Contact = () => {
     };
   }, []);
 
-  const generateVCard = async () => {
-    // Fetch profile image, convert to JPEG (best compatibility) and base64
-    let photoLine = "";
-    try {
-      const res = await fetch(marcioProfile);
-      const sourceBlob = await res.blob();
-
-      // Decode into an Image and re-encode as JPEG via canvas (max ~600px, quality 0.85)
-      const jpegBase64: string = await new Promise((resolve, reject) => {
+  useEffect(() => {
+    let cancelled = false;
+    const encode = async () => {
+      try {
         const img = new Image();
-        img.crossOrigin = "anonymous";
-        img.onload = () => {
-          try {
-            const maxSize = 600;
-            const scale = Math.min(1, maxSize / Math.max(img.width, img.height));
-            const w = Math.round(img.width * scale);
-            const h = Math.round(img.height * scale);
-            const canvas = document.createElement("canvas");
-            canvas.width = w;
-            canvas.height = h;
-            const ctx = canvas.getContext("2d");
-            if (!ctx) return reject(new Error("no ctx"));
-            // Fill white background (JPEG has no transparency)
-            ctx.fillStyle = "#ffffff";
-            ctx.fillRect(0, 0, w, h);
-            ctx.drawImage(img, 0, 0, w, h);
-            const dataUrl = canvas.toDataURL("image/jpeg", 0.85);
-            resolve(dataUrl.split(",")[1] || "");
-          } catch (err) {
-            reject(err);
-          }
-        };
-        img.onerror = reject;
-        img.src = URL.createObjectURL(sourceBlob);
-      });
+        // No crossOrigin: marcioProfile is bundled by Vite as same-origin asset
+        await new Promise<void>((resolve, reject) => {
+          img.onload = () => resolve();
+          img.onerror = () => reject(new Error("image load failed"));
+          img.src = marcioProfile;
+        });
+        const maxSize = 600;
+        const scale = Math.min(1, maxSize / Math.max(img.width, img.height));
+        const w = Math.max(1, Math.round(img.width * scale));
+        const h = Math.max(1, Math.round(img.height * scale));
+        const canvas = document.createElement("canvas");
+        canvas.width = w;
+        canvas.height = h;
+        const ctx = canvas.getContext("2d");
+        if (!ctx) throw new Error("no canvas context");
+        ctx.fillStyle = "#ffffff";
+        ctx.fillRect(0, 0, w, h);
+        ctx.drawImage(img, 0, 0, w, h);
+        const dataUrl = canvas.toDataURL("image/jpeg", 0.85);
+        const base64 = dataUrl.split(",")[1] || "";
+        if (!cancelled) photoBase64Ref.current = base64;
+      } catch (err) {
+        console.warn("Profile photo preload/encode failed", err);
+      }
+    };
+    encode();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
-      // vCard 3.0 line folding: max 75 octets per line, continuation starts with single space, CRLF separators
-      // First line: "PHOTO;ENCODING=b;TYPE=JPEG:" + first chunk; remaining chunks each on a new folded line
-      const header = "PHOTO;ENCODING=b;TYPE=JPEG:";
-      const firstChunkLen = Math.max(1, 75 - header.length);
-      const first = jpegBase64.slice(0, firstChunkLen);
-      const rest = jpegBase64.slice(firstChunkLen);
-      const restFolded = rest.match(/.{1,74}/g)?.map((c) => " " + c).join("\r\n") || "";
-      photoLine = header + first + (restFolded ? "\r\n" + restFolded : "");
-    } catch (e) {
-      console.warn("Could not embed profile photo in vCard", e);
+  const buildPhotoLine = (base64: string): string => {
+    if (!base64) return "";
+    // vCard 3.0 line folding: max 75 octets per line, continuation starts with single space, CRLF
+    const header = "PHOTO;ENCODING=b;TYPE=JPEG:";
+    const firstChunkLen = Math.max(1, 75 - header.length);
+    const first = base64.slice(0, firstChunkLen);
+    const rest = base64.slice(firstChunkLen);
+    const restFolded = rest.match(/.{1,74}/g)?.map((c) => " " + c).join("\r\n") || "";
+    return header + first + (restFolded ? "\r\n" + restFolded : "");
+  };
+
+  const generateVCard = async () => {
+    let base64 = photoBase64Ref.current;
+
+    // Fallback: if preload didn't complete or failed, try synchronously now
+    if (!base64) {
+      try {
+        const img = new Image();
+        await new Promise<void>((resolve, reject) => {
+          img.onload = () => resolve();
+          img.onerror = () => reject(new Error("image load failed"));
+          img.src = marcioProfile;
+        });
+        const canvas = document.createElement("canvas");
+        const maxSize = 600;
+        const scale = Math.min(1, maxSize / Math.max(img.width, img.height));
+        canvas.width = Math.max(1, Math.round(img.width * scale));
+        canvas.height = Math.max(1, Math.round(img.height * scale));
+        const ctx = canvas.getContext("2d")!;
+        ctx.fillStyle = "#ffffff";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        base64 = (canvas.toDataURL("image/jpeg", 0.85).split(",")[1]) || "";
+        photoBase64Ref.current = base64;
+      } catch (e) {
+        console.warn("vCard photo fallback failed", e);
+      }
     }
+
+    const photoLine = buildPhotoLine(base64);
 
     const lines = [
       "BEGIN:VCARD",
