@@ -21,7 +21,7 @@ describe("vCard generation", () => {
       const vcard = buildVCard(contact, fakePhoto);
 
       // PHOTO header always present
-      expect(vcard, `iteration ${i}`).toContain("PHOTO;ENCODING=b;TYPE=JPEG:");
+      expect(vcard, `iteration ${i}`).toContain("PHOTO;ENCODING=b;TYPE=JPEG;VALUE=BINARY:");
 
       // CRLF line endings
       expect(vcard).toContain("\r\n");
