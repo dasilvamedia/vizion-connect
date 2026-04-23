@@ -268,6 +268,23 @@ const Contact = () => {
     document.documentElement.lang = lang;
   }, [lang]);
 
+  const [photoOpen, setPhotoOpen] = useState(false);
+
+  // Close photo lightbox on ESC and lock body scroll while open
+  useEffect(() => {
+    if (!photoOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setPhotoOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [photoOpen]);
+
   const contactInfo = {
     name: "Marcio da Silva",
     workPhone: "+49 7361 3893010",
