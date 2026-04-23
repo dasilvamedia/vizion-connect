@@ -93,14 +93,14 @@ const translations: Record<Lang, Record<string, string>> = {
 };
 
 const FlagDE = () => (
-  <svg viewBox="0 0 5 3" className="w-full h-full" aria-hidden="true">
+  <svg viewBox="0 0 5 3" preserveAspectRatio="xMidYMid slice" className="w-full h-full block" aria-hidden="true">
     <rect width="5" height="1" y="0" fill="#000"/>
     <rect width="5" height="1" y="1" fill="#DD0000"/>
     <rect width="5" height="1" y="2" fill="#FFCE00"/>
   </svg>
 );
 const FlagBR = () => (
-  <svg viewBox="0 0 720 504" className="w-full h-full" aria-hidden="true">
+  <svg viewBox="0 0 720 504" preserveAspectRatio="xMidYMid slice" className="w-full h-full block" aria-hidden="true">
     <rect width="720" height="504" fill="#009C3B"/>
     <polygon points="360,40 680,252 360,464 40,252" fill="#FFDF00"/>
     <circle cx="360" cy="252" r="100" fill="#002776"/>
@@ -108,7 +108,7 @@ const FlagBR = () => (
   </svg>
 );
 const FlagGB = () => (
-  <svg viewBox="0 0 60 30" className="w-full h-full" aria-hidden="true">
+  <svg viewBox="0 0 60 30" preserveAspectRatio="xMidYMid slice" className="w-full h-full block" aria-hidden="true">
     <clipPath id="t"><path d="M0,0 v30 h60 v-30 z"/></clipPath>
     <path d="M0,0 v30 h60 v-30 z" fill="#012169"/>
     <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" strokeWidth="6" clipPath="url(#t)"/>
@@ -118,7 +118,7 @@ const FlagGB = () => (
   </svg>
 );
 const FlagFR = () => (
-  <svg viewBox="0 0 3 2" className="w-full h-full" aria-hidden="true">
+  <svg viewBox="0 0 3 2" preserveAspectRatio="xMidYMid slice" className="w-full h-full block" aria-hidden="true">
     <rect width="1" height="2" x="0" fill="#0055A4"/>
     <rect width="1" height="2" x="1" fill="#fff"/>
     <rect width="1" height="2" x="2" fill="#EF4135"/>
@@ -228,22 +228,29 @@ END:VCARD`;
   return (
     <div className="min-h-screen bg-background">
       {/* Language Switcher */}
-      <div className="fixed top-4 right-4 z-50 flex gap-2 bg-card/80 backdrop-blur-md border border-border rounded-full px-2 py-1.5 shadow-lg">
-        {langs.map(({ code, Flag, label }) => (
-          <button
-            key={code}
-            onClick={() => setLang(code)}
-            aria-label={label}
-            title={label}
-            className={`w-7 h-7 rounded-full overflow-hidden border transition-all ${
-              lang === code
-                ? "border-[#ff4500] ring-2 ring-[#ff4500]/40 scale-110"
-                : "border-border opacity-70 hover:opacity-100"
-            }`}
-          >
-            <Flag />
-          </button>
-        ))}
+      <div className="fixed top-4 right-4 z-50 flex items-center gap-1.5 bg-card/80 backdrop-blur-md border border-border rounded-full p-1.5 shadow-lg">
+        {langs.map(({ code, Flag, label }) => {
+          const active = lang === code;
+          return (
+            <button
+              key={code}
+              onClick={() => setLang(code)}
+              aria-label={label}
+              aria-pressed={active}
+              title={label}
+              className={`relative w-8 h-8 rounded-full overflow-hidden flex items-center justify-center transition-all duration-200 ${
+                active
+                  ? "ring-2 ring-[#ff4500] ring-offset-2 ring-offset-card scale-110 shadow-md"
+                  : "opacity-60 hover:opacity-100 hover:scale-105"
+              }`}
+            >
+              <span className="absolute inset-0 rounded-full overflow-hidden">
+                <Flag />
+              </span>
+              <span className="absolute inset-0 rounded-full ring-1 ring-inset ring-black/10" />
+            </button>
+          );
+        })}
       </div>
 
       <div className="max-w-2xl mx-auto px-6 py-16">
